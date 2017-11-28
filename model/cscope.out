@@ -1,0 +1,9527 @@
+cscope 15 $HOME/tmm/repos/ns-3-allinone/ns-3-dev/src/dash/model               0000051213
+	@algorithms/aaash-client.cc
+
+8 
+	~"¯ash-ş›Á.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuÏtÜ.h
+>
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("AaashClient");
+
+15 
+Çme¥aû
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+A¯shCl›Á
+);
+
+19 
+Ty³Id
+
+
+20 
+	gA¯shCl›Á
+::
+G‘Ty³Id
+()
+
+22 
+Ty³Id
+ 
+tid
+ =
+
+23 
+Ty³Id
+("ns3::A¯shCl›Á").
+S‘P¬’t
+<
+DashCl›Á
+>().
+AddCÚ¡ruùÜ
+<
+
+24 
+A¯shCl›Á
+>();
+
+25  
+	gtid
+;
+
+28 
+	gA¯shCl›Á
+::
+A¯shCl›Á
+() :
+
+29 
+m_ruÂšg_ç¡_¡¬t
+(
+Œue
+)
+
+35 
+A¯shCl›Á
+::~AaashClient()
+
+41 
+A¯shCl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+42 
+Time
+ & 
+d–ay
+)
+
+44 
+ušt32_t
+ 
+	g¿‹s
+[] =
+
+51 
+ušt32_t
+ 
+	g¿‹s_size
+ = (
+¿‹s
+) / (rates[0]);
+
+53 
+	ga1
+ = 0.75;
+
+54 
+	ga2
+ = 0.33;
+
+55 
+	ga3
+ = 0.5;
+
+56 
+	ga4
+ = 0.75;
+
+57 
+	ga5
+ = 0.9;
+
+59 
+Time
+ 
+b_mš
+("10s");
+
+60 
+Time
+ 
+b_low
+("20s");
+
+61 
+Time
+ 
+b_high
+("50s");
+
+62 
+Time
+ 
+	gb_İt
+ = 
+SecÚds
+((
+b_low
+ + 
+b_high
+).
+G‘SecÚds
+() * 0.5);
+
+64 
+Time
+ 
+f
+(
+MliSecÚds
+(
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+));
+
+66 
+Time
+ 
+	gb_t
+ = 
+m_bufãrS‹
+.
+rbegš
+()->
+£cÚd
+;
+
+69 
+ušt32_t
+ 
+	g¿‹Ind
+ = 
+¿‹s_size
+;
+
+70 
+ušt32_t
+ 
+	gi
+ = 0; i < 
+	g¿‹s_size
+; i++)
+
+72 ià(
+	g¿‹s
+[
+i
+] =ğ
+cu¼R©e
+)
+
+74 
+¿‹Ind
+ = 
+i
+;
+
+78 ià(
+	g¿‹Ind
+ =ğ
+¿‹s_size
+)
+
+80 
+NS_FATAL_ERROR
+("Wrong„ate");
+
+83 
+	gÃxtR©e
+ = 
+cu¼R©e
+;
+
+84 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+86 
+ušt32_t
+ 
+	gr_up
+ = 
+¿‹s
+[
+¿‹Ind
+];
+
+87 
+ušt32_t
+ 
+	gr_down
+ = 
+¿‹s
+[
+¿‹Ind
+];
+
+88 ià(
+	g¿‹Ind
+ + 1 < 
+	g¿‹s_size
+)
+
+90 
+	gr_up
+ = 
+¿‹s
+[
+¿‹Ind
+ + 1];
+
+92 ià(
+	g¿‹Ind
+ >= 1)
+
+94 
+r_down
+ = 
+¿‹s
+[
+¿‹Ind
+ - 1];
+
+99 ià(
+	gm_ruÂšg_ç¡_¡¬t
+ && (
+	g¿‹Ind
+ !ğ
+¿‹s_size
+ - 1è&& 
+BufãrInc
+()
+
+100 && (
+cu¼R©e
+ <ğ
+a1
+ * 
+m_b™¿‹E¡im©e
+))
+
+102 ià(
+b_t
+ < 
+b_mš
+)
+
+104 ià(
+r_up
+ <ğ
+a2
+ * 
+m_b™¿‹E¡im©e
+)
+
+106 
+ÃxtR©e
+ = 
+r_up
+;
+
+109 ià(
+	gb_t
+ < 
+	gb_low
+)
+
+111 ià(
+	gr_up
+ <ğ
+a3
+ * 
+m_b™¿‹E¡im©e
+)
+
+113 
+ÃxtR©e
+ = 
+r_up
+;
+
+118 ià(
+	gr_up
+ <ğ
+a4
+ * 
+m_b™¿‹E¡im©e
+)
+
+120 
+ÃxtR©e
+ = 
+r_up
+;
+
+122 ià(
+	gb_t
+ > 
+	gb_high
+)
+
+124 
+	gd–ay
+ = 
+b_high
+ - 
+f
+;
+
+130 
+	gm_ruÂšg_ç¡_¡¬t
+ = 
+çl£
+;
+
+131 ià(
+	gb_t
+ < 
+	gb_mš
+)
+
+133 
+	gÃxtR©e
+ = 
+¿‹s
+[0];
+
+135 ià(
+	gb_t
+ < 
+	gb_low
+)
+
+137 ià(
+	gcu¼R©e
+ !ğ
+¿‹s
+[0] && 
+cu¼R©e
+ >ğ
+m_b™¿‹E¡im©e
+)
+
+139 
+ÃxtR©e
+ = 
+r_down
+;
+
+142 ià(
+	gb_t
+ < 
+	gb_high
+)
+
+144 ià((
+	gcu¼R©e
+ =ğ
+¿‹s
+[
+¿‹s_size
+ - 1])
+
+145 || (
+r_up
+ >ğ
+a5
+ * 
+m_b™¿‹E¡im©e
+))
+
+147 
+d–ay
+ = 
+¡d
+::
+max
+(
+b_t
+ - 
+f
+, 
+b_İt
+);
+
+152 ià((
+	gcu¼R©e
+ =ğ
+¿‹s
+[
+¿‹s_size
+ - 1])
+
+153 || (
+r_up
+ >ğ
+a5
+ * 
+m_b™¿‹E¡im©e
+))
+
+155 
+d–ay
+ = 
+¡d
+::
+max
+(
+b_t
+ - 
+f
+, 
+b_İt
+);
+
+159 
+	gÃxtR©e
+ = 
+r_up
+;
+
+165 
+NS_LOG_INFO
+(
+
+166 "ÃxtR©e: " << 
+ÃxtR©e
+ << "\tb_d–ay: " << 
+d–ay
+.
+G‘SecÚds
+(è<< "\tb_t: " << 
+b_t
+.G‘SecÚds(è<< "\tb_İt: " << 
+b_İt
+.GetSeconds());
+
+169 
+boŞ
+
+
+170 
+	gA¯shCl›Á
+::
+BufãrInc
+()
+
+172 
+Time
+ 
+Ï¡
+(
+SecÚds
+(0));
+
+174 
+	g¡d
+::
+m­
+<
+Time
+, 
+	gTime
+>::
+™”©Ü
+ 
+™
+ = 
+m_bufãrS‹
+.
+begš
+();
+
+175 
+	g™
+ !ğ
+m_bufãrS‹
+.
+’d
+(); it++)
+
+180 ià(
+	g™
+->
+	g£cÚd
+ < 
+	gÏ¡
+)
+
+182  
+	gçl£
+;
+
+184 
+	gÏ¡
+ = 
+™
+->
+£cÚd
+;
+
+186  
+	gŒue
+;
+
+	@algorithms/aaash-client.h
+
+8 #iâdeà
+AAASH_CLIENT_H_
+
+
+9 
+	#AAASH_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+12 
+Çme¥aû
+ 
+	gns3
+
+
+15 şas 
+	cA¯shCl›Á
+ : 
+public
+ 
+DashCl›Á
+
+
+17 
+public
+:
+
+18 
+Ty³Id
+
+
+19 
+G‘Ty³Id
+();
+
+21 
+A¯shCl›Á
+();
+
+23 
+	gvœtu®
+
+
+24 ~
+A¯shCl›Á
+();
+
+26 
+vœtu®
+ 
+
+27 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+29 
+	g´iv©e
+:
+
+30 
+boŞ
+
+
+31 
+BufãrInc
+();
+
+33 
+boŞ
+ 
+	gm_ruÂšg_ç¡_¡¬t
+;
+
+	@algorithms/fdash-client.cc
+
+8 
+	~"fdash-ş›Á.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuÏtÜ.h
+>
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("FdashClient");
+
+15 
+Çme¥aû
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+FdashCl›Á
+);
+
+19 
+Ty³Id
+
+
+20 
+	gFdashCl›Á
+::
+G‘Ty³Id
+()
+
+22 
+Ty³Id
+ 
+tid
+ =
+
+23 
+Ty³Id
+("ns3::FdashCl›Á").
+S‘P¬’t
+<
+DashCl›Á
+>().
+AddCÚ¡ruùÜ
+<
+
+24 
+FdashCl›Á
+>();
+
+25  
+	gtid
+;
+
+28 
+	gFdashCl›Á
+::
+FdashCl›Á
+()
+
+34 
+FdashCl›Á
+::~FdashClient()
+
+40 
+FdashCl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+41 
+Time
+ & 
+d–ay
+)
+
+43 
+	g¦ow
+ = 0, 
+	gok
+ = 0, 
+	gç¡
+ = 0, 
+	gçÎšg
+ = 0, 
+	g¡—dy
+ = 0, 
+	grisšg
+ = 0, 
+	gr1
+ =
+
+44 0, 
+	gr2
+ = 0, 
+	gr3
+ = 0, 
+	gr4
+ = 0, 
+	gr5
+ = 0, 
+	gr6
+ = 0, 
+	gr7
+ = 0, 
+	gr8
+ = 0, 
+	gr9
+ = 0, 
+	gp2
+ =
+
+45 0, 
+	gp1
+ = 0, 
+	gz
+ = 0, 
+	gn1
+ = 0, 
+	gn2
+ = 0, 
+	gouut
+ = 0;
+
+47 
+	gt
+ = 
+m_rg‘_dt
+.
+G‘SecÚds
+();
+
+49 
+	gcu¼Dt
+ = 
+G‘BufãrE¡im©e
+();
+
+50 
+	gdiff
+ = 
+G‘BufãrDifã»ÁŸl
+();
+
+52 ià(
+	gcu¼Dt
+ < 2 * 
+	gt
+ / 3)
+
+54 
+	g¦ow
+ = 1.0;
+
+56 ià(
+	gcu¼Dt
+ < 
+	gt
+)
+
+58 
+	g¦ow
+ = 1 - 1 / (
+t
+ / 3è* (
+cu¼Dt
+ - 2 * / 3);
+
+59 
+	gok
+ = 1 / (
+t
+ / 3è* (
+cu¼Dt
+ - 2 * / 3);
+
+61 ià(
+	gcu¼Dt
+ < 4 * 
+	gt
+)
+
+63 
+	gok
+ = 1 - 1 / (3 * 
+t
+è* (
+cu¼Dt
+ -);
+
+64 
+	gç¡
+ = 1 / (3 * 
+t
+è* (
+cu¼Dt
+ -);
+
+68 
+	gç¡
+ = 1;
+
+71 ià(
+	gdiff
+ < -2 * 
+	gt
+ / 3)
+
+73 
+	gçÎšg
+ = 1;
+
+75 ià(
+	gdiff
+ < 0)
+
+77 
+	gçÎšg
+ = 1 - 1 / (2 * 
+t
+ / 3è* (
+diff
+ + 2 * / 3);
+
+78 
+	g¡—dy
+ = 1 / (2 * 
+t
+ / 3è* (
+diff
+ + 2 * / 3);
+
+80 ià(
+	gdiff
+ < 4 * 
+	gt
+)
+
+82 
+	g¡—dy
+ = 1 - 1 / (4 * 
+t
+è* 
+diff
+;
+
+83 
+	grisšg
+ = 1 / (4 * 
+t
+è* 
+diff
+;
+
+87 
+	grisšg
+ = 1;
+
+90 
+	gr1
+ = 
+¡d
+::
+mš
+(
+¦ow
+, 
+çÎšg
+);
+
+91 
+	gr2
+ = 
+¡d
+::
+mš
+(
+ok
+, 
+çÎšg
+);
+
+92 
+	gr3
+ = 
+¡d
+::
+mš
+(
+ç¡
+, 
+çÎšg
+);
+
+93 
+	gr4
+ = 
+¡d
+::
+mš
+(
+¦ow
+, 
+¡—dy
+);
+
+94 
+	gr5
+ = 
+¡d
+::
+mš
+(
+ok
+, 
+¡—dy
+);
+
+95 
+	gr6
+ = 
+¡d
+::
+mš
+(
+ç¡
+, 
+¡—dy
+);
+
+96 
+	gr7
+ = 
+¡d
+::
+mš
+(
+¦ow
+, 
+risšg
+);
+
+97 
+	gr8
+ = 
+¡d
+::
+mš
+(
+ok
+, 
+risšg
+);
+
+98 
+	gr9
+ = 
+¡d
+::
+mš
+(
+ç¡
+, 
+risšg
+);
+
+100 
+	gp2
+ = 
+¡d
+::
+sq¹
+(¡d::
+pow
+(
+r9
+, 2));
+
+101 
+	gp1
+ = 
+¡d
+::
+sq¹
+(¡d::
+pow
+(
+r6
+, 2è+ std::pow(
+r8
+, 2));
+
+102 
+	gz
+ = 
+¡d
+::
+sq¹
+(¡d::
+pow
+(
+r3
+, 2è+ std::pow(
+r5
+, 2è+ std::pow(
+r7
+, 2));
+
+103 
+	gn1
+ = 
+¡d
+::
+sq¹
+(¡d::
+pow
+(
+r2
+, 2è+ std::pow(
+r4
+, 2));
+
+104 
+	gn2
+ = 
+¡d
+::
+sq¹
+(¡d::
+pow
+(
+r1
+, 2));
+
+107 
+	gouut
+ = (
+n2
+ * 0.25 + 
+n1
+ * 0.5 + 
+z
+ * 1 + 
+p1
+ * 2 + 
+p2
+ * 4)
+
+108 / (
+n2
+ + 
+n1
+ + 
+z
+ + 
+p1
+ + 
+p2
+);
+
+110 
+NS_LOG_INFO
+(
+
+111 "cu¼Dt: " << 
+cu¼Dt
+ << " diff: " << 
+diff
+ << " slow: " << 
+¦ow
+ << " ok: " << 
+ok
+ << " fa¡: " << 
+ç¡
+ << " f®lšg: " << 
+çÎšg
+ << " s‹ady: " << 
+¡—dy
+ << "„isšg: " << 
+risšg
+ << "„1: " << 
+r1
+ << "„2: " << 
+r2
+ << "„3: " << 
+r3
+ << "„4: " << 
+r4
+ << "„5: " << 
+r5
+ << "„6: " << 
+r6
+ << "„7: " << 
+r7
+ << "„8: " << 
+r8
+ << "„9: " << 
+r9
+ << "…2: " << 
+p2
+ << "…1: " << 
+p1
+ << " z: " << 
+z
+ << "‚1: " << 
+n1
+ << "‚2: " << 
+n2
+ << " ouut: " << 
+ouut
+);
+
+113 
+ušt32_t
+ 
+	g»suÉ
+ = 0;
+
+115 
+	g»suÉ
+ = 
+ouut
+ * 
+m_b™¿‹E¡im©e
+;
+
+117 
+ušt32_t
+ 
+	g¿‹s
+[] =
+
+124 
+ušt32_t
+ 
+	g¿‹s_size
+ = (
+¿‹s
+) / (rates[0]);
+
+126 
+ušt32_t
+ 
+	gi
+;
+
+128 
+	gÃxtR©e
+ = 
+¿‹s
+[0];
+
+130 
+	gi
+ = 0; i < 
+	g¿‹s_size
+; i++)
+
+132 ià(
+	g»suÉ
+ > 
+	g¿‹s
+[
+i
+])
+
+134 
+	gÃxtR©e
+ = 
+¿‹s
+[
+i
+];
+
+138 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+139 ià(
+	gÃxtR©e
+ > 
+	gcu¼R©e
+)
+
+153 
+	gt_60
+ = 
+cu¼Dt
+ + (
+m_b™¿‹E¡im©e
+ / 
+ÃxtR©e
+ - 1) * 60;
+
+155 ià(
+	gt_60
+ < 
+	gt
+)
+
+157 
+	gÃxtR©e
+ = 
+cu¼R©e
+;
+
+158 
+	gt_60
+ = 
+cu¼Dt
+ + (
+m_b™¿‹E¡im©e
+ / 
+ÃxtR©e
+ - 1) * 60;
+
+160 ià(
+	gt_60
+ > 
+	gt
+)
+
+167 ià(
+	gÃxtR©e
+ < 
+	gcu¼R©e
+)
+
+169 
+	gt_60
+ = 
+cu¼Dt
+ + (
+m_b™¿‹E¡im©e
+ / 
+ÃxtR©e
+ - 1) * 60;
+
+171 ià(
+	gt_60
+ > 
+	gt
+)
+
+173 
+	gt_60
+ = 
+cu¼Dt
+ + (
+m_b™¿‹E¡im©e
+ / 
+cu¼R©e
+ - 1) * 60;
+
+174 ià(
+	gt_60
+ > 
+	gt
+)
+
+176 
+	gÃxtR©e
+ = 
+cu¼R©e
+;
+
+182 
+NS_LOG_INFO
+(
+cu¼R©e
+ << " " << 
+ouut
+ << " " << 
+»suÉ
+);
+
+	@algorithms/fdash-client.h
+
+8 #iâdeà
+FDASH_CLIENT_H_
+
+
+9 
+	#FDASH_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+12 
+Çme¥aû
+ 
+	gns3
+
+
+15 şas 
+	cFdashCl›Á
+ : 
+public
+ 
+DashCl›Á
+
+
+17 
+public
+:
+
+18 
+Ty³Id
+
+
+19 
+G‘Ty³Id
+();
+
+21 
+FdashCl›Á
+();
+
+23 
+	gvœtu®
+
+
+24 ~
+FdashCl›Á
+();
+
+26 
+vœtu®
+ 
+
+27 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+29 
+	g´iv©e
+:
+
+30 
+boŞ
+
+
+31 
+BufãrInc
+();
+
+	@algorithms/osmp-client.cc
+
+8 
+	~"osmp-ş›Á.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuÏtÜ.h
+>
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("OsmpClient");
+
+15 
+Çme¥aû
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+OsmpCl›Á
+);
+
+19 
+Ty³Id
+
+
+20 
+	gOsmpCl›Á
+::
+G‘Ty³Id
+()
+
+22 
+Ty³Id
+ 
+tid
+ =
+
+23 
+Ty³Id
+("ns3::OsmpCl›Á").
+S‘P¬’t
+<
+DashCl›Á
+>().
+AddCÚ¡ruùÜ
+<
+
+24 
+OsmpCl›Á
+>();
+
+25  
+	gtid
+;
+
+28 
+	gOsmpCl›Á
+::
+OsmpCl›Á
+()
+
+34 
+OsmpCl›Á
+::~OsmpClient()
+
+40 
+OsmpCl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+41 
+Time
+ & 
+d–ay
+)
+
+43 
+ušt32_t
+ 
+	g¿‹s
+[] =
+
+48 
+ušt32_t
+ 
+	g¿‹s_size
+ = (
+¿‹s
+) / (rates[0]);
+
+50 
+	g¡d
+::
+m­
+<
+Time
+, 
+	gTime
+>::
+™”©Ü
+ 
+™
+;
+
+51 
+	g™
+ = 
+m_bufãrS‹
+.
+’d
+();
+
+53 
+	g™
+--;
+
+54 
+Time
+ 
+	gnow
+ = 
+™
+->
+fœ¡
+;
+
+56 ià(
+	g™
+ !ğ
+m_bufãrS‹
+.
+begš
+())
+
+58 
+™
+--;
+
+62 
+Time
+ 
+	gt_Ï¡_äag
+ = 
+now
+ - 
+™
+->
+fœ¡
+;
+
+65 
+	gl_cur
+ = 0;
+
+66 
+	g¿‹s
+[
+l_cur
+] !ğ
+cu¼R©e
+)
+
+68 
+l_cur
+++;
+
+71 
+	gl_nxt
+ = 0;
+
+72 
+	gl_mš
+ = 0;
+
+73 
+	gl_max
+ = 
+¿‹s_size
+ - 1;
+
+75 
+	gr_dowÆßd
+ = 100;
+
+76 ià(
+	gt_Ï¡_äag
+.
+G‘MliSecÚds
+() > 0)
+
+78 
+	gr_dowÆßd
+ = (1.0 * 
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+)
+
+79 / 
+t_Ï¡_äag
+.
+G‘MliSecÚds
+();
+
+85 ià(
+	gr_dowÆßd
+ < 1)
+
+87 ià(
+	gl_cur
+ > 
+	gl_mš
+)
+
+89 ià(
+	gr_dowÆßd
+ < ((1.0 * 
+	g¿‹s
+[
+l_cur
+ - 1]) /„ates[l_cur]))
+
+91 
+	gl_nxt
+ = 
+l_mš
+;
+
+95 
+	gl_nxt
+ = 
+l_cur
+ - 1;
+
+101 ià(
+	gl_cur
+ < 
+	gl_max
+)
+
+103 ià(
+	gl_cur
+ == 0
+
+104 || 
+r_dowÆßd
+ > ((1.0 * 
+¿‹s
+[
+l_cur
+ - 1]) /„ates[l_cur]))
+
+108 
+l_nxt
+ =†_nxt + 1;
+
+110 !(
+	gl_nxt
+ =ğ
+l_max
+
+
+111 || 
+r_dowÆßd
+ < ((1.0 * 
+¿‹s
+[
+l_nxt
+ + 1]è/„©es[
+l_cur
+])));
+
+117 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+118 
+	gÃxtR©e
+ = 
+¿‹s
+[
+l_nxt
+];
+
+	@algorithms/osmp-client.h
+
+8 #iâdeà
+OSMP_CLIENT_H_
+
+
+9 
+	#OSMP_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+12 
+Çme¥aû
+ 
+	gns3
+
+
+15 şas 
+	cOsmpCl›Á
+ : 
+public
+ 
+DashCl›Á
+
+
+17 
+public
+:
+
+18 
+Ty³Id
+
+
+19 
+G‘Ty³Id
+();
+
+21 
+OsmpCl›Á
+();
+
+23 
+	gvœtu®
+
+
+24 ~
+OsmpCl›Á
+();
+
+26 
+vœtu®
+ 
+
+27 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+	@algorithms/raahs-client.cc
+
+8 
+	~"¿ahs-ş›Á.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuÏtÜ.h
+>
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("RaahsClient");
+
+15 
+Çme¥aû
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+R¯hsCl›Á
+);
+
+19 
+Ty³Id
+
+
+20 
+	gR¯hsCl›Á
+::
+G‘Ty³Id
+()
+
+22 
+Ty³Id
+ 
+tid
+ =
+
+23 
+Ty³Id
+("ns3::R¯hsCl›Á").
+S‘P¬’t
+<
+DashCl›Á
+>().
+AddCÚ¡ruùÜ
+<
+
+24 
+R¯hsCl›Á
+>();
+
+25  
+	gtid
+;
+
+28 
+	gR¯hsCl›Á
+::
+R¯hsCl›Á
+()
+
+34 
+R¯hsCl›Á
+::~RaahsClient()
+
+40 
+R¯hsCl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+41 
+Time
+ & 
+d–ay
+)
+
+43 
+ušt32_t
+ 
+	g¿‹s
+[] =
+
+50 
+ušt32_t
+ 
+	g¿‹s_size
+ = (
+¿‹s
+) / (rates[0]);
+
+53 
+	gmsd
+ = 
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+ / 1000.0;
+
+54 
+	gsá
+ = 
+G‘Segm’tF‘chTime
+();
+
+56 
+	gmi
+ = 
+msd
+ / 
+sá
+;
+
+58 
+	gt_mš
+ = 9;
+
+60 
+	g•sÚ
+ = 0.0;
+
+61 
+ušt32_t
+ 
+	gi
+;
+
+62 
+	gi
+ = 0; i < 
+	g¿‹s_size
+ - 1; i++)
+
+64 
+	g•sÚ
+ = 
+¡d
+::
+max
+(
+•sÚ
+, (1.0 * 
+¿‹s
+[
+i
+ + 1] -„ates[i]) /„ates[i]);
+
+67 
+	ggamma_d
+ = 0.67;
+
+69 
+	g¿‹Ind
+ = 
+¿‹s_size
+;
+
+70 
+ušt32_t
+ 
+	gi
+ = 0; i < 
+	g¿‹s_size
+; i++)
+
+72 ià(
+	g¿‹s
+[
+i
+] =ğ
+cu¼R©e
+)
+
+74 
+¿‹Ind
+ = 
+i
+;
+
+78 ià(
+	g¿‹Ind
+ =ğ
+¿‹s_size
+)
+
+80 
+NS_FATAL_ERROR
+("Wrong„ate");
+
+83 ià(
+	gmi
+ > 1 + 
+	g•sÚ
+)
+
+85 ià(
+	g¿‹Ind
+ < 
+	g¿‹s_size
+ - 1)
+
+87 
+	gÃxtR©e
+ = 
+¿‹s
+[()
+¿‹Ind
+ + 1];
+
+90 ià(
+	gmi
+ < 
+	ggamma_d
+)
+
+92 
+	gi
+ = 
+¿‹Ind
+ - 1;
+
+93 
+	gi
+ = 0; i < 
+	g¿‹Ind
+ - 1; i--)
+
+95 ià(
+	g¿‹s
+[
+i
+] < 
+mi
+ * 
+	gcu¼R©e
+)
+
+97 
+	gÃxtR©e
+ = 
+¿‹s
+[
+i
+];
+
+107 
+	gts
+ = 
+G‘BufãrE¡im©e
+(è- 
+t_mš
+ - 
+cu¼R©e
+ * 
+msd
+ / 
+¿‹s
+[0];
+
+109 ià(
+	gts
+ > 0)
+
+111 
+	gd–ay
+ = 
+SecÚds
+(
+ts
+);
+
+115 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+	@algorithms/raahs-client.h
+
+8 #iâdeà
+RAAHS_CLIENT_H_
+
+
+9 
+	#RAAHS_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+12 
+Çme¥aû
+ 
+	gns3
+
+
+15 şas 
+	cR¯hsCl›Á
+ : 
+public
+ 
+DashCl›Á
+
+
+17 
+public
+:
+
+18 
+Ty³Id
+
+
+19 
+G‘Ty³Id
+();
+
+21 
+R¯hsCl›Á
+();
+
+23 
+	gvœtu®
+
+
+24 ~
+R¯hsCl›Á
+();
+
+26 
+vœtu®
+ 
+
+27 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+29 
+	g´iv©e
+:
+
+	@algorithms/sftm-client.cc
+
+8 
+	~"sám-ş›Á.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuÏtÜ.h
+>
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("SftmClient");
+
+15 
+Çme¥aû
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+SámCl›Á
+);
+
+19 
+Ty³Id
+
+
+20 
+	gSámCl›Á
+::
+G‘Ty³Id
+()
+
+22 
+Ty³Id
+ 
+tid
+ =
+
+23 
+Ty³Id
+("ns3::SámCl›Á").
+S‘P¬’t
+<
+DashCl›Á
+>().
+AddCÚ¡ruùÜ
+<
+
+24 
+SámCl›Á
+>();
+
+25  
+	gtid
+;
+
+28 
+	gSámCl›Á
+::
+SámCl›Á
+() :
+
+29 
+m_rsá_exûeded
+(
+çl£
+)
+
+35 
+SámCl›Á
+::~SftmClient()
+
+41 
+SámCl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+42 
+Time
+ & 
+d–ay
+)
+
+44 
+ušt32_t
+ 
+	g¿‹s
+[] =
+
+51 
+ušt32_t
+ 
+	g¿‹s_size
+ = (
+¿‹s
+) / (rates[0]);
+
+54 
+	gmsd
+ = 
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+ / 1000.0;
+
+55 
+	gsá
+ = 
+G‘Segm’tF‘chTime
+();
+
+56 
+	gtbmt
+ = 
+m_rg‘_dt
+.
+G‘SecÚds
+();
+
+57 
+	gts_ns
+ = 
+m_£gm’tId
+ * 
+msd
+;
+
+58 
+	gts_o
+ = 
+G‘PÏy”
+().
+m_äamesPÏyed
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+
+
+60 
+	grsá
+ = 
+ts_ns
+ - 
+ts_o
+ - 
+tbmt
+;
+
+61 
+	grho
+ = 0.75;
+
+63 
+	grsá_s
+ = 
+rho
+ * 
+msd
+;
+
+64 ià(
+	grsá
+ < 
+	grsá_s
+ && !
+	gm_rsá_exûeded
+)
+
+66 
+	grsá
+ = 
+rsá_s
+;
+
+70 
+	gm_rsá_exûeded
+ = 
+Œue
+;
+
+73 
+	gsám
+ = 
+¡d
+::
+mš
+(
+msd
+, 
+rsá
+è/ 
+	gsá
+;
+
+75 
+ušt32_t
+ 
+	g¿‹Ind
+ = 
+¿‹s_size
+;
+
+76 
+ušt32_t
+ 
+	gi
+ = 0; i < 
+	g¿‹s_size
+; i++)
+
+78 ià(
+	g¿‹s
+[
+i
+] =ğ
+cu¼R©e
+)
+
+80 
+¿‹Ind
+ = 
+i
+;
+
+84 ià(
+	g¿‹Ind
+ =ğ
+¿‹s_size
+)
+
+86 
+NS_FATAL_ERROR
+("Wrong„ate");
+
+89 
+	gec_u
+ =
+
+90 
+¿‹Ind
+ < 
+¿‹s_size
+ - 1 ?
+
+91 (1.0 * 
+¿‹s
+[
+¿‹Ind
+ + 1] -„ates[rateInd]) /„ates[rateInd] :
+
+92 
+¡d
+::
+num”ic_lim™s
+<>::
+max
+();
+
+94 
+	gemax_u
+ = 0;
+
+95 
+ušt32_t
+ 
+	gi
+ = 0; i < 
+	g¿‹s_size
+ - 1; i++)
+
+97 
+	ge
+ = (1.0 * 
+¿‹s
+[
+i
+ + 1] -„ates[i]) /„ates[i];
+
+98 
+	gemax_u
+ = 
+¡d
+::
+max
+(
+emax_u
+, 
+e
+);
+
+101 
+	ge_u
+ = 
+¡d
+::
+mš
+(
+emax_u
+, 2 * 
+ec_u
+);
+
+103 
+	gec_d
+ =
+
+104 
+¿‹Ind
+ > 0 ?
+
+105 (1.0 * 
+¿‹s
+[
+¿‹Ind
+] -„ates[rateInd - 1]) /„ates[rateInd] : 1.0;
+
+107 
+	gemš_d
+ = 
+¡d
+::
+num”ic_lim™s
+<>::
+max
+();
+
+108 
+ušt32_t
+ 
+	gi
+ = 1; i < 
+	g¿‹s_size
+; i++)
+
+110 
+	ge
+ = (1.0 * 
+¿‹s
+[
+i
+] -„ates[i - 1]) /„ates[i];
+
+111 
+	gemš_d
+ = 
+¡d
+::
+mš
+(
+emš_d
+, 
+e
+);
+
+114 
+	ge_d
+ = 
+¡d
+::
+max
+(2 * 
+emš_d
+, 
+ec_d
+);
+
+116 ià(
+	gsám
+ > 1 + 
+	ge_u
+ && 
+	g¿‹Ind
+ < 
+	g¿‹s_size
+ - 1)
+
+118 
+	gÃxtR©e
+ = 
+¿‹s
+[
+¿‹Ind
+ + 1];
+
+120 ià(
+	gsám
+ < 1 - 
+	ge_d
+ && 
+	g¿‹Ind
+ != 0)
+
+122 
+ušt32_t
+ 
+i
+ = 0; 
+	gi
+ < 
+	g¿‹Ind
+; i++)
+
+124 ià(
+	g¿‹s
+[
+i
+] >ğ
+sám
+ * 
+¿‹s
+[
+¿‹Ind
+])
+
+128 
+	gÃxtR©e
+ = 
+¿‹s
+[
+i
+];
+
+132 
+	gbmt_mš
+ = 0;
+
+133 
+	gbmt_c
+ = 
+G‘BufãrE¡im©e
+();
+
+134 
+	gb_max
+ = 
+¿‹s
+[
+¿‹s_size
+ - 1];
+
+135 
+	gb_mš
+ = 
+¿‹s
+[0];
+
+136 
+	gt_id
+ = 
+bmt_c
+ - 
+bmt_mš
+ - 
+msd
+ * 
+b_max
+ / 
+b_mš
+;
+
+138 ià(
+	gt_id
+ > 0)
+
+140 
+	gd–ay
+ = 
+SecÚds
+(
+t_id
+);
+
+144 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+	@algorithms/sftm-client.h
+
+8 #iâdeà
+SFTM_CLIENT_H_
+
+
+9 
+	#SFTM_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+12 
+Çme¥aû
+ 
+	gns3
+
+
+15 şas 
+	cSámCl›Á
+ : 
+public
+ 
+DashCl›Á
+
+
+17 
+public
+:
+
+18 
+Ty³Id
+
+
+19 
+G‘Ty³Id
+();
+
+21 
+SámCl›Á
+();
+
+23 
+	gvœtu®
+
+
+24 ~
+SámCl›Á
+();
+
+26 
+vœtu®
+ 
+
+27 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+29 
+	g´iv©e
+:
+
+30 
+boŞ
+ 
+m_rsá_exûeded
+;
+
+	@algorithms/svaa-client.cc
+
+8 
+	~"sv¯-ş›Á.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuÏtÜ.h
+>
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("SvaaClient");
+
+15 
+Çme¥aû
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+Sv¯Cl›Á
+);
+
+19 
+Ty³Id
+
+
+20 
+	gSv¯Cl›Á
+::
+G‘Ty³Id
+()
+
+22 
+Ty³Id
+ 
+tid
+ =
+
+23 
+Ty³Id
+("ns3::Sv¯Cl›Á").
+S‘P¬’t
+<
+DashCl›Á
+>().
+AddCÚ¡ruùÜ
+<
+
+24 
+Sv¯Cl›Á
+>();
+
+25  
+	gtid
+;
+
+28 
+	gSv¯Cl›Á
+::
+Sv¯Cl›Á
+() :
+
+29 
+m_m_k_1
+(0), 
+m_m_k_2
+(0), 
+m_couÁ”
+(0)
+
+35 
+	gSv¯Cl›Á
+::~
+Sv¯Cl›Á
+()
+
+41 
+Sv¯Cl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+42 
+Time
+ & 
+d–ay
+)
+
+44 
+ušt32_t
+ 
+	g¿‹s
+[] =
+
+49 
+ušt32_t
+ 
+	g¿‹s_size
+ = (
+¿‹s
+) / (rates[0]);
+
+50 
+	gdiff
+ = 
+G‘BufãrDifã»ÁŸl
+();
+
+52 
+	gq_tk
+ = 
+G‘BufãrE¡im©e
+();
+
+53 
+	gq_»f
+ = 
+m_rg‘_dt
+.
+G‘SecÚds
+();
+
+54 
+	gp
+ = 1.0;
+
+55 
+	gf_q
+ = 2 * 
+¡d
+::
+exp
+(
+p
+ * (
+q_tk
+ - 
+q_»f
+))
+
+56 / (1 + 
+¡d
+::
+exp
+(
+p
+ * (
+q_tk
+ - 
+q_»f
+)));
+
+57 
+	gd–
+ = 
+MPEG_TIME_BETWEEN_FRAMES
+ * 
+MPEG_FRAMES_PER_SEGMENT
+ / 1000.0;
+
+58 
+	gf_t
+ = 
+d–
+ / (d– - 
+diff
+);
+
+59 
+	gf_u
+ = 1;
+
+61 
+	gf
+ = 
+f_q
+ * 
+f_t
+ * 
+f_u
+;
+
+63 
+	gt_k
+ = 
+m_b™¿‹E¡im©e
+;
+
+65 
+	gu_k
+ = 
+f
+ * 
+t_k
+;
+
+67 
+	gm_k
+ = 0;
+
+68 ià(
+	gdiff
+ >ğ0.4 * 
+d–
+)
+
+70 
+m_k
+ = 1;
+
+72 ià(
+	gdiff
+ >ğ0.2 * 
+d–
+)
+
+74 
+m_k
+ = 5;
+
+76 ià(
+	gdiff
+ >= 0)
+
+78 
+m_k
+ = 15;
+
+82 
+	gm_k
+ = 20;
+
+85 
+	gm
+ = (
+m_k
+ + 
+m_m_k_1
+ + 
+m_m_k_2
+) / 3;
+
+86 
+	gm_m_k_2
+ = 
+m_m_k_1
+;
+
+87 
+	gm_m_k_1
+ = 
+m_k
+;
+
+89 ià(
+	gq_tk
+ < 
+	gq_»f
+ / 2)
+
+91 
+	gi
+ = 
+¿‹s_size
+ - 1;
+
+92 
+	g¿‹s
+[
+i
+] > 
+	gt_k
+ && 
+	gi
+ > 0)
+
+94 
+	gi
+--;
+
+96 
+	gÃxtR©e
+ = 
+¿‹s
+[
+i
+];
+
+97 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+100 ià(
+	gu_k
+ > 
+	gcu¼R©e
+)
+
+102 
+	gm_couÁ”
+++;
+
+103 ià(
+	gm_couÁ”
+ > 
+	gm
+)
+
+105 
+	gi
+ = 
+¿‹s_size
+ - 1;
+
+106 
+	g¿‹s
+[
+i
+] > 
+	gt_k
+ && 
+	gi
+ > 0)
+
+108 
+	gi
+--;
+
+110 
+	gÃxtR©e
+ = 
+¿‹s
+[
+i
+];
+
+111 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+112 
+	gm_couÁ”
+ = 0;
+
+116 ià(
+	gu_k
+ < 
+	gcu¼R©e
+)
+
+118 
+	gm_couÁ”
+ = 0;
+
+120 
+	gÃxtR©e
+ = 
+cu¼R©e
+;
+
+121 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+	@algorithms/svaa-client.h
+
+8 #iâdeà
+SVAA_CLIENT_H_
+
+
+9 
+	#SVAA_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-ş›Á.h
+>
+
+12 
+Çme¥aû
+ 
+	gns3
+
+
+15 şas 
+	cSv¯Cl›Á
+ : 
+public
+ 
+DashCl›Á
+
+
+17 
+public
+:
+
+18 
+Ty³Id
+
+
+19 
+G‘Ty³Id
+();
+
+21 
+Sv¯Cl›Á
+();
+
+23 
+	gvœtu®
+
+
+24 ~
+Sv¯Cl›Á
+();
+
+26 
+vœtu®
+ 
+
+27 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+29 
+	g´iv©e
+:
+
+30 
+m_m_k_1
+;
+
+31 
+	gm_m_k_2
+;
+
+32 
+	gm_couÁ”
+;
+
+	@dash-client.cc
+
+21 
+	~<ns3/log.h
+>
+
+22 
+	~<ns3/uš‹g”.h
+>
+
+23 
+	~<ns3/tı-sock‘-çùÜy.h
+>
+
+24 
+	~<ns3/simuÏtÜ.h
+>
+
+25 
+	~<ns3/š‘-sock‘-add»ss.h
+>
+
+26 
+	~<ns3/š‘6-sock‘-add»ss.h
+>
+
+27 
+	~"h‰p-h—d”.h
+"
+
+28 
+	~"dash-ş›Á.h
+"
+
+29 
+	~"·¿.h
+"
+
+31 
+NS_LOG_COMPONENT_DEFINE
+("DashClient");
+
+32 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+34 
+	gveùÜ
+ <> 
+	gvideo_num
+;
+
+36 
+Çme¥aû
+ 
+	gns3
+
+
+39 
+NS_OBJECT_ENSURE_REGISTERED
+(
+DashCl›Á
+);
+
+41 
+	gDashCl›Á
+::
+m_couÁObjs
+ = 0;
+
+43 
+Ty³Id
+
+
+44 
+	gDashCl›Á
+::
+G‘Ty³Id
+()
+
+46 
+Ty³Id
+ 
+tid
+ =
+
+47 
+Ty³Id
+("ns3::DashCl›Á").
+S‘P¬’t
+<
+AµliÿtiÚ
+>().
+AddCÚ¡ruùÜ
+<
+
+48 
+DashCl›Á
+>().
+AddA‰ribu‹
+("VideoId",
+
+49 "ThId oàthvideØth© i ¶ayed.", 
+Uš‹g”V®ue
+(0),
+
+50 
+MakeUš‹g”AcûssÜ
+(&
+DashCl›Á
+::
+m_videoId
+),
+
+51 
+MakeUš‹g”Check”
+<
+ušt32_t
+>(1)).
+AddA‰ribu‹
+("Remote",
+
+52 "Thadd»s oàthde¡š©iÚ", 
+Add»ssV®ue
+(),
+
+53 
+MakeAdd»ssAcûssÜ
+(&
+DashCl›Á
+::
+m_³”
+), 
+MakeAdd»ssCheck”
+()).
+AddA‰ribu‹
+(
+
+55 
+Ty³IdV®ue
+(
+TıSock‘FaùÜy
+::
+G‘Ty³Id
+()),
+
+56 
+MakeTy³IdAcûssÜ
+(&
+DashCl›Á
+::
+m_tid
+), 
+MakeTy³IdCheck”
+()).
+AddA‰ribu‹
+(
+
+57 "T¬g‘Dt", "Thrg‘ bufãršgime", 
+TimeV®ue
+(
+Time
+("35s")),
+
+58 
+MakeTimeAcûssÜ
+(&
+DashCl›Á
+::
+m_rg‘_dt
+), 
+MakeTimeCheck”
+()).
+AddA‰ribu‹
+(
+
+60 
+TimeV®ue
+(
+Time
+("10s")), 
+MakeTimeAcûssÜ
+(&
+DashCl›Á
+::
+m_wšdow
+),
+
+61 
+MakeTimeCheck”
+()
+
+63 ).
+AddT¿ûSourû
+("Tx", "A‚ew…acket is created‡nd is sent",
+
+64 
+MakeT¿ûSourûAcûssÜ
+(&
+DashCl›Á
+::
+m_txT¿û
+));
+
+65  
+	gtid
+;
+
+68 
+	gDashCl›Á
+::
+DashCl›Á
+() :
+
+69 
+m_¿‹Chªges
+(0), 
+m_rg‘_dt
+("35s"), 
+m_b™¿‹E¡im©e
+(0.0), 
+m_£gm’tId
+(
+
+70 0), 
+m_sock‘
+(0), 
+m_cÚÃùed
+(
+çl£
+), 
+m_tÙBy‹s
+(0), 
+m_¡¬‹dReûivšg
+(
+
+71 
+SecÚds
+(0)), 
+m_sumDt
+(SecÚds(0)), 
+m_Ï¡Dt
+(SecÚds(-1)), 
+m_id
+(
+
+72 
+m_couÁObjs
+++), 
+m_»que¡Time
+("0s"), 
+m_£gm’t_by‹s
+(0), 
+m_b™R©e
+(
+
+73 50000), 
+m_wšdow
+(
+SecÚds
+(10)), 
+m_£gm’tF‘chTime
+(Seconds(0))
+
+75 
+NS_LOG_FUNCTION
+(
+this
+);
+
+76 
+	gm_·r£r
+.
+S‘Aµ
+(
+this
+);
+
+79 
+	gDashCl›Á
+::~
+DashCl›Á
+()
+
+81 
+NS_LOG_FUNCTION
+(
+this
+);
+
+84 
+	gPŒ
+<
+	gSock‘
+>
+
+85 
+	gDashCl›Á
+::
+G‘Sock‘
+() const
+
+87 
+NS_LOG_FUNCTION
+(
+this
+);
+
+88  
+	gm_sock‘
+;
+
+92 
+	gDashCl›Á
+::
+DoDi¥o£
+()
+
+94 
+NS_LOG_FUNCTION
+(
+this
+);
+
+96 
+	gm_sock‘
+ = 0;
+
+98 
+	gAµliÿtiÚ
+::
+DoDi¥o£
+();
+
+103 
+	gDashCl›Á
+::
+S¹AµliÿtiÚ
+()
+
+105 
+NS_LOG_FUNCTION
+(
+this
+);
+
+109 ià(!
+	gm_sock‘
+)
+
+111 
+	gm_sock‘
+ = 
+Sock‘
+::
+C»©eSock‘
+(
+G‘Node
+(), 
+m_tid
+);
+
+114 ià(
+	gm_sock‘
+->
+G‘Sock‘Ty³
+(è!ğ
+Sock‘
+::
+NS3_SOCK_STREAM
+
+
+115 && 
+m_sock‘
+->
+G‘Sock‘Ty³
+(è!ğ
+Sock‘
+::
+NS3_SOCK_SEQPACKET
+)
+
+117 
+NS_FATAL_ERROR
+("Using HTTP with‡n incompatible socketype. "
+
+122 ià(
+	gIÃt6Sock‘Add»ss
+::
+IsM©chšgTy³
+(
+m_³”
+))
+
+124 
+m_sock‘
+->
+Bšd6
+();
+
+126 ià(
+	gIÃtSock‘Add»ss
+::
+IsM©chšgTy³
+(
+m_³”
+))
+
+128 
+m_sock‘
+->
+Bšd
+();
+
+131 
+	gm_sock‘
+->
+CÚÃù
+(
+m_³”
+);
+
+132 
+	gm_sock‘
+->
+S‘RecvC®lback
+(
+MakeC®lback
+(&
+DashCl›Á
+::
+HªdËR—d
+, 
+this
+));
+
+133 
+	gm_sock‘
+->
+S‘CÚÃùC®lback
+(
+
+134 
+MakeC®lback
+(&
+DashCl›Á
+::
+CÚÃùiÚSucûeded
+, 
+this
+),
+
+135 
+MakeC®lback
+(&
+DashCl›Á
+::
+CÚÃùiÚFaed
+, 
+this
+));
+
+136 
+	gm_sock‘
+->
+S‘S’dC®lback
+(
+MakeC®lback
+(&
+DashCl›Á
+::
+D©aS’d
+, 
+this
+));
+
+141 
+	gDashCl›Á
+::
+StİAµliÿtiÚ
+()
+
+143 
+NS_LOG_FUNCTION
+(
+this
+);
+
+145 ià(
+	gm_sock‘
+ != 0)
+
+147 
+m_sock‘
+->
+Clo£
+();
+
+148 
+	gm_cÚÃùed
+ = 
+çl£
+;
+
+149 
+	gm_¶ay”
+.
+	gm_¡©e
+ = 
+MPEG_PLAYER_DONE
+;
+
+153 
+NS_LOG_WARN
+("DashClient found‚ull socketo close in StopApplication");
+
+159 
+	gDashCl›Á
+::
+Reque¡Segm’t
+()
+
+161 
+NS_LOG_FUNCTION
+(
+this
+);
+
+163 ià(
+	gm_cÚÃùed
+ =ğ
+çl£
+)
+
+168 
+	gPŒ
+<
+	gPack‘
+> 
+	g·ck‘
+ = 
+C»©e
+<
+Pack‘
+>(100);
+
+170 
+HTTPH—d”
+ 
+	gh‰pH—d”
+;
+
+171 
+	gh‰pH—d”
+.
+S‘Seq
+(1);
+
+172 
+	gh‰pH—d”
+.
+S‘Mes§geTy³
+(
+HTTP_REQUEST
+);
+
+173 
+	gh‰pH—d”
+.
+S‘VideoId
+(
+m_videoId
+);
+
+174 
+	gh‰pH—d”
+.
+S‘ResŞutiÚ
+(
+m_b™R©e
+);
+
+175 
+	gh‰pH—d”
+.
+S‘Segm’tId
+(
+m_£gm’tId
+++);
+
+176 
+	g·ck‘
+->
+AddH—d”
+(
+h‰pH—d”
+);
+
+179 
+	g»s
+ = 0;
+
+180 ià(((è(
+	g»s
+ = 
+m_sock‘
+->
+S’d
+(
+·ck‘
+))è!ğ·ck‘->
+G‘Size
+())
+
+182 
+NS_FATAL_ERROR
+(
+
+183 "Oh oh. Couldn'ˆ£nd…ack‘!„es=" << 
+»s
+ << " size=" << 
+·ck‘
+->
+G‘Size
+());
+
+186 
+	gm_»que¡Time
+ = 
+SimuÏtÜ
+::
+Now
+();
+
+187 
+	gm_£gm’t_by‹s
+ = 0;
+
+192 
+	gDashCl›Á
+::
+HªdËR—d
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+194 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+
+196 
+	gm_·r£r
+.
+R—dSock‘
+(
+sock‘
+);
+
+201 
+	gDashCl›Á
+::
+CÚÃùiÚSucûeded
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+203 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+
+204 
+NS_LOG_LOGIC
+("DashClient Connection succeeded");
+
+205 
+	gm_cÚÃùed
+ = 
+Œue
+;
+
+206 
+Reque¡Segm’t
+();
+
+210 
+	gDashCl›Á
+::
+CÚÃùiÚFaed
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+212 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+NS_LOG_LOGIC
+(
+
+217 
+	gDashCl›Á
+::
+D©aS’d
+(
+PŒ
+<
+Sock‘
+>, 
+ušt32_t
+)
+
+219 
+NS_LOG_FUNCTION
+(
+this
+);
+
+221 ià(
+	gm_cÚÃùed
+)
+
+224 
+NS_LOG_INFO
+("Something was sent");
+
+229 
+NS_LOG_INFO
+("NOT CONNECTED!!!!");
+
+234 
+	gDashCl›Á
+::
+Mes§geReûived
+(
+Pack‘
+ 
+mes§ge
+)
+
+236 
+NS_LOG_FUNCTION
+(
+this
+ << 
+mes§ge
+);
+
+238 
+MPEGH—d”
+ 
+	gm³gH—d”
+;
+
+239 
+HTTPH—d”
+ 
+	gh‰pH—d”
+;
+
+242 
+	gm_¶ay”
+.
+ReûiveF¿me
+(&
+mes§ge
+);
+
+243 
+	gm_£gm’t_by‹s
+ +ğ
+mes§ge
+.
+G‘Size
+();
+
+244 
+	gm_tÙBy‹s
+ +ğ
+mes§ge
+.
+G‘Size
+();
+
+248 
+	gmes§ge
+.
+RemoveH—d”
+(
+m³gH—d”
+);
+
+249 
+	gmes§ge
+.
+RemoveH—d”
+(
+h‰pH—d”
+);
+
+252 
+	gm_¶ay”
+.
+	gm_¡©e
+)
+
+254 
+	gMPEG_PLAYER_PLAYING
+:
+
+255 
+m_sumDt
+ +ğ
+m_¶ay”
+.
+G‘R—lPÏyTime
+(
+m³gH—d”
+.
+G‘PÏybackTime
+());
+
+257 
+	gMPEG_PLAYER_PAUSED
+:
+
+259 
+	gMPEG_PLAYER_DONE
+:
+
+262 
+NS_FATAL_ERROR
+("WRONG STATE");
+
+265 ià(
+	gm³gH—d”
+.
+G‘F¿meId
+(è=ğ
+MPEG_FRAMES_PER_SEGMENT
+ - 1)
+
+270 
+m_£gm’tF‘chTime
+ = 
+SimuÏtÜ
+::
+Now
+(è- 
+m_»que¡Time
+;
+
+272 
+NS_LOG_INFO
+(
+
+273 
+SimuÏtÜ
+::
+Now
+().
+G‘SecÚds
+(è<< " by‹s: " << 
+m_£gm’t_by‹s
+ << " segm’tTime: " << 
+m_£gm’tF‘chTime
+.GetSeconds() << " segmentRate: " << 8 * m_segment_bytes / m_segmentFetchTime.GetSeconds());
+
+275 
+AddB™R©e
+(
+SimuÏtÜ
+::
+Now
+(),
+
+276 8 * 
+m_£gm’t_by‹s
+ / 
+m_£gm’tF‘chTime
+.
+G‘SecÚds
+());
+
+278 
+Time
+ 
+	gcu¼Dt
+ = 
+m_¶ay”
+.
+G‘R—lPÏyTime
+(
+m³gH—d”
+.
+G‘PÏybackTime
+());
+
+280 
+LogBufãrLev–
+(
+cu¼Dt
+);
+
+282 
+ušt32_t
+ 
+	gŞd
+ = 
+m_b™R©e
+;
+
+285 
+Time
+ 
+	gbufãrD–ay
+;
+
+290 
+ušt32_t
+ 
+	g´evB™¿‹
+ = 
+m_b™R©e
+;
+
+299 
+	gDashCl›Á
+::
+C®cNextSegm’t
+(
+´evB™¿‹
+, 
+m_b™R©e
+, 
+bufãrD–ay
+);
+
+301 ià(
+	g´evB™¿‹
+ !ğ
+m_b™R©e
+)
+
+303 
+m_¿‹Chªges
+++;
+
+306 ià(
+	gbufãrD–ay
+ =ğ
+SecÚds
+(0))
+
+308 
+Reque¡Segm’t
+();
+
+312 
+	gm_¶ay”
+.
+SchduËBufãrWakeup
+(
+bufãrD–ay
+, 
+this
+);
+
+327 ià(
+	gm_£gm’tId
+==70084è
+DashCl›Á
+::
+StİAµliÿtiÚ
+();
+
+338 
+NS_LOG_INFO
+(
+
+339 "===ğLa¡ f¿m»ûived. Reque¡šg segm’ˆ" << 
+m_£gm’tId
+);
+
+342 
+NS_LOG_INFO
+(
+
+343 "!@#$#@!$@#\t" << 
+SimuÏtÜ
+::
+Now
+().
+G‘SecÚds
+(è<< " old: " << 
+Şd
+ << "‚ew: " << 
+m_b™R©e
+ << ": " << 
+cu¼Dt
+.G‘SecÚds(è<< " dt: " << (cu¼Dˆ- 
+m_Ï¡Dt
+).GetSeconds());
+
+345 
+	gm_Ï¡Dt
+ = 
+cu¼Dt
+;
+
+352 
+	gDashCl›Á
+::
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+,
+
+353 
+Time
+ & 
+d–ay
+)
+
+361 
+	gÃxtR©e
+ = 
+cu¼R©e
+;
+
+362 
+	gd–ay
+ = 
+SecÚds
+(0);
+
+366 
+	gDashCl›Á
+::
+G‘Sts
+()
+
+368 
+¡d
+::
+cout
+ << " InterruptionTime: "
+
+369 << 
+m_¶ay”
+.
+m_š‹¼u±iÚ_time
+.
+G‘SecÚds
+() << " interruptions: "
+
+370 << 
+m_¶ay”
+.
+m_š‹¼ru±iÚs
+ << "‡vgRate: "
+
+371 << (1.0 * 
+m_¶ay”
+.
+m_tÙ®R©e
+è/ m_¶ay”.
+m_äamesPÏyed
+
+
+372 << " mšR©e: " << 
+m_¶ay”
+.
+m_mšR©e
+ << " AvgDt: "
+
+373 << 
+m_sumDt
+.
+G‘SecÚds
+(è/ 
+m_¶ay”
+.
+m_äamesPÏyed
+ << " changes: "
+
+374 << 
+m_¿‹Chªges
+ << 
+¡d
+::
+’dl
+;
+
+379 
+	gDashCl›Á
+::
+LogBufãrLev–
+(
+Time
+ 
+t
+)
+
+381 
+m_bufãrS‹
+[
+SimuÏtÜ
+::
+Now
+()] = 
+t
+;
+
+382 
+	g¡d
+::
+m­
+<
+Time
+, 
+	gTime
+>::
+™”©Ü
+ 
+™
+ = 
+m_bufãrS‹
+.
+begš
+();
+
+383 
+	g™
+ !ğ
+m_bufãrS‹
+.
+’d
+(); ++it)
+
+385 ià(
+	g™
+->
+	gfœ¡
+ < (
+	gSimuÏtÜ
+::
+Now
+(è- 
+m_wšdow
+))
+
+387 
+m_bufãrS‹
+.
+”a£
+(
+™
+->
+fœ¡
+);
+
+393 
+	gDashCl›Á
+::
+G‘BufãrE¡im©e
+()
+
+395 
+sum
+ = 0;
+
+396 
+	gcouÁ
+ = 0;
+
+397 
+	g¡d
+::
+m­
+<
+Time
+, 
+	gTime
+>::
+™”©Ü
+ 
+™
+ = 
+m_bufãrS‹
+.
+begš
+();
+
+398 
+	g™
+ !ğ
+m_bufãrS‹
+.
+’d
+(); ++it)
+
+400 
+	gsum
+ +ğ
+™
+->
+£cÚd
+.
+G‘SecÚds
+();
+
+401 
+	gcouÁ
+++;
+
+403  
+	gsum
+ / 
+	gcouÁ
+;
+
+407 
+	gDashCl›Á
+::
+G‘BufãrDifã»ÁŸl
+()
+
+409 
+¡d
+::
+m­
+<
+Time
+, 
+	gTime
+>::
+™”©Ü
+ 
+™
+ = 
+m_bufãrS‹
+.
+’d
+();
+
+411 ià(
+	g™
+ =ğ
+m_bufãrS‹
+.
+begš
+())
+
+416 
+	g™
+--;
+
+417 
+Time
+ 
+	gÏ¡
+ = 
+™
+->
+£cÚd
+;
+
+419 ià(
+	g™
+ =ğ
+m_bufãrS‹
+.
+begš
+())
+
+424 
+	g™
+--;
+
+425 
+Time
+ 
+	g´ev
+ = 
+™
+->
+£cÚd
+;
+
+426  (
+	gÏ¡
+ - 
+	g´ev
+).
+G‘SecÚds
+();
+
+430 
+	gDashCl›Á
+::
+G‘Segm’tF‘chTime
+()
+
+432  
+m_£gm’tF‘chTime
+.
+G‘SecÚds
+();
+
+436 
+	gDashCl›Á
+::
+AddB™R©e
+(
+Time
+ 
+time
+, 
+b™¿‹
+)
+
+438 
+	gm_b™¿‹s
+[
+time
+] = 
+b™¿‹
+;
+
+439 
+	gsum
+ = 0;
+
+440 
+	gcouÁ
+ = 0;
+
+441 
+	g¡d
+::
+m­
+<
+Time
+, >::
+™”©Ü
+ 
+™
+ = 
+m_b™¿‹s
+.
+begš
+();
+
+442 
+	g™
+ !ğ
+m_b™¿‹s
+.
+’d
+(); ++it)
+
+444 ià(
+	g™
+->
+	gfœ¡
+ < (
+	gSimuÏtÜ
+::
+Now
+(è- 
+m_wšdow
+))
+
+446 
+m_b™¿‹s
+.
+”a£
+(
+™
+->
+fœ¡
+);
+
+450 
+	gsum
+ +ğ
+™
+->
+£cÚd
+;
+
+451 
+	gcouÁ
+++;
+
+454 
+	gm_b™¿‹E¡im©e
+ = 
+sum
+ / 
+couÁ
+;
+
+	@dash-client.h
+
+21 #iâdeà
+DASH_CLIENT_H
+
+
+22 
+	#DASH_CLIENT_H
+
+
+	)
+
+24 
+	~"ns3/­¶iÿtiÚ.h
+"
+
+25 
+	~"ns3/±r.h
+"
+
+26 
+	~"ns3/sock‘.h
+"
+
+27 
+	~"m³g-¶ay”.h
+"
+
+28 
+	~"ns3/Œaûd-ÿÎback.h
+"
+
+29 
+	~"h‰p-·r£r.h
+"
+
+32 
+Çme¥aû
+ 
+	gns3
+
+
+60 şas 
+	cDashCl›Á
+ : 
+public
+ 
+AµliÿtiÚ
+
+
+62 
+ä›nd
+ 
+şass
+ 
+M³gPÏy”
+;
+
+63 
+ä›nd
+ 
+şass
+ 
+	gH‰pP¬£r
+;
+
+64 
+	gpublic
+:
+
+65 
+Ty³Id
+
+
+66 
+G‘Ty³Id
+();
+
+68 
+DashCl›Á
+();
+
+70 
+	gvœtu®
+
+
+71 ~
+DashCl›Á
+();
+
+76 
+	gPŒ
+<
+	gSock‘
+>
+
+77 
+G‘Sock‘
+() const;
+
+83 
+G‘Sts
+();
+
+90 
+šlše
+ 
+	gM³gPÏy”
+ &
+
+91 
+G‘PÏy”
+()
+
+93  
+	gm_¶ay”
+;
+
+96 
+	g´Ùeùed
+:
+
+97 
+vœtu®
+ 
+
+98 
+DoDi¥o£
+();
+
+100 
+šlše
+
+
+101 
+G‘B™R©eE¡im©e
+()
+
+103  
+	gm_b™¿‹E¡im©e
+;
+
+106 
+G‘BufãrDifã»ÁŸl
+();
+
+109 
+AddB™R©e
+(
+Time
+ 
+time
+, 
+b™¿‹
+);
+
+112 
+G‘BufãrE¡im©e
+();
+
+115 
+G‘Segm’tF‘chTime
+();
+
+117 
+	g¡d
+::
+m­
+<
+Time
+, 
+	gTime
+> 
+	gm_bufãrS‹
+;
+
+118 
+ušt32_t
+ 
+	gm_¿‹Chªges
+;
+
+119 
+Time
+ 
+	gm_rg‘_dt
+;
+
+120 
+	g¡d
+::
+m­
+<
+Time
+, > 
+	gm_b™¿‹s
+;
+
+121 
+	gm_b™¿‹E¡im©e
+;
+
+122 
+ušt32_t
+ 
+	gm_£gm’tId
+;
+
+124 
+	g´iv©e
+:
+
+132 
+Reque¡Segm’t
+();
+
+141 
+Mes§geReûived
+(
+Pack‘
+ 
+mes§ge
+);
+
+144 
+vœtu®
+ 
+
+145 
+S¹AµliÿtiÚ
+();
+
+146 
+vœtu®
+ 
+
+147 
+StİAµliÿtiÚ
+();
+
+149 
+CÚÃùiÚSucûeded
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+);
+
+151 
+CÚÃùiÚFaed
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+);
+
+153 
+D©aS’d
+(
+PŒ
+<
+Sock‘
+>, 
+ušt32_t
+);
+
+155 
+HªdËR—d
+(
+PŒ
+<
+Sock‘
+>);
+
+156 
+vœtu®
+ 
+
+157 
+C®cNextSegm’t
+(
+ušt32_t
+ 
+cu¼R©e
+, ušt32_ˆ& 
+ÃxtR©e
+, 
+Time
+ & 
+d–ay
+);
+
+159 
+LogBufãrLev–
+(
+Time
+ 
+t
+);
+
+160 
+šlše
+
+
+161 
+S‘Wšdow
+(
+Time
+ 
+time
+)
+
+163 
+	gm_wšdow
+ = 
+time
+;
+
+166 
+M³gPÏy”
+ 
+	gm_¶ay”
+;
+
+167 
+H‰pP¬£r
+ 
+	gm_·r£r
+;
+
+168 
+	gPŒ
+<
+	gSock‘
+> 
+	gm_sock‘
+;
+
+169 
+Add»ss
+ 
+	gm_³”
+;
+
+170 
+boŞ
+ 
+	gm_cÚÃùed
+;
+
+171 
+ušt32_t
+ 
+	gm_tÙBy‹s
+;
+
+172 
+Ty³Id
+ 
+	gm_tid
+;
+
+173 
+	gT¿ûdC®lback
+<
+	gPŒ
+<cÚ¡ 
+	gPack‘
+> > 
+	gm_txT¿û
+;
+
+174 
+ušt32_t
+ 
+	gm_videoId
+;
+
+175 
+Time
+ 
+	gm_¡¬‹dReûivšg
+;
+
+176 
+Time
+ 
+	gm_sumDt
+;
+
+177 
+Time
+ 
+	gm_Ï¡Dt
+;
+
+178 
+	gm_couÁObjs
+;
+
+179 
+	gm_id
+;
+
+180 
+Time
+ 
+	gm_»que¡Time
+;
+
+181 
+ušt32_t
+ 
+	gm_£gm’t_by‹s
+;
+
+182 
+ušt32_t
+ 
+	gm_b™R©e
+;
+
+183 
+Time
+ 
+	gm_wšdow
+;
+
+184 
+Time
+ 
+	gm_£gm’tF‘chTime
+;
+
+	@dash-server.cc
+
+21 
+	~"ns3/add»ss.h
+"
+
+22 
+	~"ns3/add»ss-uts.h
+"
+
+23 
+	~"ns3/log.h
+"
+
+24 
+	~"ns3/š‘-sock‘-add»ss.h
+"
+
+25 
+	~"ns3/š‘6-sock‘-add»ss.h
+"
+
+26 
+	~"ns3/node.h
+"
+
+27 
+	~"ns3/sock‘.h
+"
+
+28 
+	~"ns3/udp-sock‘.h
+"
+
+29 
+	~"ns3/simuÏtÜ.h
+"
+
+30 
+	~"ns3/sock‘-çùÜy.h
+"
+
+31 
+	~"ns3/·ck‘.h
+"
+
+32 
+	~"ns3/Œaû-sourû-acûssÜ.h
+"
+
+33 
+	~"ns3/udp-sock‘-çùÜy.h
+"
+
+34 
+	~"dash-£rv”.h
+"
+
+35 
+	~"h‰p-h—d”.h
+"
+
+36 
+	~"m³g-h—d”.h
+"
+
+37 
+	~<ns3/¿ndom-v¬ŸbË-¡»am.h
+>
+
+38 
+	~<ns3/tı-sock‘.h
+>
+
+39 
+	~<ns3/doubË.h
+>
+
+40 
+	~"·¿.h
+"
+
+41 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+44 
+Çme¥aû
+ 
+	gns3
+
+
+46 
+NS_LOG_COMPONENT_DEFINE
+("DashServer");
+
+47 
+NS_OBJECT_ENSURE_REGISTERED
+(
+DashS”v”
+);
+
+49 
+Ty³Id
+
+
+50 
+	gDashS”v”
+::
+G‘Ty³Id
+()
+
+52 
+Ty³Id
+ 
+tid
+ =
+
+53 
+Ty³Id
+("ns3::DashS”v”").
+S‘P¬’t
+<
+AµliÿtiÚ
+>().
+AddCÚ¡ruùÜ
+<
+
+54 
+DashS”v”
+>().
+AddA‰ribu‹
+("Local",
+
+55 "ThAdd»s Ú whichØBšdhrx sock‘.", 
+Add»ssV®ue
+(),
+
+56 
+MakeAdd»ssAcûssÜ
+(&
+DashS”v”
+::
+m_loÿl
+), 
+MakeAdd»ssCheck”
+()).
+AddA‰ribu‹
+(
+
+58 
+Ty³IdV®ue
+(
+UdpSock‘FaùÜy
+::
+G‘Ty³Id
+()),
+
+59 
+MakeTy³IdAcûssÜ
+(&
+DashS”v”
+::
+m_tid
+), 
+MakeTy³IdCheck”
+()).
+AddT¿ûSourû
+(
+
+61 
+MakeT¿ûSourûAcûssÜ
+(&
+DashS”v”
+::
+m_rxT¿û
+));
+
+62  
+	gtid
+;
+
+65 
+	gDashS”v”
+::
+DashS”v”
+()
+
+67 
+NS_LOG_FUNCTION
+(
+this
+);
+
+68 
+	gm_sock‘
+ = 0;
+
+69 
+	gm_tÙ®Rx
+ = 0;
+
+72 
+	gDashS”v”
+::~
+DashS”v”
+()
+
+74 
+NS_LOG_FUNCTION
+(
+this
+);
+
+77 
+	gPŒ
+<
+	gSock‘
+>
+
+78 
+	gDashS”v”
+::
+G‘Li¡’šgSock‘
+() const
+
+80 
+NS_LOG_FUNCTION
+(
+this
+);
+
+81  
+	gm_sock‘
+;
+
+84 
+	g¡d
+::
+li¡
+<
+PŒ
+<
+Sock‘
+> >
+
+85 
+DashS”v”
+::
+G‘Acû±edSock‘s
+() const
+
+87 
+NS_LOG_FUNCTION
+(
+this
+);
+
+88  
+	gm_sock‘Li¡
+;
+
+92 
+	gDashS”v”
+::
+DoDi¥o£
+()
+
+94 
+NS_LOG_FUNCTION
+(
+this
+);
+
+95 
+	gm_sock‘
+ = 0;
+
+96 
+	gm_sock‘Li¡
+.
+ş—r
+();
+
+99 
+	gAµliÿtiÚ
+::
+DoDi¥o£
+();
+
+104 
+	gDashS”v”
+::
+S¹AµliÿtiÚ
+()
+
+106 
+NS_LOG_FUNCTION
+(
+this
+);
+
+108 ià(!
+	gm_sock‘
+)
+
+110 
+	gm_sock‘
+ = 
+Sock‘
+::
+C»©eSock‘
+(
+G‘Node
+(), 
+m_tid
+);
+
+111 
+	gm_sock‘
+->
+Bšd
+(
+m_loÿl
+);
+
+112 
+	gm_sock‘
+->
+Li¡’
+();
+
+114 ià(
+	gadd»ssUts
+::
+IsMuÉiÿ¡
+(
+m_loÿl
+))
+
+116 
+PŒ
+<
+UdpSock‘
+> 
+udpSock‘
+ = 
+DyÇmicCa¡
+<UdpSock‘>(
+m_sock‘
+);
+
+117 ià(
+	gudpSock‘
+)
+
+120 
+	gudpSock‘
+->
+MuÉiÿ¡JošGroup
+(0, 
+m_loÿl
+);
+
+124 
+NS_FATAL_ERROR
+("Error: joining multicast on‡‚on-UDP socket");
+
+129 
+	gm_sock‘
+->
+S‘RecvC®lback
+(
+MakeC®lback
+(&
+DashS”v”
+::
+HªdËR—d
+, 
+this
+));
+
+131 
+	gm_sock‘
+->
+S‘Acû±C®lback
+(
+
+132 
+MakeNuÎC®lback
+<
+boŞ
+, 
+PŒ
+<
+Sock‘
+>, cÚ¡ 
+Add»ss
+ &>(),
+
+133 
+MakeC®lback
+(&
+DashS”v”
+::
+HªdËAcû±
+, 
+this
+));
+
+134 
+	gm_sock‘
+->
+S‘Clo£C®lbacks
+(
+
+135 
+MakeC®lback
+(&
+DashS”v”
+::
+HªdËP“rClo£
+, 
+this
+),
+
+136 
+MakeC®lback
+(&
+DashS”v”
+::
+HªdËP“rE¼Ü
+, 
+this
+));
+
+140 
+	gDashS”v”
+::
+StİAµliÿtiÚ
+()
+
+142 
+NS_LOG_FUNCTION
+(
+this
+);
+
+143 !
+	gm_sock‘Li¡
+.
+em±y
+())
+
+145 
+	gPŒ
+<
+	gSock‘
+> 
+	gacû±edSock‘
+ = 
+m_sock‘Li¡
+.
+äÚt
+();
+
+146 
+	gm_sock‘Li¡
+.
+pİ_äÚt
+();
+
+147 
+	gacû±edSock‘
+->
+Clo£
+();
+
+149 ià(
+	gm_sock‘
+)
+
+151 
+	gm_sock‘
+->
+Clo£
+();
+
+152 
+	gm_sock‘
+->
+S‘RecvC®lback
+(
+MakeNuÎC®lback
+<, 
+PŒ
+<
+Sock‘
+> >());
+
+157 
+	gDashS”v”
+::
+HªdËR—d
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+159 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+
+160 
+	gPŒ
+<
+	gPack‘
+> 
+	g·ck‘
+;
+
+161 
+Add»ss
+ 
+	gäom
+;
+
+162 (
+	g·ck‘
+ = 
+sock‘
+->
+RecvFrom
+(
+äom
+)))
+
+164 ià(
+·ck‘
+->
+G‘Size
+() == 0)
+
+168 
+	gm_tÙ®Rx
+ +ğ
+·ck‘
+->
+G‘Size
+();
+
+170 
+HTTPH—d”
+ 
+	gh—d”
+;
+
+171 
+	g·ck‘
+->
+RemoveH—d”
+(
+h—d”
+);
+
+175 
+S’dSegm’t
+(
+h—d”
+.
+G‘VideoId
+(), h—d”.
+G‘ResŞutiÚ
+(),
+
+176 
+h—d”
+.
+G‘Segm’tId
+(), 
+sock‘
+);
+
+178 ià(
+	gIÃtSock‘Add»ss
+::
+IsM©chšgTy³
+(
+äom
+))
+
+180 
+NS_LOG_INFO
+(
+
+181 "Aˆtim" << 
+SimuÏtÜ
+::
+Now
+ ().
+G‘SecÚds
+ (è<< " ·ck‘ sšk„eûived " << 
+·ck‘
+->
+G‘Size
+ (è<< " by‹ äom " << 
+IÃtSock‘Add»ss
+::
+CÚv”tFrom
+(
+äom
+).
+G‘Ipv4
+ (è<< "…Üˆ" << IÃtSock‘Add»ss::CÚv”tFrom (äom).
+G‘PÜt
+ (è<< "Ù® Rx " << 
+m_tÙ®Rx
+ << " bytes");
+
+183 ià(
+	gIÃt6Sock‘Add»ss
+::
+IsM©chšgTy³
+(
+äom
+))
+
+185 
+NS_LOG_INFO
+(
+
+186 "Aˆtim" << 
+SimuÏtÜ
+::
+Now
+ ().
+G‘SecÚds
+ (è<< " ·ck‘ sšk„eûived " << 
+·ck‘
+->
+G‘Size
+ (è<< " by‹ äom " << 
+IÃt6Sock‘Add»ss
+::
+CÚv”tFrom
+(
+äom
+).
+G‘Ipv6
+ (è<< "…Üˆ" << IÃt6Sock‘Add»ss::CÚv”tFrom (äom).
+G‘PÜt
+ (è<< "Ù® Rx " << 
+m_tÙ®Rx
+ << " bytes");
+
+188 
+m_rxT¿û
+(
+·ck‘
+, 
+äom
+);
+
+193 
+	gDashS”v”
+::
+HªdËP“rClo£
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+195 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+
+199 
+	gDashS”v”
+::
+HªdËP“rE¼Ü
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+201 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+
+205 
+	gDashS”v”
+::
+HªdËAcû±
+(
+PŒ
+<
+Sock‘
+> 
+s
+, cÚ¡ 
+Add»ss
+& 
+äom
+)
+
+207 
+NS_LOG_FUNCTION
+(
+this
+ << 
+s
+ << 
+äom
+);
+
+208 
+	gs
+->
+S‘RecvC®lback
+(
+MakeC®lback
+(&
+DashS”v”
+::
+HªdËR—d
+, 
+this
+));
+
+209 
+	gs
+->
+S‘S’dC®lback
+(
+MakeC®lback
+(&
+DashS”v”
+::
+D©aS’d
+, 
+this
+));
+
+210 
+	gm_sock‘Li¡
+.
+push_back
+(
+s
+);
+
+215 
+	gDashS”v”
+::
+D©aS’d
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+, 
+ušt32_t
+)
+
+217 
+NS_LOG_FUNCTION
+(
+this
+);
+
+218 
+	g¡d
+::
+m­
+<
+PŒ
+<
+Sock‘
+>, std::
+queue
+<
+Pack‘
+> >::
+™”©Ü
+ 
+™”
+ =
+
+219 
+m_queues
+.
+begš
+(); 
+	g™”
+ !ğm_queues.
+’d
+(); ++iter)
+
+221 
+HTTPH—d”
+ 
+	gh‰pH—d”
+;
+
+222 
+MPEGH—d”
+ 
+	gm³gH—d”
+;
+
+224 ià(
+	g™”
+->
+	g£cÚd
+.
+size
+())
+
+226 
+	gPŒ
+<
+	gPack‘
+> 
+	gäame
+ = 
+™”
+->
+£cÚd
+.
+äÚt
+().
+Cİy
+();
+
+228 
+	gäame
+->
+RemoveH—d”
+(
+m³gH—d”
+);
+
+229 
+	gäame
+->
+RemoveH—d”
+(
+h‰pH—d”
+);
+
+231 
+NS_LOG_INFO
+(
+
+232 "VidId: " << 
+h‰pH—d”
+.
+G‘VideoId
+(è<< "„xAvğ" << 
+™”
+->
+fœ¡
+->
+G‘RxAvaabË
+(è<< " queueğ"<< i‹r->
+£cÚd
+.
+size
+(è<< "„esğ" << h‰pH—d”.
+G‘ResŞutiÚ
+());
+
+236 !
+	gm_queues
+[
+sock‘
+].
+em±y
+())
+
+238 
+	gby‹s
+;
+
+239 
+	gPŒ
+<
+	gPack‘
+> 
+	gäame
+ = 
+m_queues
+[
+sock‘
+].
+äÚt
+().
+Cİy
+();
+
+240 ià((
+	gby‹s
+ = 
+sock‘
+->
+S’d
+(
+äame
+)è!ğ(èäame->
+G‘Size
+())
+
+242 
+NS_LOG_INFO
+("Could‚ot send frame");
+
+243 ià(
+	gby‹s
+ != -1)
+
+245 
+NS_FATAL_ERROR
+("Oops, we sent half‡ frame :(");
+
+249 
+	gm_queues
+[
+sock‘
+].
+pİ
+();
+
+252 
+NS_LOG_INFO
+("DATA WAS JUST SENT!!!");
+
+257 
+	gDashS”v”
+::
+S’dSegm’t
+(
+ušt32_t
+ 
+video_id
+, ušt32_ˆ
+»sŞutiÚ
+,
+
+258 
+ušt32_t
+ 
+£gm’t_id
+, 
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+262 
+	gco
+=0;
+
+263 if(
+	gco
+==0){
+
+264 
+cout
+<<"š s”v” side"<<
+’dl
+;
+
+265 
+size_t
+ 
+	gj
+=0,
+	gmax
+=
+video_num
+.
+size
+();j!=
+max
+;j++){
+
+266 
+	gcout
+<<
+	gvideo_num
+[
+j
+]<<
+	g’dl
+;
+
+268 
+	gco
+++;
+
+273 
+	gavg_·ck‘size
+ = 
+»sŞutiÚ
+ / (50 * 8);
+
+275 
+HTTPH—d”
+ 
+	gh‰p_h—d”_tmp
+;
+
+276 
+MPEGH—d”
+ 
+	gm³g_h—d”_tmp
+;
+
+278 
+	gPŒ
+<
+	gUnifÜmRªdomV¬ŸbË
+> 
+	gäame_size_g’
+ = 
+C»©eObjeù
+<
+UnifÜmRªdomV¬ŸbË
+> ();
+
+280 
+	gäame_size_g’
+->
+S‘A‰ribu‹
+ ("Mš", 
+DoubËV®ue
+ (1288));
+
+289 
+	gäame_size_g’
+->
+S‘A‰ribu‹
+ ("Max", 
+DoubËV®ue
+ (1288));
+
+292 
+ušt32_t
+ 
+	gf_id
+ = 0; f_id < 
+	gMPEG_FRAMES_PER_SEGMENT
+; f_id++)
+
+294 
+ušt32_t
+ 
+	gäame_size
+ = (è
+äame_size_g’
+->
+G‘V®ue
+();
+
+298 
+HTTPH—d”
+ 
+	gh‰p_h—d”
+;
+
+299 
+	gh‰p_h—d”
+.
+S‘Mes§geTy³
+(
+HTTP_RESPONSE
+);
+
+300 
+	gh‰p_h—d”
+.
+S‘VideoId
+(
+video_id
+);
+
+301 
+	gh‰p_h—d”
+.
+S‘ResŞutiÚ
+(
+»sŞutiÚ
+);
+
+302 
+	gh‰p_h—d”
+.
+S‘Segm’tId
+(
+£gm’t_id
+);
+
+304 
+MPEGH—d”
+ 
+	gm³g_h—d”
+;
+
+305 
+	gm³g_h—d”
+.
+S‘F¿meId
+(
+f_id
+);
+
+306 
+	gm³g_h—d”
+.
+S‘PÏybackTime
+(
+
+307 
+MliSecÚds
+(
+
+308 (
+f_id
+ + (
+£gm’t_id
+ * 
+MPEG_FRAMES_PER_SEGMENT
+))
+
+309 * 
+MPEG_TIME_BETWEEN_FRAMES
+));
+
+311 
+	gcout
+<<
+	gSimuÏtÜ
+::
+Now
+()<<": "<<(
+f_id
+ + (
+£gm’t_id
+ * 
+MPEG_FRAMES_PER_SEGMENT
+))* 
+MPEG_TIME_BETWEEN_FRAMES
+<<
+’dl
+;
+
+315 
+	gm³g_h—d”
+.
+S‘Ty³
+('B');
+
+316 
+	gm³g_h—d”
+.
+S‘Size
+(
+äame_size
+);
+
+318 
+	gPŒ
+<
+	gPack‘
+> 
+	gäame
+ = 
+C»©e
+<
+Pack‘
+>(
+äame_size
+);
+
+319 
+	gäame
+->
+AddH—d”
+(
+h‰p_h—d”
+);
+
+320 
+	gäame
+->
+AddH—d”
+(
+m³g_h—d”
+);
+
+321 
+NS_LOG_INFO
+(
+
+322 "SENDING PACKET " << 
+f_id
+ << " " << 
+äame
+->
+G‘Size
+(è<< "„es=" << 
+h‰p_h—d”
+.
+G‘ResŞutiÚ
+(è<< " size=" << 
+m³g_h—d”
+.G‘Size(è<< "‡vg=" << 
+avg_·ck‘size
+);
+
+324 
+	gm_queues
+[
+sock‘
+].
+push
+(*
+äame
+);
+
+326 
+D©aS’d
+(
+sock‘
+, 0);
+
+	@dash-server.h
+
+21 #iâdeà
+DASH_SERVER_H
+
+
+22 
+	#DASH_SERVER_H
+
+
+	)
+
+24 
+	~"ns3/­¶iÿtiÚ.h
+"
+
+25 
+	~"ns3/ev’t-id.h
+"
+
+26 
+	~"ns3/±r.h
+"
+
+27 
+	~"ns3/Œaûd-ÿÎback.h
+"
+
+28 
+	~"ns3/add»ss.h
+"
+
+29 
+	~<m­
+>
+
+30 
+	~<queue
+>
+
+32 
+Çme¥aû
+ 
+	gns3
+
+
+35 
+şass
+ 
+	gAdd»ss
+;
+
+36 
+şass
+ 
+	gSock‘
+;
+
+37 
+şass
+ 
+	gPack‘
+;
+
+52 şas 
+	cDashS”v”
+ : 
+public
+ 
+AµliÿtiÚ
+
+
+54 
+public
+:
+
+55 
+Ty³Id
+
+
+56 
+G‘Ty³Id
+();
+
+57 
+DashS”v”
+();
+
+59 
+	gvœtu®
+
+
+60 ~
+DashS”v”
+();
+
+65 
+	gPŒ
+<
+	gSock‘
+>
+
+66 
+G‘Li¡’šgSock‘
+() const;
+
+71 
+	g¡d
+::
+li¡
+<
+PŒ
+<
+Sock‘
+> >
+
+72 
+G‘Acû±edSock‘s
+() const;
+
+74 
+	g´Ùeùed
+:
+
+75 
+vœtu®
+ 
+
+76 
+DoDi¥o£
+();
+
+77 
+	g´iv©e
+:
+
+79 
+vœtu®
+ 
+
+80 
+S¹AµliÿtiÚ
+();
+
+81 
+vœtu®
+ 
+
+82 
+StİAµliÿtiÚ
+();
+
+85 
+HªdËR—d
+(
+PŒ
+<
+Sock‘
+>);
+
+87 
+D©aS’d
+(
+PŒ
+<
+Sock‘
+>, 
+ušt32_t
+);
+
+90 
+S’dSegm’t
+(
+ušt32_t
+ 
+video_id
+, ušt32_ˆ
+»sŞutiÚ
+, ušt32_ˆ
+£gm’t_id
+,
+
+91 
+PŒ
+<
+Sock‘
+> 
+sock‘
+);
+
+93 
+HªdËAcû±
+(
+PŒ
+<
+Sock‘
+>, cÚ¡ 
+Add»ss
+& 
+äom
+);
+
+95 
+HªdËP“rClo£
+(
+PŒ
+<
+Sock‘
+>);
+
+97 
+HªdËP“rE¼Ü
+(
+PŒ
+<
+Sock‘
+>);
+
+101 
+	gPŒ
+<
+	gSock‘
+> 
+	gm_sock‘
+;
+
+102 
+	g¡d
+::
+li¡
+<
+PŒ
+<
+Sock‘
+> > 
+m_sock‘Li¡
+;
+
+104 
+Add»ss
+ 
+	gm_loÿl
+;
+
+105 
+ušt32_t
+ 
+	gm_tÙ®Rx
+;
+
+106 
+Ty³Id
+ 
+	gm_tid
+;
+
+107 
+	gT¿ûdC®lback
+<
+	gPŒ
+<cÚ¡ 
+	gPack‘
+>, cÚ¡ 
+	gAdd»ss
+ &> 
+	gm_rxT¿û
+;
+
+110 
+	g¡d
+::
+m­
+<
+PŒ
+<
+Sock‘
+>, std::
+queue
+<
+Pack‘
+> > 
+m_queues
+;
+
+	@http-header.cc
+
+21 
+	~"ns3/as£¹.h
+"
+
+22 
+	~"ns3/log.h
+"
+
+23 
+	~"ns3/h—d”.h
+"
+
+24 
+	~"ns3/simuÏtÜ.h
+"
+
+25 
+	~"h‰p-h—d”.h
+"
+
+27 
+NS_LOG_COMPONENT_DEFINE
+("HTTPHeader");
+
+29 
+Çme¥aû
+ 
+	gns3
+
+
+32 
+NS_OBJECT_ENSURE_REGISTERED
+ (
+HTTPH—d”
+)
+
+35 
+	gHTTPH—d”
+::
+HTTPH—d”
+() :
+
+36 
+m_£q
+(0), 
+m_ts
+(
+SimuÏtÜ
+::
+Now
+().
+G‘TimeS‹p
+()), 
+m_mes§ge_ty³
+(
+
+37 
+HTTP_REQUEST
+), 
+m_video_id
+(0), 
+m_»sŞutiÚ
+(0), 
+m_£gm’t_id
+(0)
+
+40 
+NS_LOG_FUNCTION
+(
+this
+);
+
+44 
+	gHTTPH—d”
+::
+S‘Seq
+(
+ušt32_t
+ 
+£q
+)
+
+46 
+NS_LOG_FUNCTION
+(
+this
+ << 
+£q
+);
+
+47 
+	gm_£q
+ = 
+£q
+;
+
+49 
+ušt32_t
+
+
+50 
+	gHTTPH—d”
+::
+G‘Seq
+() const
+
+52 
+NS_LOG_FUNCTION
+(
+this
+);
+
+53  
+	gm_£q
+;
+
+57 
+	gHTTPH—d”
+::
+S‘Mes§geTy³
+(
+ušt32_t
+ 
+mes§ge_ty³
+)
+
+59 
+NS_LOG_FUNCTION
+(
+this
+ << 
+mes§ge_ty³
+);
+
+60 
+	gm_mes§ge_ty³
+ = 
+mes§ge_ty³
+;
+
+63 
+ušt32_t
+
+
+64 
+	gHTTPH—d”
+::
+G‘Mes§geTy³
+() const
+
+66 
+NS_LOG_FUNCTION
+(
+this
+);
+
+67  
+	gm_mes§ge_ty³
+;
+
+70 
+	gHTTPH—d”
+::
+S‘VideoId
+(
+ušt32_t
+ 
+video_id
+)
+
+73 
+NS_LOG_FUNCTION
+(
+this
+ << 
+video_id
+);
+
+74 
+	gm_video_id
+ = 
+video_id
+;
+
+76 
+ušt32_t
+
+
+77 
+	gHTTPH—d”
+::
+G‘VideoId
+() const
+
+80 
+NS_LOG_FUNCTION
+(
+this
+);
+
+81  
+	gm_video_id
+;
+
+84 
+	gHTTPH—d”
+::
+S‘ResŞutiÚ
+(
+ušt32_t
+ 
+»sŞutiÚ
+)
+
+87 
+NS_LOG_FUNCTION
+(
+this
+ << 
+»sŞutiÚ
+);
+
+88 
+	gm_»sŞutiÚ
+ = 
+»sŞutiÚ
+;
+
+90 
+ušt32_t
+
+
+91 
+	gHTTPH—d”
+::
+G‘ResŞutiÚ
+() const
+
+93 
+NS_LOG_FUNCTION
+(
+this
+);
+
+94  
+	gm_»sŞutiÚ
+;
+
+98 
+	gHTTPH—d”
+::
+S‘Segm’tId
+(
+ušt32_t
+ 
+£gm’t_id
+)
+
+100 
+NS_LOG_FUNCTION
+(
+this
+ << 
+£gm’t_id
+);
+
+101 
+	gm_£gm’t_id
+ = 
+£gm’t_id
+;
+
+103 
+ušt32_t
+
+
+104 
+	gHTTPH—d”
+::
+G‘Segm’tId
+() const
+
+106 
+NS_LOG_FUNCTION
+(
+this
+);
+
+107  
+	gm_£gm’t_id
+;
+
+110 
+Time
+
+
+111 
+	gHTTPH—d”
+::
+G‘Ts
+() const
+
+113 
+NS_LOG_FUNCTION
+(
+this
+);
+
+114  
+TimeS‹p
+(
+m_ts
+);
+
+117 
+Ty³Id
+
+
+118 
+	gHTTPH—d”
+::
+G‘Ty³Id
+()
+
+120 
+Ty³Id
+ 
+tid
+ =
+
+121 
+Ty³Id
+("ns3::HTTPH—d”").
+S‘P¬’t
+<
+H—d”
+>().
+AddCÚ¡ruùÜ
+<
+HTTPH—d”
+>();
+
+122  
+	gtid
+;
+
+124 
+Ty³Id
+
+
+125 
+	gHTTPH—d”
+::
+G‘In¡ªûTy³Id
+() const
+
+127  
+G‘Ty³Id
+();
+
+130 
+	gHTTPH—d”
+::
+Pršt
+(
+¡d
+::
+o¡»am
+ &
+os
+) const
+
+132 
+NS_LOG_FUNCTION
+(
+this
+ << &
+os
+);
+
+133 
+	gos
+ << "(£q=" << 
+	gm_£q
+ << "ime=" << 
+TimeS‹p
+(
+m_ts
+).
+G‘SecÚds
+() << ")";
+
+135 
+ušt32_t
+
+
+136 
+	gHTTPH—d”
+::
+G‘S”ŸlizedSize
+() const
+
+138 
+NS_LOG_FUNCTION
+(
+this
+);
+
+143 
+	gHTTPH—d”
+::
+S”Ÿlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+) const
+
+145 
+NS_LOG_FUNCTION
+(
+this
+ << &
+¡¬t
+);
+
+146 
+	gBufãr
+::
+I‹¿tÜ
+ 
+i
+ = 
+¡¬t
+;
+
+147 
+	gi
+.
+Wr™eHtÚU32
+(
+m_£q
+);
+
+148 
+	gi
+.
+Wr™eHtÚU64
+(
+m_ts
+);
+
+149 
+	gi
+.
+Wr™eHtÚU32
+(
+m_mes§ge_ty³
+);
+
+150 
+	gi
+.
+Wr™eHtÚU32
+(
+m_video_id
+);
+
+151 
+	gi
+.
+Wr™eHtÚU32
+(
+m_»sŞutiÚ
+);
+
+152 
+	gi
+.
+Wr™eHtÚU32
+(
+m_£gm’t_id
+);
+
+154 
+ušt32_t
+
+
+155 
+	gHTTPH—d”
+::
+De£rŸlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+)
+
+157 
+NS_LOG_FUNCTION
+(
+this
+ << &
+¡¬t
+);
+
+158 
+	gBufãr
+::
+I‹¿tÜ
+ 
+i
+ = 
+¡¬t
+;
+
+159 
+	gm_£q
+ = 
+i
+.
+R—dNtohU32
+();
+
+160 
+	gm_ts
+ = 
+i
+.
+R—dNtohU64
+();
+
+161 
+	gm_mes§ge_ty³
+ = 
+i
+.
+R—dNtohU32
+();
+
+162 
+	gm_video_id
+ = 
+i
+.
+R—dNtohU32
+();
+
+163 
+	gm_»sŞutiÚ
+ = 
+i
+.
+R—dNtohU32
+();
+
+164 
+	gm_£gm’t_id
+ = 
+i
+.
+R—dNtohU32
+();
+
+165  
+G‘S”ŸlizedSize
+();
+
+	@http-header.h
+
+21 #iâdeà
+HTTP_TS_HEADER_H
+
+
+22 
+	#HTTP_TS_HEADER_H
+
+
+	)
+
+24 
+	~"ns3/h—d”.h
+"
+
+25 
+	~"ns3/n¡ime.h
+"
+
+27 
+Çme¥aû
+ 
+	gns3
+
+
+35 
+	#HTTP_REQUEST
+ 0
+
+	)
+
+36 
+	#HTTP_RESPONSE
+ 1
+
+	)
+
+38 şas 
+	cHTTPH—d”
+ : 
+public
+ 
+H—d”
+
+
+40 
+public
+:
+
+41 
+HTTPH—d”
+();
+
+47 
+S‘Seq
+(
+ušt32_t
+ 
+£q
+);
+
+52 
+ušt32_t
+
+
+53 
+G‘Seq
+() const;
+
+59 
+S‘Mes§geTy³
+(
+ušt32_t
+ 
+mes§ge_ty³
+);
+
+60 
+ušt32_t
+
+
+61 
+G‘Mes§geTy³
+() const;
+
+64 
+S‘VideoId
+(
+ušt32_t
+ 
+video_id
+);
+
+65 
+ušt32_t
+
+
+66 
+G‘VideoId
+() const;
+
+69 
+S‘ResŞutiÚ
+(
+ušt32_t
+ 
+»sŞutiÚ
+);
+
+70 
+ušt32_t
+
+
+71 
+G‘ResŞutiÚ
+() const;
+
+74 
+S‘Segm’tId
+(
+ušt32_t
+ 
+£gm’t_id
+);
+
+75 
+ušt32_t
+
+
+76 
+G‘Segm’tId
+() const;
+
+78 
+Time
+
+
+79 
+G‘Ts
+() const;
+
+81 
+Ty³Id
+
+
+82 
+G‘Ty³Id
+();
+
+84 
+vœtu®
+ 
+ušt32_t
+
+
+85 
+G‘S”ŸlizedSize
+() const;
+
+87 
+	g´iv©e
+:
+
+88 
+vœtu®
+ 
+Ty³Id
+
+
+89 
+G‘In¡ªûTy³Id
+() const;
+
+90 
+vœtu®
+ 
+
+91 
+Pršt
+(
+¡d
+::
+o¡»am
+ &
+os
+) const;
+
+92 
+vœtu®
+ 
+
+93 
+S”Ÿlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+) const;
+
+94 
+vœtu®
+ 
+ušt32_t
+
+
+95 
+De£rŸlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+);
+
+97 
+ušt32_t
+ 
+	gm_£q
+;
+
+98 
+ušt64_t
+ 
+	gm_ts
+;
+
+100 
+ušt32_t
+ 
+	gm_mes§ge_ty³
+;
+
+101 
+ušt32_t
+ 
+	gm_video_id
+;
+
+102 
+ušt32_t
+ 
+	gm_»sŞutiÚ
+;
+
+103 
+ušt32_t
+ 
+	gm_£gm’t_id
+;
+
+	@http-parser.cc
+
+21 
+	~"h‰p-·r£r.h
+"
+
+22 
+	~"ns3/log.h
+"
+
+23 
+	~"ns3/add»ss.h
+"
+
+24 
+	~"ns3/sock‘.h
+"
+
+25 
+	~"ns3/·ck‘.h
+"
+
+26 
+	~"ns3/simuÏtÜ.h
+"
+
+27 
+	~"h‰p-h—d”.h
+"
+
+28 
+	~"m³g-h—d”.h
+"
+
+29 
+	~"dash-ş›Á.h
+"
+
+31 
+NS_LOG_COMPONENT_DEFINE
+("HttpParser");
+
+33 
+Çme¥aû
+ 
+	gns3
+
+
+36 
+	gH‰pP¬£r
+::
+H‰pP¬£r
+() :
+
+37 
+m_by‹s
+(0), 
+m_­p
+(
+NULL
+), 
+m_Ï¡m—su»m’t
+("0s")
+
+39 
+NS_LOG_FUNCTION
+(
+this
+);
+
+42 
+	gH‰pP¬£r
+::~
+H‰pP¬£r
+()
+
+44 
+NS_LOG_FUNCTION
+(
+this
+);
+
+48 
+	gH‰pP¬£r
+::
+S‘Aµ
+(
+DashCl›Á
+ *
+­p
+)
+
+50 
+NS_LOG_FUNCTION
+(
+this
+ << 
+­p
+);
+
+51 
+	gm_­p
+ = 
+­p
+;
+
+54 
+	gH‰pP¬£r
+::
+R—dSock‘
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+)
+
+56 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sock‘
+);
+
+57 
+Add»ss
+ 
+	gäom
+;
+
+58 
+	gby‹s
+ = 
+sock‘
+->
+RecvFrom
+(&
+m_bufãr
+[
+m_by‹s
+], 
+MPEG_MAX_MESSAGE
+ - m_bytes,
+
+59 0, 
+äom
+);
+
+61 
+MPEGH—d”
+ 
+	gm³g_h—d”
+;
+
+62 
+HTTPH—d”
+ 
+	gh‰p_h—d”
+;
+
+64 
+ušt32_t
+ 
+	gh—d”size
+ = 
+m³g_h—d”
+.
+G‘S”ŸlizedSize
+()
+
+65 + 
+h‰p_h—d”
+.
+G‘S”ŸlizedSize
+();
+
+67 ià(
+	gby‹s
+ > 0)
+
+69 
+	gm_by‹s
+ +ğ
+by‹s
+;
+
+71 ià(
+	gm_Ï¡m—su»m’t
+ > 
+Time
+("0s"))
+
+73 
+NS_LOG_INFO
+(
+
+74 
+SimuÏtÜ
+::
+Now
+().
+G‘SecÚds
+(è<< " by‹s: " << 
+by‹s
+ << " dt: " << (SimuÏtÜ::Now(è- 
+m_Ï¡m—su»m’t
+).G‘SecÚds(è<< " b™¿‹: " << (8 * (by‹ + 
+h—d”size
+)/ (Simulator::Now() - m_lastmeasurement).GetSeconds()));
+
+76 
+	gm_Ï¡m—su»m’t
+ = 
+SimuÏtÜ
+::
+Now
+();
+
+79 
+NS_LOG_INFO
+(
+
+80 "### Bufã¸¥aû: " << 
+m_by‹s
+ << " QueuËngth " << 
+m_­p
+->
+G‘PÏy”
+().
+G‘QueueSize
+());
+
+82 ià(
+	gm_by‹s
+ < 
+	gh—d”size
+)
+
+87 
+Pack‘
+ 
+h—d”Pack‘
+(
+m_bufãr
+, 
+h—d”size
+);
+
+88 
+	gh—d”Pack‘
+.
+RemoveH—d”
+(
+m³g_h—d”
+);
+
+90 
+ušt32_t
+ 
+	gmes§ge_size
+ = 
+h—d”size
+ + 
+m³g_h—d”
+.
+G‘Size
+();
+
+92 ià(
+	gm_by‹s
+ < 
+	gmes§ge_size
+)
+
+96 
+Pack‘
+ 
+mes§ge
+(
+m_bufãr
+, 
+mes§ge_size
+);
+
+98 
+memmove
+(
+m_bufãr
+, &m_bufãr[
+mes§ge_size
+], 
+m_by‹s
+ - message_size);
+
+99 
+	gm_by‹s
+ -ğ
+mes§ge_size
+;
+
+100 
+	gm_­p
+->
+Mes§geReûived
+(
+mes§ge
+);
+
+102 
+R—dSock‘
+(
+sock‘
+);
+
+	@http-parser.h
+
+21 #iâdeà
+HTTP_PARSER_H_
+
+
+22 
+	#HTTP_PARSER_H_
+
+
+	)
+
+24 
+	~<ns3/±r.h
+>
+
+25 
+	~"m³g-h—d”.h
+"
+
+27 
+Çme¥aû
+ 
+	gns3
+
+
+30 
+şass
+ 
+	gSock‘
+;
+
+31 
+şass
+ 
+	gDashCl›Á
+;
+
+33 şas 
+	cH‰pP¬£r
+
+
+35 
+	gpublic
+:
+
+36 
+H‰pP¬£r
+();
+
+37 
+	gvœtu®
+
+
+38 ~
+H‰pP¬£r
+();
+
+40 
+R—dSock‘
+(
+PŒ
+<
+Sock‘
+> 
+sock‘
+);
+
+42 
+S‘Aµ
+(
+DashCl›Á
+ *
+­p
+);
+
+44 
+	g´iv©e
+:
+
+45 
+ušt8_t
+ 
+m_bufãr
+[
+MPEG_MAX_MESSAGE
+];
+
+46 
+ušt32_t
+ 
+	gm_by‹s
+;
+
+47 
+DashCl›Á
+ *
+	gm_­p
+;
+
+49 
+Time
+ 
+	gm_Ï¡m—su»m’t
+;
+
+	@mpeg-header.cc
+
+21 
+	~"ns3/as£¹.h
+"
+
+22 
+	~"ns3/log.h
+"
+
+23 
+	~"ns3/h—d”.h
+"
+
+24 
+	~"ns3/simuÏtÜ.h
+"
+
+25 
+	~"m³g-h—d”.h
+"
+
+27 
+NS_LOG_COMPONENT_DEFINE
+("MPEGHeader");
+
+29 
+Çme¥aû
+ 
+	gns3
+
+
+32 
+NS_OBJECT_ENSURE_REGISTERED
+ (
+MPEGH—d”
+)
+
+35 
+	gMPEGH—d”
+::
+MPEGH—d”
+() :
+
+36 
+m_£q
+(0), 
+m_ts
+(
+SimuÏtÜ
+::
+Now
+().
+G‘TimeS‹p
+()), 
+m_äame_id
+(0), 
+m_¶ayback_time
+(
+
+37 0), 
+m_ty³
+('B')
+
+40 
+NS_LOG_FUNCTION
+(
+this
+);
+
+44 
+	gMPEGH—d”
+::
+S‘Seq
+(
+ušt32_t
+ 
+£q
+)
+
+46 
+NS_LOG_FUNCTION
+(
+this
+ << 
+£q
+);
+
+47 
+	gm_£q
+ = 
+£q
+;
+
+49 
+ušt32_t
+
+
+50 
+	gMPEGH—d”
+::
+G‘Seq
+() const
+
+52 
+NS_LOG_FUNCTION
+(
+this
+);
+
+53  
+	gm_£q
+;
+
+57 
+	gMPEGH—d”
+::
+S‘F¿meId
+(
+ušt32_t
+ 
+äame_id
+)
+
+59 
+NS_LOG_FUNCTION
+(
+this
+);
+
+60 
+	gm_äame_id
+ = 
+äame_id
+;
+
+62 
+ušt32_t
+
+
+63 
+	gMPEGH—d”
+::
+G‘F¿meId
+() const
+
+65 
+NS_LOG_FUNCTION
+(
+this
+);
+
+66  
+	gm_äame_id
+;
+
+70 
+	gMPEGH—d”
+::
+S‘PÏybackTime
+(
+Time
+ 
+¶ayback_time
+)
+
+72 
+NS_LOG_FUNCTION
+(
+this
+);
+
+73 
+	gm_¶ayback_time
+ = 
+¶ayback_time
+.
+G‘TimeS‹p
+();
+
+75 
+Time
+
+
+76 
+	gMPEGH—d”
+::
+G‘PÏybackTime
+() const
+
+78 
+NS_LOG_FUNCTION
+(
+this
+);
+
+79  
+TimeS‹p
+(
+m_¶ayback_time
+);
+
+83 
+	gMPEGH—d”
+::
+S‘Ty³
+(
+ušt32_t
+ 
+ty³
+)
+
+85 
+NS_LOG_FUNCTION
+(
+this
+);
+
+86 
+	gm_ty³
+ = 
+ty³
+;
+
+88 
+ušt32_t
+
+
+89 
+	gMPEGH—d”
+::
+G‘Ty³
+() const
+
+91 
+NS_LOG_FUNCTION
+(
+this
+);
+
+92  
+	gm_ty³
+;
+
+96 
+	gMPEGH—d”
+::
+S‘Size
+(
+ušt32_t
+ 
+size
+)
+
+98 
+NS_LOG_FUNCTION
+(
+this
+);
+
+99 
+	gm_size
+ = 
+size
+;
+
+102 
+ušt32_t
+
+
+103 
+	gMPEGH—d”
+::
+G‘Size
+() const
+
+105 
+NS_LOG_FUNCTION
+(
+this
+);
+
+106  
+	gm_size
+;
+
+108 
+Time
+
+
+109 
+	gMPEGH—d”
+::
+G‘Ts
+() const
+
+111 
+NS_LOG_FUNCTION
+(
+this
+);
+
+112  
+TimeS‹p
+(
+m_ts
+);
+
+115 
+Ty³Id
+
+
+116 
+	gMPEGH—d”
+::
+G‘Ty³Id
+()
+
+118 
+Ty³Id
+ 
+tid
+ =
+
+119 
+Ty³Id
+("ns3::MPEGH—d”").
+S‘P¬’t
+<
+H—d”
+>().
+AddCÚ¡ruùÜ
+<
+MPEGH—d”
+>();
+
+120  
+	gtid
+;
+
+122 
+Ty³Id
+
+
+123 
+	gMPEGH—d”
+::
+G‘In¡ªûTy³Id
+() const
+
+125  
+G‘Ty³Id
+();
+
+128 
+	gMPEGH—d”
+::
+Pršt
+(
+¡d
+::
+o¡»am
+ &
+os
+) const
+
+130 
+NS_LOG_FUNCTION
+(
+this
+ << &
+os
+);
+
+131 
+	gos
+ << "(£q=" << 
+	gm_£q
+ << "ime=" << 
+TimeS‹p
+(
+m_ts
+).
+G‘SecÚds
+() << ")";
+
+133 
+ušt32_t
+
+
+134 
+	gMPEGH—d”
+::
+G‘S”ŸlizedSize
+() const
+
+136 
+NS_LOG_FUNCTION
+(
+this
+);
+
+141 
+	gMPEGH—d”
+::
+S”Ÿlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+) const
+
+143 
+NS_LOG_FUNCTION
+(
+this
+ << &
+¡¬t
+);
+
+144 
+	gBufãr
+::
+I‹¿tÜ
+ 
+i
+ = 
+¡¬t
+;
+
+145 
+	gi
+.
+Wr™eHtÚU32
+(
+m_£q
+);
+
+146 
+	gi
+.
+Wr™eHtÚU64
+(
+m_ts
+);
+
+147 
+	gi
+.
+Wr™eHtÚU32
+(
+m_äame_id
+);
+
+148 
+	gi
+.
+Wr™eHtÚU64
+(
+m_¶ayback_time
+);
+
+149 
+	gi
+.
+Wr™eHtÚU32
+(
+m_ty³
+);
+
+150 
+	gi
+.
+Wr™eHtÚU32
+(
+m_size
+);
+
+152 
+ušt32_t
+
+
+153 
+	gMPEGH—d”
+::
+De£rŸlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+)
+
+155 
+NS_LOG_FUNCTION
+(
+this
+ << &
+¡¬t
+);
+
+156 
+	gBufãr
+::
+I‹¿tÜ
+ 
+i
+ = 
+¡¬t
+;
+
+157 
+	gm_£q
+ = 
+i
+.
+R—dNtohU32
+();
+
+158 
+	gm_ts
+ = 
+i
+.
+R—dNtohU64
+();
+
+159 
+	gm_äame_id
+ = 
+i
+.
+R—dNtohU32
+();
+
+160 
+	gm_¶ayback_time
+ = 
+i
+.
+R—dNtohU64
+();
+
+161 
+	gm_ty³
+ = 
+i
+.
+R—dNtohU32
+();
+
+162 
+	gm_size
+ = 
+i
+.
+R—dNtohU32
+();
+
+163  
+G‘S”ŸlizedSize
+();
+
+	@mpeg-header.h
+
+21 #iâdeà
+MPEG_HEADER_H
+
+
+22 
+	#MPEG_HEADER_H
+
+
+	)
+
+24 
+	~"ns3/h—d”.h
+"
+
+25 
+	~"ns3/n¡ime.h
+"
+
+27 
+Çme¥aû
+ 
+	gns3
+
+
+37 
+	#MPEG_MAX_MESSAGE
+ 100000
+
+	)
+
+38 
+	#MPEG_FRAMES_PER_SEGMENT
+ 100
+
+39 
+	#MPEG_TIME_BETWEEN_FRAMES
+ 20
+
+40 şas 
+	cMPEGH—d”
+ : 
+public
+ 
+H—d”
+
+
+	)
+
+42 
+	gpublic
+:
+
+43 
+MPEGH—d”
+();
+
+49 
+S‘Seq
+(
+ušt32_t
+ 
+£q
+);
+
+53 
+ušt32_t
+
+
+54 
+G‘Seq
+() const;
+
+60 
+S‘F¿meId
+(
+ušt32_t
+ 
+äame_id
+);
+
+61 
+ušt32_t
+
+
+62 
+G‘F¿meId
+() const;
+
+65 
+S‘PÏybackTime
+(
+Time
+ 
+¶ayback_time
+);
+
+66 
+Time
+
+
+67 
+G‘PÏybackTime
+() const;
+
+70 
+S‘Ty³
+(
+ušt32_t
+ 
+ty³
+);
+
+71 
+ušt32_t
+
+
+72 
+G‘Ty³
+() const;
+
+75 
+S‘Size
+(
+ušt32_t
+ 
+size
+);
+
+76 
+ušt32_t
+
+
+77 
+G‘Size
+() const;
+
+79 
+Time
+
+
+80 
+G‘Ts
+() const;
+
+82 
+Ty³Id
+
+
+83 
+G‘Ty³Id
+();
+
+85 
+vœtu®
+ 
+ušt32_t
+
+
+86 
+G‘S”ŸlizedSize
+() const;
+
+88 
+	g´iv©e
+:
+
+89 
+vœtu®
+ 
+Ty³Id
+
+
+90 
+G‘In¡ªûTy³Id
+() const;
+
+91 
+vœtu®
+ 
+
+92 
+Pršt
+(
+¡d
+::
+o¡»am
+ &
+os
+) const;
+
+93 
+vœtu®
+ 
+
+94 
+S”Ÿlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+) const;
+
+95 
+vœtu®
+ 
+ušt32_t
+
+
+96 
+De£rŸlize
+(
+Bufãr
+::
+I‹¿tÜ
+ 
+¡¬t
+);
+
+98 
+ušt32_t
+ 
+	gm_£q
+;
+
+99 
+ušt64_t
+ 
+	gm_ts
+;
+
+101 
+ušt32_t
+ 
+	gm_äame_id
+;
+
+102 
+ušt64_t
+ 
+	gm_¶ayback_time
+;
+
+103 
+ušt32_t
+ 
+	gm_ty³
+;
+
+104 
+ušt32_t
+ 
+	gm_size
+;
+
+	@mpeg-player.cc
+
+21 
+	~"ns3/log.h
+"
+
+22 
+	~"ns3/n¡ime.h
+"
+
+23 
+	~"ns3/simuÏtÜ.h
+"
+
+24 
+	~"h‰p-h—d”.h
+"
+
+25 
+	~"m³g-h—d”.h
+"
+
+26 
+	~"m³g-¶ay”.h
+"
+
+27 
+	~"dash-ş›Á.h
+"
+
+28 
+	~<cm©h
+>
+
+30 
+NS_LOG_COMPONENT_DEFINE
+("MpegPlayer");
+
+31 
+Çme¥aû
+ 
+	gns3
+
+
+34 
+	gM³gPÏy”
+::
+M³gPÏy”
+() :
+
+35 
+m_¡©e
+(
+MPEG_PLAYER_NOT_STARTED
+), 
+m_š‹¼ru±iÚs
+(0), 
+m_tÙ®R©e
+(0), 
+m_mšR©e
+(
+
+36 100000000), 
+m_äamesPÏyed
+(0), 
+m_bufãrD–ay
+("0s")
+
+38 
+NS_LOG_FUNCTION
+(
+this
+);
+
+41 
+	gM³gPÏy”
+::~
+M³gPÏy”
+()
+
+43 
+NS_LOG_FUNCTION
+(
+this
+);
+
+47 
+	gM³gPÏy”
+::
+G‘QueueSize
+()
+
+49  
+m_queue
+.
+size
+();
+
+52 
+Time
+
+
+53 
+	gM³gPÏy”
+::
+G‘R—lPÏyTime
+(
+Time
+ 
+¶ayTime
+)
+
+55 
+NS_LOG_INFO
+(
+
+56 " S¹: " << 
+m_¡¬t_time
+.
+G‘SecÚds
+(è<< " IÁ”: " << 
+m_š‹¼u±iÚ_time
+.G‘SecÚds(è<< "…Ïytime: " << 
+¶ayTime
+.G‘SecÚds(è<< "‚ow: " << 
+SimuÏtÜ
+::
+Now
+().GetSeconds() << "‡ctual: " << (m_start_time + m_interruption_time +…layTime).GetSeconds());
+
+58  
+	gm_¡¬t_time
+ + 
+	gm_š‹¼u±iÚ_time
+
+
+59 + (
+	gm_¡©e
+ =ğ
+MPEG_PLAYER_PAUSED
+ ?
+
+60 (
+SimuÏtÜ
+::
+Now
+(è- 
+m_Ï¡·u£d
+è: 
+SecÚds
+(0)è+ 
+¶ayTime
+
+
+61 - 
+SimuÏtÜ
+::
+Now
+();
+
+65 
+	gM³gPÏy”
+::
+ReûiveF¿me
+(
+PŒ
+<
+Pack‘
+> 
+mes§ge
+)
+
+67 
+NS_LOG_FUNCTION
+(
+this
+ << 
+mes§ge
+);
+
+68 
+NS_LOG_INFO
+("Reûived F¿m" << 
+m_¡©e
+);
+
+70 
+	gPŒ
+<
+	gPack‘
+> 
+	gmsg
+ = 
+mes§ge
+->
+Cİy
+();
+
+72 
+	gm_queue
+.
+push
+(
+msg
+);
+
+73 ià(
+	gm_¡©e
+ =ğ
+MPEG_PLAYER_PAUSED
+)
+
+75 
+NS_LOG_INFO
+("Play„esumed");
+
+76 
+	gm_¡©e
+ = 
+MPEG_PLAYER_PLAYING
+;
+
+77 
+	gm_š‹¼u±iÚ_time
+ +ğ(
+SimuÏtÜ
+::
+Now
+(è- 
+m_Ï¡·u£d
+);
+
+78 
+PÏyF¿me
+();
+
+80 ià(
+	gm_¡©e
+ =ğ
+MPEG_PLAYER_NOT_STARTED
+)
+
+82 
+NS_LOG_INFO
+("Play started");
+
+83 
+	gm_¡©e
+ = 
+MPEG_PLAYER_PLAYING
+;
+
+84 
+	gm_¡¬t_time
+ = 
+SimuÏtÜ
+::
+Now
+();
+
+85 
+	gSimuÏtÜ
+::
+ScheduË
+(
+SimuÏtÜ
+::
+Now
+(), &
+M³gPÏy”
+::
+PÏyF¿me
+, 
+this
+);
+
+90 
+	gM³gPÏy”
+::
+S¹
+()
+
+92 
+NS_LOG_FUNCTION
+(
+this
+);
+
+93 
+	gm_¡©e
+ = 
+MPEG_PLAYER_PLAYING
+;
+
+94 
+	gm_š‹¼u±iÚ_time
+ = 
+SecÚds
+(0);
+
+99 
+	gM³gPÏy”
+::
+PÏyF¿me
+()
+
+102 
+NS_LOG_FUNCTION
+(
+this
+);
+
+103 ià(
+	gm_¡©e
+ =ğ
+MPEG_PLAYER_DONE
+)
+
+107 ià(
+	gm_queue
+.
+em±y
+())
+
+109 
+NS_LOG_INFO
+(
+SimuÏtÜ
+::
+Now
+().
+G‘SecÚds
+() << " No frameso…lay");
+
+110 
+	gm_¡©e
+ = 
+MPEG_PLAYER_PAUSED
+;
+
+111 
+	gm_Ï¡·u£d
+ = 
+SimuÏtÜ
+::
+Now
+();
+
+112 
+	gm_š‹¼ru±iÚs
+++;
+
+115 
+	gPŒ
+<
+	gPack‘
+> 
+	gmes§ge
+ = 
+m_queue
+.
+äÚt
+();
+
+116 
+	gm_queue
+.
+pİ
+();
+
+118 
+MPEGH—d”
+ 
+	gm³g_h—d”
+;
+
+119 
+HTTPH—d”
+ 
+	gh‰p_h—d”
+;
+
+121 
+	gmes§ge
+->
+RemoveH—d”
+(
+m³g_h—d”
+);
+
+122 
+	gmes§ge
+->
+RemoveH—d”
+(
+h‰p_h—d”
+);
+
+124 
+	gm_tÙ®R©e
+ +ğ
+h‰p_h—d”
+.
+G‘ResŞutiÚ
+();
+
+125 ià(
+	gh‰p_h—d”
+.
+G‘Segm’tId
+() > 0)
+
+127 
+	gm_mšR©e
+ =
+
+128 
+h‰p_h—d”
+.
+G‘ResŞutiÚ
+(è< 
+m_mšR©e
+ ?
+
+129 
+h‰p_h—d”
+.
+G‘ResŞutiÚ
+(è: 
+m_mšR©e
+;
+
+131 
+	gm_äamesPÏyed
+++;
+
+136 
+Time
+ 
+	gb_t
+ = 
+G‘R—lPÏyTime
+(
+m³g_h—d”
+.
+G‘PÏybackTime
+());
+
+138 ià(
+	gm_bufãrD–ay
+ > 
+Time
+("0s"è&& 
+	gb_t
+ < m_bufãrD–ay && 
+	gm_dashCl›Á
+)
+
+140 
+	gm_dashCl›Á
+->
+Reque¡Segm’t
+();
+
+141 
+	gm_bufãrD–ay
+ = 
+SecÚds
+(0);
+
+142 
+	gm_dashCl›Á
+ = 
+NULL
+;
+
+145 
+NS_LOG_INFO
+(
+
+146 
+SimuÏtÜ
+::
+Now
+().
+G‘SecÚds
+(è<< " PLAYING FRAME: " << " VidId: " << 
+h‰p_h—d”
+.
+G‘VideoId
+(è<< " SegId: " << h‰p_h—d”.
+G‘Segm’tId
+(è<< " Res: " << h‰p_h—d”.
+G‘ResŞutiÚ
+(è<< " F¿meId: " << 
+m³g_h—d”
+.
+G‘F¿meId
+(è<< " PÏyTime: " << m³g_h—d”.
+G‘PÏybackTime
+().G‘SecÚds(è<< " Ty³: " << (èm³g_h—d”.
+G‘Ty³
+(è<< " iÁ”Time: " << 
+m_š‹¼u±iÚ_time
+.G‘SecÚds(è<< " queueL’gth: " << 
+m_queue
+.
+size
+());
+
+154 
+	gSimuÏtÜ
+::
+ScheduË
+(
+MliSecÚds
+(2000), &
+M³gPÏy”
+::
+PÏyF¿me
+, 
+this
+);
+
+	@mpeg-player.h
+
+21 #iâdeà
+MPEG_PLAYER_H_
+
+
+22 
+	#MPEG_PLAYER_H_
+
+
+	)
+
+24 
+	~<queue
+>
+
+25 
+	~<m­
+>
+
+26 
+	~"ns3/±r.h
+"
+
+27 
+	~"ns3/·ck‘.h
+"
+
+29 
+Çme¥aû
+ 
+	gns3
+
+
+33 
+	gMPEG_PLAYER_PAUSED
+, 
+	gMPEG_PLAYER_PLAYING
+, 
+	gMPEG_PLAYER_NOT_STARTED
+, 
+	gMPEG_PLAYER_DONE
+
+
+36 
+şass
+ 
+	gDashCl›Á
+;
+
+38 şas 
+	cM³gPÏy”
+
+
+40 
+	gpublic
+:
+
+41 
+M³gPÏy”
+();
+
+43 
+	gvœtu®
+
+
+44 ~
+M³gPÏy”
+();
+
+47 
+ReûiveF¿me
+(
+PŒ
+<
+Pack‘
+> 
+mes§ge
+);
+
+50 
+G‘QueueSize
+();
+
+53 
+S¹
+();
+
+55 
+Time
+
+
+56 
+G‘R—lPÏyTime
+(
+Time
+ 
+¶ayTime
+);
+
+58 
+šlše
+
+
+59 
+SchduËBufãrWakeup
+(cÚ¡ 
+Time
+ 
+t
+, 
+DashCl›Á
+ * 
+ş›Á
+)
+
+61 
+	gm_bufãrD–ay
+ = 
+t
+;
+
+62 
+	gm_dashCl›Á
+ = 
+ş›Á
+;
+
+65 
+	gm_¡©e
+;
+
+66 
+Time
+ 
+	gm_š‹¼u±iÚ_time
+;
+
+67 
+	gm_š‹¼ru±iÚs
+;
+
+69 
+Time
+ 
+	gm_¡¬t_time
+;
+
+70 
+ušt64_t
+ 
+	gm_tÙ®R©e
+;
+
+71 
+ušt32_t
+ 
+	gm_mšR©e
+;
+
+72 
+ušt32_t
+ 
+	gm_äamesPÏyed
+;
+
+74 
+	g´iv©e
+:
+
+76 
+PÏyF¿me
+();
+
+78 
+Time
+ 
+	gm_Ï¡·u£d
+;
+
+79 
+	g¡d
+::
+queue
+<
+PŒ
+<
+Pack‘
+> > 
+m_queue
+;
+
+80 
+Time
+ 
+	gm_bufãrD–ay
+;
+
+81 
+DashCl›Á
+ * 
+	gm_dashCl›Á
+;
+
+	@para.h
+
+1 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+2 
+	g¡d
+::
+¡ršg
+ 
+check‹¡
+;
+
+4 
+veùÜ
+ <> 
+video_num
+;
+
+	@
+1
+.
+1
+/usr/include
+25
+493
+algorithms/aaash-client.cc
+algorithms/aaash-client.h
+algorithms/fdash-client.cc
+algorithms/fdash-client.h
+algorithms/osmp-client.cc
+algorithms/osmp-client.h
+algorithms/raahs-client.cc
+algorithms/raahs-client.h
+algorithms/sftm-client.cc
+algorithms/sftm-client.h
+algorithms/svaa-client.cc
+algorithms/svaa-client.h
+dash-client.cc
+dash-client.h
+dash-server.cc
+dash-server.h
+http-header.cc
+http-header.h
+http-parser.cc
+http-parser.h
+mpeg-header.cc
+mpeg-header.h
+mpeg-player.cc
+mpeg-player.h
+para.h

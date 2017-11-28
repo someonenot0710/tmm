@@ -1,0 +1,2560 @@
+cscope 15 $HOME/repos/ns-3-allinone/ns-3-dev/src/dash/examples               0000014730
+	@dash-example.cc
+
+27 
+	~<¡ršg
+>
+
+28 
+	~<f¡»am
+>
+
+29 
+	~"ns3/cÜe-moduË.h
+"
+
+30 
+	~"ns3/pošt-to-pošt-moduË.h
+"
+
+31 
+	~"ns3/š‹º‘-moduË.h
+"
+
+32 
+	~"ns3/­¶iÿtiÚs-moduË.h
+"
+
+33 
+	~"ns3/ÃtwÜk-moduË.h
+"
+
+34 
+	~"ns3/dash-moduË.h
+"
+
+35 
+	~"../mod–/·¿.h
+"
+
+36 
+usšg
+ 
+Çme¥aû
+ 
+	gns3
+;
+
+38 
+NS_LOG_COMPONENT_DEFINE
+("DashExample");
+
+41 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+43 
+boŞ
+ 
+Œacšg
+ = 
+çl£
+;
+
+44 
+ušt32_t
+ 
+maxBy‹s
+ = 100;
+
+45 
+ušt32_t
+ 
+u£rs
+ = 1;
+
+46 
+rg‘_dt
+ = 35.0;
+
+47 
+¡İTime
+ = 100.0;
+
+48 
+¡d
+::
+¡ršg
+ 
+lškR©e
+ = "500Kbps";
+
+49 
+¡d
+::
+¡ršg
+ 
+d–ay
+ = "5ms";
+
+50 
+¡d
+::
+¡ršg
+ 
+´ÙocŞ
+ = "ns3::DashClient";
+
+51 
+¡d
+::
+¡ršg
+ 
+wšdow
+ = "10s";
+
+53 
+	`LogCompÚ’tEÇbË
+ ("DashS”v”", 
+LOG_LEVEL_ALL
+);
+
+54 
+	`LogCompÚ’tEÇbË
+ ("DashCl›Á", 
+LOG_LEVEL_ALL
+);
+
+60 
+CommªdLše
+ 
+cmd
+;
+
+61 
+cmd
+.
+	`AddV®ue
+("Œacšg", "FÏgØ’abË/di§bË¿cšg", 
+Œacšg
+);
+
+62 
+cmd
+.
+	`AddV®ue
+("maxBytes", "Total‚umber of bytes for‡pplicationo send",
+
+63 
+maxBy‹s
+);
+
+64 
+cmd
+.
+	`AddV®ue
+("u£rs", "Thnumb” oàcÚcu¼’ˆvideos", 
+u£rs
+);
+
+65 
+cmd
+.
+	`AddV®ue
+("targetDt",
+
+67 
+rg‘_dt
+);
+
+68 
+cmd
+.
+	`AddV®ue
+("stopTime",
+
+69 "Thtimwh’hş›Á wÈ¡İ„eque¡šg segm’ts", 
+¡İTime
+);
+
+70 
+cmd
+.
+	`AddV®ue
+("linkRate",
+
+72 
+lškR©e
+);
+
+73 
+cmd
+.
+	`AddV®ue
+("delay",
+
+75 
+d–ay
+);
+
+76 
+cmd
+.
+	`AddV®ue
+("protocol",
+
+78 
+´ÙocŞ
+);
+
+79 
+cmd
+.
+	`AddV®ue
+("window",
+
+80 "Thwšdow fÜ m—suršghav”agthroughpuˆ(Time).", 
+wšdow
+);
+
+82 
+cmd
+.
+	`AddV®ue
+("test",
+
+83 "Thwšdow fÜ m—suršghav”agthroughpuˆ(Time).", 
+check‹¡
+);
+
+84 
+cmd
+.
+	`P¬£
+(
+¬gc
+, 
+¬gv
+);
+
+90 
+	`NS_LOG_INFO
+("Create‚odes.");
+
+91 
+NodeCÚš”
+ 
+nodes
+;
+
+92 
+nodes
+.
+	`C»©e
+(2);
+
+94 
+	`NS_LOG_INFO
+("Create channels.");
+
+99 
+PoštToPoštH–³r
+ 
+poštToPošt
+;
+
+100 
+poštToPošt
+.
+	`S‘DeviûA‰ribu‹
+("D©aR©e", 
+	`SŒšgV®ue
+(
+lškR©e
+));
+
+101 
+poštToPošt
+.
+	`S‘ChªÃlA‰ribu‹
+("D–ay", 
+	`SŒšgV®ue
+(
+d–ay
+));
+
+102 
+N‘DeviûCÚš”
+ 
+deviûs
+;
+
+103 
+deviûs
+ = 
+poštToPošt
+.
+	`In¡®l
+(
+nodes
+);
+
+108 
+IÁ”ÃtSckH–³r
+ 
+š‹º‘
+;
+
+109 
+š‹º‘
+.
+	`In¡®l
+(
+nodes
+);
+
+114 
+	`NS_LOG_INFO
+("Assign IP Addresses.");
+
+115 
+Ipv4Add»ssH–³r
+ 
+v4
+;
+
+116 
+Ipv4IÁ”çûCÚš”
+ 
+i
+ = 
+v4
+.
+	`Assign
+(
+deviûs
+);
+
+118 
+	`NS_LOG_INFO
+("Create Applications.");
+
+120 
+¡d
+::
+veùÜ
+<¡d::
+¡ršg
+> 
+´ÙocŞs
+;
+
+121 
+¡d
+::
+¡ršg¡»am
+ 
+	`ss
+(
+´ÙocŞ
+);
+
+122 
+¡d
+::
+¡ršg
+ 
+´Ùo
+;
+
+123 
+ušt32_t
+ 
+´ÙoNum
+ = 0;
+
+124 
+¡d
+::
+	`g‘lše
+(
+ss
+, 
+´Ùo
+, ','è&& 
+´ÙoNum
+++ < 
+u£rs
+)
+
+126 
+´ÙocŞs
+.
+	`push_back
+(
+´Ùo
+);
+
+129 
+ušt16_t
+ 
+pÜt
+ = 80;
+
+130 
+¡d
+::
+veùÜ
+<
+DashCl›ÁH–³r
+> 
+ş›Ás
+;
+
+131 
+¡d
+::
+veùÜ
+<
+AµliÿtiÚCÚš”
+> 
+ş›ÁAµs
+;
+
+134 
+ušt32_t
+ 
+u£r
+ = 0; u£¸< 
+u£rs
+; user++)
+
+136 
+DashCl›ÁH–³r
+ 
+	`ş›Á
+("ns3::TcpSocketFactory",
+
+137 
+	`IÃtSock‘Add»ss
+(
+i
+.
+	`G‘Add»ss
+(1), 
+pÜt
+), 
+´ÙocŞs
+[
+u£r
+ % 
+´ÙoNum
+]);
+
+139 
+ş›Á
+.
+	`S‘A‰ribu‹
+("VideoId", 
+	`Uš‹g”V®ue
+(
+u£r
+ + 1));
+
+140 
+ş›Á
+.
+	`S‘A‰ribu‹
+("T¬g‘Dt", 
+	`TimeV®ue
+(
+	`SecÚds
+(
+rg‘_dt
+)));
+
+141 
+ş›Á
+.
+	`S‘A‰ribu‹
+("wšdow", 
+	`TimeV®ue
+(
+	`Time
+(
+wšdow
+)));
+
+142 
+AµliÿtiÚCÚš”
+ 
+ş›ÁAµ
+ = 
+ş›Á
+.
+	`In¡®l
+(
+nodes
+.
+	`G‘
+(0));
+
+143 
+ş›ÁAµ
+.
+	`S¹
+(
+	`SecÚds
+(0.25+
+u£r
+*100));
+
+146 
+ş›Ás
+.
+	`push_back
+(
+ş›Á
+);
+
+147 
+ş›ÁAµs
+.
+	`push_back
+(
+ş›ÁAµ
+);
+
+151 
+DashS”v”H–³r
+ 
+	`£rv”
+("ns3::TcpSocketFactory",
+
+152 
+	`IÃtSock‘Add»ss
+(
+Ipv4Add»ss
+::
+	`G‘Any
+(), 
+pÜt
+));
+
+153 
+AµliÿtiÚCÚš”
+ 
+£rv”Aµs
+ = 
+£rv”
+.
+	`In¡®l
+(
+nodes
+.
+	`G‘
+(1));
+
+154 
+£rv”Aµs
+.
+	`S¹
+(
+	`SecÚds
+(0.0));
+
+160 ià(
+Œacšg
+)
+
+162 
+AsciiT¿ûH–³r
+ 
+ascii
+;
+
+163 
+poštToPošt
+.
+	`EÇbËAsciiAÎ
+(
+ascii
+.
+	`C»©eFeSŒ—m
+("dash-send.tr"));
+
+164 
+poštToPošt
+.
+	`EÇbËPÿpAÎ
+("dash-£nd", 
+çl£
+);
+
+169 
+	`NS_LOG_INFO
+("Run Simulation.");
+
+171 
+SimuÏtÜ
+::
+	`Run
+();
+
+172 
+SimuÏtÜ
+::
+	`De¡roy
+();
+
+173 
+	`NS_LOG_INFO
+("Done.");
+
+176 
+ušt32_t
+ 
+k
+;
+
+177 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+179 
+PŒ
+<
+DashCl›Á
+> 
+­p
+ = 
+DyÇmicCa¡
+<DashCl›Á>(
+ş›ÁAµs
+[
+k
+].
+	`G‘
+(0));
+
+180 
+¡d
+::
+cout
+ << 
+´ÙocŞs
+[
+k
+ % 
+´ÙoNum
+] << "-Node: " << k;
+
+181 
+­p
+->
+	`G‘Sts
+();
+
+186 
+	}
+}
+
+	@dash-wifi.cc
+
+21 
+	~"ns3/cÜe-moduË.h
+"
+
+22 
+	~"ns3/ÃtwÜk-moduË.h
+"
+
+23 
+	~"ns3/­¶iÿtiÚs-moduË.h
+"
+
+24 
+	~"ns3/wifi-moduË.h
+"
+
+25 
+	~"ns3/mob™y-moduË.h
+"
+
+26 
+	~"ns3/csma-moduË.h
+"
+
+27 
+	~"ns3/š‹º‘-moduË.h
+"
+
+28 
+	~"ns3/Ãnim-moduË.h
+"
+
+29 
+	~"ns3/Ş¤-h–³r.h
+"
+
+30 
+	~"ns3/dash-moduË.h
+"
+
+32 
+usšg
+ 
+Çme¥aû
+ 
+	gns3
+;
+
+33 
+NS_LOG_COMPONENT_DEFINE
+("Dash-Wifi");
+
+36 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+38 
+ušt32_t
+ 
+nWifi
+ = 8;
+
+39 
+ušt32_t
+ 
+maxBy‹s
+ = 0;
+
+40 
+ušt32_t
+ 
+u£rs
+ = 1;
+
+41 
+ušt32_t
+ 
+bulkNo
+ = 1;
+
+42 
+rg‘_dt
+ = 35.0;
+
+43 
+¡İTime
+ = 100.0;
+
+44 
+¡d
+::
+¡ršg
+ 
+lškR©e
+ = "500Kbps";
+
+45 
+¡d
+::
+¡ršg
+ 
+d–ay
+ = "5ms";
+
+46 
+¡d
+::
+¡ršg
+ 
+´ÙocŞ
+ = "ns3::DashClient";
+
+47 
+¡d
+::
+¡ršg
+ 
+wšdow
+ = "10s";
+
+56 
+CommªdLše
+ 
+cmd
+;
+
+57 
+cmd
+.
+	`AddV®ue
+("nWifi", "Numb” oàwif˜STA deviûs", 
+nWifi
+);
+
+58 
+cmd
+.
+	`AddV®ue
+("maxBytes", "Total‚umber of bytes for‡pplicationo send",
+
+59 
+maxBy‹s
+);
+
+60 
+cmd
+.
+	`AddV®ue
+("u£rs", "Thnumb” oàcÚcu¼’ˆvideos", 
+u£rs
+);
+
+61 
+cmd
+.
+	`AddV®ue
+("bulkNo", "Thnumb” oàbackground TCP¿nsãrs", 
+bulkNo
+);
+
+62 
+cmd
+.
+	`AddV®ue
+("targetDt",
+
+64 
+rg‘_dt
+);
+
+65 
+cmd
+.
+	`AddV®ue
+("stopTime",
+
+66 "Thtimwh’hş›Á wÈ¡İ„eque¡šg segm’ts", 
+¡İTime
+);
+
+67 
+cmd
+.
+	`AddV®ue
+("linkRate",
+
+69 
+lškR©e
+);
+
+70 
+cmd
+.
+	`AddV®ue
+("delay",
+
+72 
+d–ay
+);
+
+73 
+cmd
+.
+	`AddV®ue
+("protocol",
+
+75 
+´ÙocŞ
+);
+
+76 
+cmd
+.
+	`AddV®ue
+("window",
+
+77 "Thwšdow fÜ m—suršghav”agthroughpuˆ(Time).", 
+wšdow
+);
+
+78 
+cmd
+.
+	`P¬£
+(
+¬gc
+, 
+¬gv
+);
+
+80 ià(
+bulkNo
+ + 
+u£rs
+ > 
+nWifi
+ + 1)
+
+82 
+¡d
+::
+û¼
+ << "you‚“d mÜ¡©iÚs" << std::
+’dl
+;
+
+86 
+¡d
+::
+cout
+ << "nWifiğ" << 
+nWifi
+ << std::
+’dl
+;
+
+88 
+	`LogCompÚ’tEÇbË
+("UdpCl›Á", 
+LOG_LEVEL_INFO
+);
+
+89 
+	`LogCompÚ’tEÇbË
+("UdpS”v”", 
+LOG_LEVEL_INFO
+);
+
+91 
+NodeCÚš”
+ 
+wifiSNodes
+;
+
+92 
+wifiSNodes
+.
+	`C»©e
+(
+nWifi
+);
+
+94 
+YªsWifiChªÃlH–³r
+ 
+chªÃl
+ = YªsWifiChªÃlH–³r::
+	`DeçuÉ
+();
+
+95 
+YªsWifiPhyH–³r
+ 
+phy
+ = YªsWifiPhyH–³r::
+	`DeçuÉ
+();
+
+96 
+phy
+.
+	`S‘ChªÃl
+(
+chªÃl
+.
+	`C»©e
+());
+
+99 
+WifiH–³r
+ 
+wifi
+ = 
+	`WifiH–³r
+();
+
+100 
+wifi
+.
+	`S‘RemÙeStiÚMªag”
+("ns3::AarfWifiManager");
+
+101 
+NqosWifiMacH–³r
+ 
+mac
+ = NqosWifiMacH–³r::
+	`DeçuÉ
+();
+
+103 
+N‘DeviûCÚš”
+ 
+¡aDeviûs
+;
+
+104 
+¡aDeviûs
+ = 
+wifi
+.
+	`In¡®l
+(
+phy
+, 
+mac
+, 
+wifiSNodes
+);
+
+106 
+Mob™yH–³r
+ 
+mob™y
+;
+
+107 
+mob™y
+.
+	`S‘Pos™iÚAÎoÿtÜ
+("ns3::GridPositionAllocator", "MinX",
+
+108 
+	`DoubËV®ue
+(0.0), "MinY", DoubleValue(0.0), "DeltaX", DoubleValue(40.0),
+
+109 "D–Y", 
+	`DoubËV®ue
+(50.0), "GridWidth", 
+	`Uš‹g”V®ue
+(2), "LayoutType",
+
+110 
+	`SŒšgV®ue
+("RowFirst"));
+
+112 
+mob™y
+.
+	`S‘Mob™yMod–
+("ns3::ConstantPositionMobilityModel");
+
+113 
+mob™y
+.
+	`In¡®l
+(
+wifiSNodes
+);
+
+115 
+IÁ”ÃtSckH–³r
+ 
+¡ack
+;
+
+116 
+¡ack
+.
+	`In¡®l
+(
+wifiSNodes
+);
+
+117 
+Ipv4Add»ssH–³r
+ 
+add»ss
+;
+
+118 
+add»ss
+.
+	`S‘Ba£
+("10.1.2.0", "255.255.255.0");
+
+119 
+Ipv4IÁ”çûCÚš”
+ 
+š‹rçûs
+ = 
+add»ss
+.
+	`Assign
+(
+¡aDeviûs
+);
+
+122 
+¡d
+::
+veùÜ
+<¡d::
+¡ršg
+> 
+´ÙocŞs
+;
+
+123 
+¡d
+::
+¡ršg¡»am
+ 
+	`ss
+(
+´ÙocŞ
+);
+
+124 
+¡d
+::
+¡ršg
+ 
+´Ùo
+;
+
+125 
+ušt32_t
+ 
+´ÙoNum
+ = 0;
+
+126 
+¡d
+::
+	`g‘lše
+(
+ss
+, 
+´Ùo
+, ','è&& 
+´ÙoNum
+++ < 
+u£rs
+)
+
+128 
+´ÙocŞs
+.
+	`push_back
+(
+´Ùo
+);
+
+131 
+ušt16_t
+ 
+pÜt
+ = 80;
+
+133 
+¡d
+::
+veùÜ
+<
+DashCl›ÁH–³r
+> 
+ş›Ás
+;
+
+134 
+¡d
+::
+veùÜ
+<
+AµliÿtiÚCÚš”
+> 
+ş›ÁAµs
+;
+
+136 
+ušt32_t
+ 
+u£r
+ = 0; u£¸< 
+u£rs
+; user++)
+
+138 
+DashCl›ÁH–³r
+ 
+	`ş›Á
+("ns3::TcpSocketFactory",
+
+139 
+	`IÃtSock‘Add»ss
+(
+š‹rçûs
+.
+	`G‘Add»ss
+(0), 
+pÜt
+),
+´ÙocŞs
+[
+u£r
+ % 
+´ÙoNum
+]);
+
+141 
+ş›Á
+.
+	`S‘A‰ribu‹
+("VideoId", 
+	`Uš‹g”V®ue
+(
+u£r
+ + 1));
+
+142 
+ş›Á
+.
+	`S‘A‰ribu‹
+("T¬g‘Dt", 
+	`TimeV®ue
+(
+	`SecÚds
+(
+rg‘_dt
+)));
+
+143 
+ş›Á
+.
+	`S‘A‰ribu‹
+("wšdow", 
+	`TimeV®ue
+(
+	`Time
+(
+wšdow
+)));
+
+144 
+AµliÿtiÚCÚš”
+ 
+ş›ÁAµ
+ = 
+ş›Á
+.
+	`In¡®l
+(
+wifiSNodes
+.
+	`G‘
+(
+u£r
+ + 1));
+
+145 
+ş›ÁAµ
+.
+	`S¹
+(
+	`SecÚds
+(0.25));
+
+146 
+ş›ÁAµ
+.
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+));
+
+148 
+ş›Ás
+.
+	`push_back
+(
+ş›Á
+);
+
+149 
+ş›ÁAµs
+.
+	`push_back
+(
+ş›ÁAµ
+);
+
+153 
+DashS”v”H–³r
+ 
+	`£rv”
+("ns3::TcpSocketFactory",
+
+154 
+	`IÃtSock‘Add»ss
+(
+Ipv4Add»ss
+::
+	`G‘Any
+(), 
+pÜt
+));
+
+155 
+AµliÿtiÚCÚš”
+ 
+£rv”Aµs
+ = 
+£rv”
+.
+	`In¡®l
+(
+wifiSNodes
+.
+	`G‘
+(0));
+
+156 
+£rv”Aµs
+.
+	`S¹
+(
+	`SecÚds
+(0.0));
+
+157 
+£rv”Aµs
+.
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+ + 5.0));
+
+159 
+ušt32_t
+ 
+bulk
+ = 0; bulk < 
+bulkNo
+; bulk++)
+
+161 
+BulkS’dH–³r
+ 
+	`sourû
+("ns3::TcpSocketFactory",
+
+162 
+	`IÃtSock‘Add»ss
+(
+š‹rçûs
+.
+	`G‘Add»ss
+(1 + 
+u£rs
+ + 
+bulk
+), 
+pÜt
+));
+
+164 
+sourû
+.
+	`S‘A‰ribu‹
+("MaxBy‹s", 
+	`Uš‹g”V®ue
+(
+maxBy‹s
+));
+
+165 
+AµliÿtiÚCÚš”
+ 
+sourûAµs
+ = 
+sourû
+.
+	`In¡®l
+(
+wifiSNodes
+.
+	`G‘
+(0));
+
+166 
+sourûAµs
+.
+	`S¹
+(
+	`SecÚds
+(0.0));
+
+167 
+sourûAµs
+.
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+));
+
+169 
+Pack‘SškH–³r
+ 
+	`sšk
+("ns3::TcpSocketFactory",
+
+170 
+	`IÃtSock‘Add»ss
+(
+Ipv4Add»ss
+::
+	`G‘Any
+(), 
+pÜt
+));
+
+171 
+AµliÿtiÚCÚš”
+ 
+sškAµs
+ = 
+sšk
+.
+	`In¡®l
+(
+
+172 
+wifiSNodes
+.
+	`G‘
+(1 + 
+u£rs
+ + 
+bulk
+));
+
+173 
+sškAµs
+.
+	`S¹
+(
+	`SecÚds
+(0.0));
+
+174 
+sškAµs
+.
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+));
+
+191 
+SimuÏtÜ
+::
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+));
+
+192 
+Anim©iÚIÁ”çû
+ 
+	`ªim
+("dash-wifi.xml");
+
+193 
+SimuÏtÜ
+::
+	`Run
+();
+
+194 
+SimuÏtÜ
+::
+	`De¡roy
+();
+
+196 
+ušt32_t
+ 
+k
+;
+
+197 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+199 
+PŒ
+<
+DashCl›Á
+> 
+­p
+ = 
+DyÇmicCa¡
+<DashCl›Á>(
+ş›ÁAµs
+[
+k
+].
+	`G‘
+(0));
+
+200 
+¡d
+::
+cout
+ << 
+´ÙocŞs
+[
+k
+ % 
+´ÙoNum
+] << "-Node: " << k;
+
+201 
+­p
+->
+	`G‘Sts
+();
+
+205 
+	}
+}
+
+	@link-example.cc
+
+27 
+	~<¡ršg
+>
+
+28 
+	~<f¡»am
+>
+
+29 
+	~"ns3/cÜe-moduË.h
+"
+
+30 
+	~"ns3/pošt-to-pošt-moduË.h
+"
+
+31 
+	~"ns3/š‹º‘-moduË.h
+"
+
+32 
+	~"ns3/­¶iÿtiÚs-moduË.h
+"
+
+33 
+	~"ns3/ÃtwÜk-moduË.h
+"
+
+34 
+	~"ns3/dash-moduË.h
+"
+
+36 
+usšg
+ 
+Çme¥aû
+ 
+	gns3
+;
+
+38 
+NS_LOG_COMPONENT_DEFINE
+("DashExample");
+
+41 
+C®lBack
+(
+PŒ
+<
+N‘Deviû
+> 
+deviû
+, 
+¡d
+::
+¡ršg
+ 
+¿‹
+)
+
+43 
+¡d
+::
+cout
+ << "============================================\n"
+
+44 "==ğCALLBACK:‚ew„©e: " << 
+¿‹
+ << " =====\n"
+
+45 "============================================" << 
+¡d
+::
+’dl
+;
+
+47 
+	gdeviû
+->
+S‘A‰ribu‹
+("D©aR©e", 
+SŒšgV®ue
+(
+¿‹
+));
+
+52 
+Sw™chC®lBack
+(
+PŒ
+<
+N‘Deviû
+> 
+deviû
+, cÚ¡ 
+¡d
+::
+¡ršg
+ & 
+sw™chTime
+,
+
+53 cÚ¡ 
+¡d
+::
+¡ršg
+ & 
+lowR©e
+, cÚ¡ std::¡ršg & 
+highR©e
+, 
+boŞ
+ 
+æag
+)
+
+56 
+	g¡d
+::
+cout
+ << "============================================\n"
+
+57 "==ğCALLBACK:‚ew„©e: " << (
+æag
+ ? 
+lowR©e
+ : 
+highR©e
+) << " =====\n"
+
+58 "============================================" << 
+¡d
+::
+’dl
+;
+
+60 
+	gdeviû
+->
+S‘A‰ribu‹
+("DataRate",
+
+61 
+æag
+ ? 
+SŒšgV®ue
+(
+lowR©e
+è: SŒšgV®ue(
+highR©e
+));
+
+62 
+	gæag
+ = !
+æag
+;
+
+64 
+	gSimuÏtÜ
+::
+ScheduË
+(
+Time
+(
+sw™chTime
+), 
+Sw™chC®lBack
+, 
+deviû
+, switchTime,
+
+65 
+lowR©e
+, 
+highR©e
+, 
+æag
+);
+
+69 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+71 
+boŞ
+ 
+Œacšg
+ = 
+çl£
+;
+
+72 
+ušt32_t
+ 
+maxBy‹s
+ = 100;
+
+73 
+ušt32_t
+ 
+u£rs
+ = 1;
+
+74 
+rg‘_dt
+ = 35.0;
+
+75 
+¡İTime
+ = 500.0;
+
+76 
+lškHigh
+ = 200.0;
+
+77 
+lškLow
+ = 400.0;
+
+78 
+¡d
+::
+¡ršg
+ 
+lškR©e
+ = "1000000";
+
+79 
+¡d
+::
+¡ršg
+ 
+highR©e
+ = "2000000";
+
+80 
+¡d
+::
+¡ršg
+ 
+lowR©e
+ = "1000000";
+
+81 
+¡d
+::
+¡ršg
+ 
+d–ay
+ = "5ms";
+
+82 
+¡d
+::
+¡ršg
+ 
+sw™chTime
+ = "0s";
+
+83 
+¡d
+::
+¡ršg
+ 
+sw™chS¹
+ = "190s";
+
+84 
+¡d
+::
+¡ršg
+ 
+´ÙocŞ
+ = "ns3::DashClient";
+
+85 
+¡d
+::
+¡ršg
+ 
+wšdow
+ = "10s";
+
+94 
+CommªdLše
+ 
+cmd
+;
+
+95 
+cmd
+.
+	`AddV®ue
+("Œacšg", "FÏgØ’abË/di§bË¿cšg", 
+Œacšg
+);
+
+96 
+cmd
+.
+	`AddV®ue
+("maxBytes", "Total‚umber of bytes for‡pplicationo send",
+
+97 
+maxBy‹s
+);
+
+98 
+cmd
+.
+	`AddV®ue
+("u£rs", "Thnumb” oàcÚcu¼’ˆvideos", 
+u£rs
+);
+
+99 
+cmd
+.
+	`AddV®ue
+("targetDt",
+
+101 
+rg‘_dt
+);
+
+102 
+cmd
+.
+	`AddV®ue
+("stopTime",
+
+103 "Thtimwh’hş›Á wÈ¡İ„eque¡šg segm’ts", 
+¡İTime
+);
+
+104 
+cmd
+.
+	`AddV®ue
+("linkRate",
+
+106 
+lškR©e
+);
+
+107 
+cmd
+.
+	`AddV®ue
+("delay",
+
+109 
+d–ay
+);
+
+110 
+cmd
+.
+	`AddV®ue
+("switchTime",
+
+112 
+sw™chTime
+);
+
+113 
+cmd
+.
+	`AddV®ue
+("protocol",
+
+115 
+´ÙocŞ
+);
+
+116 
+cmd
+.
+	`AddV®ue
+("window",
+
+117 "Thwšdow fÜ m—suršghav”agthroughpuˆ(Time).", 
+wšdow
+);
+
+118 
+cmd
+.
+	`P¬£
+(
+¬gc
+, 
+¬gv
+);
+
+123 
+	`NS_LOG_INFO
+("Create‚odes.");
+
+124 
+NodeCÚš”
+ 
+nodes
+;
+
+125 
+nodes
+.
+	`C»©e
+(2);
+
+127 
+	`NS_LOG_INFO
+("Create channels.");
+
+132 
+PoštToPoštH–³r
+ 
+poštToPošt
+;
+
+133 
+poštToPošt
+.
+	`S‘DeviûA‰ribu‹
+("D©aR©e", 
+	`SŒšgV®ue
+(
+lškR©e
+));
+
+134 
+poštToPošt
+.
+	`S‘ChªÃlA‰ribu‹
+("D–ay", 
+	`SŒšgV®ue
+(
+d–ay
+));
+
+136 
+N‘DeviûCÚš”
+ 
+deviûs
+;
+
+137 
+deviûs
+ = 
+poštToPošt
+.
+	`In¡®l
+(
+nodes
+);
+
+139 ià(
+	`Time
+(
+sw™chTime
+è=ğ
+	`SecÚds
+(0))
+
+141 
+SimuÏtÜ
+::
+	`ScheduË
+(
+	`SecÚds
+(
+lškHigh
+), 
+C®lBack
+, 
+deviûs
+.
+	`G‘
+(0),
+
+142 
+highR©e
+);
+
+143 
+SimuÏtÜ
+::
+	`ScheduË
+(
+	`SecÚds
+(
+lškLow
+), 
+C®lBack
+, 
+deviûs
+.
+	`G‘
+(0), 
+lowR©e
+);
+
+144 
+SimuÏtÜ
+::
+	`ScheduË
+(
+	`SecÚds
+(
+lškHigh
+), 
+C®lBack
+, 
+deviûs
+.
+	`G‘
+(1),
+
+145 
+highR©e
+);
+
+146 
+SimuÏtÜ
+::
+	`ScheduË
+(
+	`SecÚds
+(
+lškLow
+), 
+C®lBack
+, 
+deviûs
+.
+	`G‘
+(1), 
+lowR©e
+);
+
+150 
+SimuÏtÜ
+::
+	`ScheduË
+(
+	`Time
+(
+sw™chS¹
+), 
+Sw™chC®lBack
+, 
+deviûs
+.
+	`G‘
+(0),
+
+151 
+sw™chTime
+, 
+lowR©e
+, 
+highR©e
+, 
+çl£
+);
+
+152 
+SimuÏtÜ
+::
+	`ScheduË
+(
+	`Time
+(
+sw™chS¹
+), 
+Sw™chC®lBack
+, 
+deviûs
+.
+	`G‘
+(1),
+
+153 
+sw™chTime
+, 
+lowR©e
+, 
+highR©e
+, 
+çl£
+);
+
+158 
+IÁ”ÃtSckH–³r
+ 
+š‹º‘
+;
+
+159 
+š‹º‘
+.
+	`In¡®l
+(
+nodes
+);
+
+164 
+	`NS_LOG_INFO
+("Assign IP Addresses.");
+
+165 
+Ipv4Add»ssH–³r
+ 
+v4
+;
+
+166 
+v4
+.
+	`S‘Ba£
+("10.1.1.0", "255.255.255.0");
+
+167 
+Ipv4IÁ”çûCÚš”
+ 
+i
+ = 
+v4
+.
+	`Assign
+(
+deviûs
+);
+
+169 
+	`NS_LOG_INFO
+("Create Applications.");
+
+171 
+¡d
+::
+veùÜ
+<¡d::
+¡ršg
+> 
+´ÙocŞs
+;
+
+172 
+¡d
+::
+¡ršg¡»am
+ 
+	`ss
+(
+´ÙocŞ
+);
+
+173 
+¡d
+::
+¡ršg
+ 
+´Ùo
+;
+
+174 
+ušt32_t
+ 
+´ÙoNum
+ = 0;
+
+175 
+¡d
+::
+	`g‘lše
+(
+ss
+, 
+´Ùo
+, ','è&& 
+´ÙoNum
+++ < 
+u£rs
+)
+
+177 
+´ÙocŞs
+.
+	`push_back
+(
+´Ùo
+);
+
+180 
+ušt16_t
+ 
+pÜt
+ = 80;
+
+182 
+¡d
+::
+veùÜ
+<
+DashCl›ÁH–³r
+> 
+ş›Ás
+;
+
+183 
+¡d
+::
+veùÜ
+<
+AµliÿtiÚCÚš”
+> 
+ş›ÁAµs
+;
+
+185 
+ušt32_t
+ 
+u£r
+ = 0; u£¸< 
+u£rs
+; user++)
+
+187 
+DashCl›ÁH–³r
+ 
+	`ş›Á
+("ns3::TcpSocketFactory",
+
+188 
+	`IÃtSock‘Add»ss
+(
+i
+.
+	`G‘Add»ss
+(1), 
+pÜt
+), 
+´ÙocŞs
+[
+u£r
+ % 
+´ÙoNum
+]);
+
+190 
+ş›Á
+.
+	`S‘A‰ribu‹
+("T¬g‘Dt", 
+	`TimeV®ue
+(
+	`SecÚds
+(
+rg‘_dt
+)));
+
+191 
+ş›Á
+.
+	`S‘A‰ribu‹
+("VideoId", 
+	`Uš‹g”V®ue
+(
+u£r
+ + 1));
+
+192 
+ş›Á
+.
+	`S‘A‰ribu‹
+("wšdow",
+	`TimeV®ue
+(
+	`Time
+(
+wšdow
+)));
+
+194 
+AµliÿtiÚCÚš”
+ 
+ş›ÁAµ
+ = 
+ş›Á
+.
+	`In¡®l
+(
+nodes
+.
+	`G‘
+(0));
+
+195 
+ş›ÁAµ
+.
+	`S¹
+(
+	`SecÚds
+(0.25));
+
+196 
+ş›ÁAµ
+.
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+));
+
+198 
+ş›Ás
+.
+	`push_back
+(
+ş›Á
+);
+
+199 
+ş›ÁAµs
+.
+	`push_back
+(
+ş›ÁAµ
+);
+
+203 
+DashS”v”H–³r
+ 
+	`£rv”
+("ns3::TcpSocketFactory",
+
+204 
+	`IÃtSock‘Add»ss
+(
+Ipv4Add»ss
+::
+	`G‘Any
+(), 
+pÜt
+));
+
+205 
+AµliÿtiÚCÚš”
+ 
+£rv”Aµs
+ = 
+£rv”
+.
+	`In¡®l
+(
+nodes
+.
+	`G‘
+(1));
+
+206 
+£rv”Aµs
+.
+	`S¹
+(
+	`SecÚds
+(0.0));
+
+207 
+£rv”Aµs
+.
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+ + 5.0));
+
+212 ià(
+Œacšg
+)
+
+214 
+AsciiT¿ûH–³r
+ 
+ascii
+;
+
+215 
+poštToPošt
+.
+	`EÇbËAsciiAÎ
+(
+ascii
+.
+	`C»©eFeSŒ—m
+("dash-send.tr"));
+
+216 
+poštToPošt
+.
+	`EÇbËPÿpAÎ
+("dash-£nd", 
+çl£
+);
+
+222 
+	`NS_LOG_INFO
+("Run Simulation.");
+
+223 
+SimuÏtÜ
+::
+	`Stİ
+(
+	`SecÚds
+(
+¡İTime
+));
+
+224 
+SimuÏtÜ
+::
+	`Run
+();
+
+225 
+SimuÏtÜ
+::
+	`De¡roy
+();
+
+226 
+	`NS_LOG_INFO
+("Done.");
+
+228 
+ušt32_t
+ 
+k
+;
+
+229 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+231 
+PŒ
+<
+DashCl›Á
+> 
+­p
+ = 
+DyÇmicCa¡
+<DashCl›Á>(
+ş›ÁAµs
+[
+k
+].
+	`G‘
+(0));
+
+232 
+¡d
+::
+cout
+ << 
+´ÙocŞs
+[
+k
+ % 
+´ÙoNum
+] << "-Node: " << k;
+
+233 
+­p
+->
+	`G‘Sts
+();
+
+236 
+	}
+}
+
+	@../model/para.h
+
+1 
+	gcheck‹¡
+=20;
+
+	@
+1
+.
+1
+/usr/include
+4
+61
+dash-example.cc
+dash-wifi.cc
+link-example.cc
+../model/para.h

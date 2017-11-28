@@ -1,0 +1,15726 @@
+cscope 15 $HOME/tmm/repos/ns-3-allinone/ns-3-dev/src/dash               0000087344
+	@examples/dash-example.cc
+
+27 
+	~<°rög
+>
+
+28 
+	~<f°ªam
+>
+
+29 
+	~"ns3/c‹e-moduÀ.h
+"
+
+30 
+	~"ns3/poöt-to-poöt-moduÀ.h
+"
+
+31 
+	~"ns3/öã∫ë-moduÀ.h
+"
+
+32 
+	~"ns3/≠∂iˇti⁄s-moduÀ.h
+"
+
+33 
+	~"ns3/√tw‹k-moduÀ.h
+"
+
+34 
+	~"ns3/dash-moduÀ.h
+"
+
+35 
+	~"../modñ/∑ø.h
+"
+
+36 
+usög
+ 
+«me•a˚
+ 
+	gns3
+;
+
+37 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+38 
+NS_LOG_COMPONENT_DEFINE
+("DashExample");
+
+40 
+	#SIZE
+ 100
+
+	)
+
+41 
+	glöe
+[
+SIZE
+];
+
+46 
+	$maö
+(
+¨gc
+, *
+¨gv
+[])
+
+48 
+boﬁ
+ 
+åacög
+ = 
+Ál£
+;
+
+49 
+uöt32_t
+ 
+maxByãs
+ = 100;
+
+50 
+uöt32_t
+ 
+u£rs
+ = 1;
+
+51 
+èrgë_dt
+ = 35.0;
+
+52 
+°›Time
+ = 100.0;
+
+53 
+°d
+::
+°rög
+ 
+lökR©e
+ = "500Kbps";
+
+54 
+°d
+::
+°rög
+ 
+dñay
+ = "0ms";
+
+55 
+°d
+::
+°rög
+ 
+¥Ÿocﬁ
+ = "ns3::DashClient";
+
+56 
+°d
+::
+°rög
+ 
+wödow
+ = "10s";
+
+59 
+öô_buf„r
+ = 4;
+
+60 
+£g_Àngth
+ = 1;
+
+69 
+Comm™dLöe
+ 
+cmd
+;
+
+70 
+cmd
+.
+	`AddVÆue
+("åacög", "FœgÅÿíabÀ/dißbÀÅøcög", 
+åacög
+);
+
+71 
+cmd
+.
+	`AddVÆue
+("maxBytes", "TotalÇumber of bytes forápplicationÅo send",
+
+72 
+maxByãs
+);
+
+73 
+cmd
+.
+	`AddVÆue
+("u£rs", "Thênumbî o‡c⁄cuºíàvideos", 
+u£rs
+);
+
+74 
+cmd
+.
+	`AddVÆue
+("targetDt",
+
+76 
+èrgë_dt
+);
+
+77 
+cmd
+.
+	`AddVÆue
+("stopTime",
+
+78 "ThêtimêwhíÅhê˛õ¡†wû»°›Ñeque°ög segmíts", 
+°›Time
+);
+
+79 
+cmd
+.
+	`AddVÆue
+("linkRate",
+
+81 
+lökR©e
+);
+
+82 
+cmd
+.
+	`AddVÆue
+("delay",
+
+84 
+dñay
+);
+
+85 
+cmd
+.
+	`AddVÆue
+("protocol",
+
+87 
+¥Ÿocﬁ
+);
+
+88 
+cmd
+.
+	`AddVÆue
+("window",
+
+89 "Thêwödow f‹ mósurögÅhêavîagêthroughpuà(Time).", 
+wödow
+);
+
+91 
+cmd
+.
+	`AddVÆue
+("in_file",
+
+92 "öpuàfûe", 
+checkã°
+);
+
+94 
+cmd
+.
+	`AddVÆue
+("seg_length",
+
+95 "öpuàfûe", 
+£g_Àngth
+);
+
+97 
+cmd
+.
+	`AddVÆue
+("init_buffer",
+
+98 "öpuàfûe", 
+öô_buf„r
+);
+
+100 
+cmd
+.
+	`P¨£
+(
+¨gc
+, 
+¨gv
+);
+
+104 
+if°ªam
+ 
+	`fûe
+("3x3_num.csv");
+
+105 
+°rög
+ 
+°r
+;
+
+106 if(!
+fûe
+Ë
+cout
+<<"nÿfûe"<<
+ídl
+;
+
+107 
+	`gëlöe
+(
+fûe
+,
+°r
+)){
+
+108 
+video_num
+.
+	`push_back
+(
+	`°oi
+(
+°r
+));
+
+128 
+	`NS_LOG_INFO
+("CreateÇodes.");
+
+129 
+NodeC⁄èöî
+ 
+nodes
+;
+
+130 
+nodes
+.
+	`Cª©e
+(2);
+
+132 
+	`NS_LOG_INFO
+("Create channels.");
+
+137 
+PoötToPoötHñ≥r
+ 
+poötToPoöt
+;
+
+138 
+poötToPoöt
+.
+	`SëDevi˚Aâribuã
+("D©aR©e", 
+	`SåögVÆue
+(
+lökR©e
+));
+
+139 
+poötToPoöt
+.
+	`SëCh™√lAâribuã
+("Dñay", 
+	`SåögVÆue
+(
+dñay
+));
+
+140 
+NëDevi˚C⁄èöî
+ 
+devi˚s
+;
+
+141 
+devi˚s
+ = 
+poötToPoöt
+.
+	`In°Æl
+(
+nodes
+);
+
+146 
+I¡î√tSèckHñ≥r
+ 
+öã∫ë
+;
+
+147 
+öã∫ë
+.
+	`In°Æl
+(
+nodes
+);
+
+152 
+	`NS_LOG_INFO
+("Assign IP Addresses.");
+
+153 
+Ipv4AddªssHñ≥r
+ 
+ùv4
+;
+
+154 
+Ipv4I¡îÁ˚C⁄èöî
+ 
+i
+ = 
+ùv4
+.
+	`Assign
+(
+devi˚s
+);
+
+156 
+	`NS_LOG_INFO
+("Create Applications.");
+
+158 
+°d
+::
+ve˘‹
+<°d::
+°rög
+> 
+¥Ÿocﬁs
+;
+
+159 
+°d
+::
+°rög°ªam
+ 
+	`ss
+(
+¥Ÿocﬁ
+);
+
+160 
+°d
+::
+°rög
+ 
+¥Ÿo
+;
+
+161 
+uöt32_t
+ 
+¥ŸoNum
+ = 0;
+
+162 
+°d
+::
+	`gëlöe
+(
+ss
+, 
+¥Ÿo
+, ','Ë&& 
+¥ŸoNum
+++ < 
+u£rs
+)
+
+164 
+¥Ÿocﬁs
+.
+	`push_back
+(
+¥Ÿo
+);
+
+167 
+uöt16_t
+ 
+p‹t
+ = 80;
+
+168 
+°d
+::
+ve˘‹
+<
+DashClõ¡Hñ≥r
+> 
+˛õ¡s
+;
+
+169 
+°d
+::
+ve˘‹
+<
+Aµliˇti⁄C⁄èöî
+> 
+˛õ¡Aµs
+;
+
+172 
+uöt32_t
+ 
+u£r
+ = 0; u£∏< 
+u£rs
+; user++)
+
+174 
+DashClõ¡Hñ≥r
+ 
+	`˛õ¡
+("ns3::TcpSocketFactory",
+
+175 
+	`I√tSockëAddªss
+(
+i
+.
+	`GëAddªss
+(1), 
+p‹t
+), 
+¥Ÿocﬁs
+[
+u£r
+ % 
+¥ŸoNum
+]);
+
+177 
+˛õ¡
+.
+	`SëAâribuã
+("VideoId", 
+	`UöãgîVÆue
+(
+u£r
+ + 1));
+
+178 
+˛õ¡
+.
+	`SëAâribuã
+("T¨gëDt", 
+	`TimeVÆue
+(
+	`Sec⁄ds
+(
+èrgë_dt
+)));
+
+179 
+˛õ¡
+.
+	`SëAâribuã
+("wödow", 
+	`TimeVÆue
+(
+	`Time
+(
+wödow
+)));
+
+180 
+Aµliˇti⁄C⁄èöî
+ 
+˛õ¡Aµ
+ = 
+˛õ¡
+.
+	`In°Æl
+(
+nodes
+.
+	`Gë
+(0));
+
+181 
+˛õ¡Aµ
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.25));
+
+184 
+˛õ¡s
+.
+	`push_back
+(
+˛õ¡
+);
+
+185 
+˛õ¡Aµs
+.
+	`push_back
+(
+˛õ¡Aµ
+);
+
+189 
+DashSîvîHñ≥r
+ 
+	`£rvî
+("ns3::TcpSocketFactory",
+
+190 
+	`I√tSockëAddªss
+(
+Ipv4Addªss
+::
+	`GëAny
+(), 
+p‹t
+));
+
+191 
+Aµliˇti⁄C⁄èöî
+ 
+£rvîAµs
+ = 
+£rvî
+.
+	`In°Æl
+(
+nodes
+.
+	`Gë
+(1));
+
+192 
+£rvîAµs
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.0));
+
+198 i‡(
+åacög
+)
+
+200 
+AsciiTø˚Hñ≥r
+ 
+ascii
+;
+
+201 
+poötToPoöt
+.
+	`E«bÀAsciiAŒ
+(
+ascii
+.
+	`Cª©eFûeSåóm
+("dash-send.tr"));
+
+202 
+poötToPoöt
+.
+	`E«bÀPˇpAŒ
+("dash-£nd", 
+Ál£
+);
+
+207 
+	`NS_LOG_INFO
+("Run Simulation.");
+
+209 
+Simuœt‹
+::
+	`Run
+();
+
+210 
+Simuœt‹
+::
+	`De°roy
+();
+
+211 
+	`NS_LOG_INFO
+("Done.");
+
+214 
+uöt32_t
+ 
+k
+;
+
+215 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+217 
+På
+<
+DashClõ¡
+> 
+≠p
+ = 
+Dy«micCa°
+<DashClõ¡>(
+˛õ¡Aµs
+[
+k
+].
+	`Gë
+(0));
+
+218 
+°d
+::
+cout
+ << 
+¥Ÿocﬁs
+[
+k
+ % 
+¥ŸoNum
+] << "-Node: " << k;
+
+219 
+≠p
+->
+	`GëSèts
+();
+
+224 
+	}
+}
+
+	@examples/dash-wifi.cc
+
+21 
+	~"ns3/c‹e-moduÀ.h
+"
+
+22 
+	~"ns3/√tw‹k-moduÀ.h
+"
+
+23 
+	~"ns3/≠∂iˇti⁄s-moduÀ.h
+"
+
+24 
+	~"ns3/wifi-moduÀ.h
+"
+
+25 
+	~"ns3/mobûôy-moduÀ.h
+"
+
+26 
+	~"ns3/csma-moduÀ.h
+"
+
+27 
+	~"ns3/öã∫ë-moduÀ.h
+"
+
+28 
+	~"ns3/√ènim-moduÀ.h
+"
+
+29 
+	~"ns3/ﬁ§-hñ≥r.h
+"
+
+30 
+	~"ns3/dash-moduÀ.h
+"
+
+32 
+usög
+ 
+«me•a˚
+ 
+	gns3
+;
+
+33 
+NS_LOG_COMPONENT_DEFINE
+("Dash-Wifi");
+
+36 
+	$maö
+(
+¨gc
+, *
+¨gv
+[])
+
+38 
+uöt32_t
+ 
+nWifi
+ = 8;
+
+39 
+uöt32_t
+ 
+maxByãs
+ = 0;
+
+40 
+uöt32_t
+ 
+u£rs
+ = 1;
+
+41 
+uöt32_t
+ 
+bulkNo
+ = 1;
+
+42 
+èrgë_dt
+ = 35.0;
+
+43 
+°›Time
+ = 100.0;
+
+44 
+°d
+::
+°rög
+ 
+lökR©e
+ = "500Kbps";
+
+45 
+°d
+::
+°rög
+ 
+dñay
+ = "5ms";
+
+46 
+°d
+::
+°rög
+ 
+¥Ÿocﬁ
+ = "ns3::DashClient";
+
+47 
+°d
+::
+°rög
+ 
+wödow
+ = "10s";
+
+56 
+Comm™dLöe
+ 
+cmd
+;
+
+57 
+cmd
+.
+	`AddVÆue
+("nWifi", "Numbî o‡wifòSTA devi˚s", 
+nWifi
+);
+
+58 
+cmd
+.
+	`AddVÆue
+("maxBytes", "TotalÇumber of bytes forápplicationÅo send",
+
+59 
+maxByãs
+);
+
+60 
+cmd
+.
+	`AddVÆue
+("u£rs", "Thênumbî o‡c⁄cuºíàvideos", 
+u£rs
+);
+
+61 
+cmd
+.
+	`AddVÆue
+("bulkNo", "Thênumbî o‡background TCPÅøns„rs", 
+bulkNo
+);
+
+62 
+cmd
+.
+	`AddVÆue
+("targetDt",
+
+64 
+èrgë_dt
+);
+
+65 
+cmd
+.
+	`AddVÆue
+("stopTime",
+
+66 "ThêtimêwhíÅhê˛õ¡†wû»°›Ñeque°ög segmíts", 
+°›Time
+);
+
+67 
+cmd
+.
+	`AddVÆue
+("linkRate",
+
+69 
+lökR©e
+);
+
+70 
+cmd
+.
+	`AddVÆue
+("delay",
+
+72 
+dñay
+);
+
+73 
+cmd
+.
+	`AddVÆue
+("protocol",
+
+75 
+¥Ÿocﬁ
+);
+
+76 
+cmd
+.
+	`AddVÆue
+("window",
+
+77 "Thêwödow f‹ mósurögÅhêavîagêthroughpuà(Time).", 
+wödow
+);
+
+78 
+cmd
+.
+	`P¨£
+(
+¨gc
+, 
+¨gv
+);
+
+80 i‡(
+bulkNo
+ + 
+u£rs
+ > 
+nWifi
+ + 1)
+
+82 
+°d
+::
+˚º
+ << "youÇìd m‹ê°©i⁄s" << std::
+ídl
+;
+
+86 
+°d
+::
+cout
+ << "nWifi" << 
+nWifi
+ << std::
+ídl
+;
+
+88 
+	`LogComp⁄ítE«bÀ
+("UdpClõ¡", 
+LOG_LEVEL_INFO
+);
+
+89 
+	`LogComp⁄ítE«bÀ
+("UdpSîvî", 
+LOG_LEVEL_INFO
+);
+
+91 
+NodeC⁄èöî
+ 
+wifiSèNodes
+;
+
+92 
+wifiSèNodes
+.
+	`Cª©e
+(
+nWifi
+);
+
+94 
+Y™sWifiCh™√lHñ≥r
+ 
+ch™√l
+ = Y™sWifiCh™√lHñ≥r::
+	`DeÁu…
+();
+
+95 
+Y™sWifiPhyHñ≥r
+ 
+phy
+ = Y™sWifiPhyHñ≥r::
+	`DeÁu…
+();
+
+96 
+phy
+.
+	`SëCh™√l
+(
+ch™√l
+.
+	`Cª©e
+());
+
+99 
+WifiHñ≥r
+ 
+wifi
+ = 
+	`WifiHñ≥r
+();
+
+100 
+wifi
+.
+	`SëRemŸeSèti⁄M™agî
+("ns3::AarfWifiManager");
+
+101 
+NqosWifiMacHñ≥r
+ 
+mac
+ = NqosWifiMacHñ≥r::
+	`DeÁu…
+();
+
+103 
+NëDevi˚C⁄èöî
+ 
+°aDevi˚s
+;
+
+104 
+°aDevi˚s
+ = 
+wifi
+.
+	`In°Æl
+(
+phy
+, 
+mac
+, 
+wifiSèNodes
+);
+
+106 
+MobûôyHñ≥r
+ 
+mobûôy
+;
+
+107 
+mobûôy
+.
+	`SëPosôi⁄AŒoˇt‹
+("ns3::GridPositionAllocator", "MinX",
+
+108 
+	`DoubÀVÆue
+(0.0), "MinY", DoubleValue(0.0), "DeltaX", DoubleValue(40.0),
+
+109 "DñèY", 
+	`DoubÀVÆue
+(50.0), "GridWidth", 
+	`UöãgîVÆue
+(2), "LayoutType",
+
+110 
+	`SåögVÆue
+("RowFirst"));
+
+112 
+mobûôy
+.
+	`SëMobûôyModñ
+("ns3::ConstantPositionMobilityModel");
+
+113 
+mobûôy
+.
+	`In°Æl
+(
+wifiSèNodes
+);
+
+115 
+I¡î√tSèckHñ≥r
+ 
+°ack
+;
+
+116 
+°ack
+.
+	`In°Æl
+(
+wifiSèNodes
+);
+
+117 
+Ipv4AddªssHñ≥r
+ 
+addªss
+;
+
+118 
+addªss
+.
+	`SëBa£
+("10.1.2.0", "255.255.255.0");
+
+119 
+Ipv4I¡îÁ˚C⁄èöî
+ 
+öãrÁ˚s
+ = 
+addªss
+.
+	`Assign
+(
+°aDevi˚s
+);
+
+122 
+°d
+::
+ve˘‹
+<°d::
+°rög
+> 
+¥Ÿocﬁs
+;
+
+123 
+°d
+::
+°rög°ªam
+ 
+	`ss
+(
+¥Ÿocﬁ
+);
+
+124 
+°d
+::
+°rög
+ 
+¥Ÿo
+;
+
+125 
+uöt32_t
+ 
+¥ŸoNum
+ = 0;
+
+126 
+°d
+::
+	`gëlöe
+(
+ss
+, 
+¥Ÿo
+, ','Ë&& 
+¥ŸoNum
+++ < 
+u£rs
+)
+
+128 
+¥Ÿocﬁs
+.
+	`push_back
+(
+¥Ÿo
+);
+
+131 
+uöt16_t
+ 
+p‹t
+ = 80;
+
+133 
+°d
+::
+ve˘‹
+<
+DashClõ¡Hñ≥r
+> 
+˛õ¡s
+;
+
+134 
+°d
+::
+ve˘‹
+<
+Aµliˇti⁄C⁄èöî
+> 
+˛õ¡Aµs
+;
+
+136 
+uöt32_t
+ 
+u£r
+ = 0; u£∏< 
+u£rs
+; user++)
+
+138 
+DashClõ¡Hñ≥r
+ 
+	`˛õ¡
+("ns3::TcpSocketFactory",
+
+139 
+	`I√tSockëAddªss
+(
+öãrÁ˚s
+.
+	`GëAddªss
+(0), 
+p‹t
+),
+¥Ÿocﬁs
+[
+u£r
+ % 
+¥ŸoNum
+]);
+
+141 
+˛õ¡
+.
+	`SëAâribuã
+("VideoId", 
+	`UöãgîVÆue
+(
+u£r
+ + 1));
+
+142 
+˛õ¡
+.
+	`SëAâribuã
+("T¨gëDt", 
+	`TimeVÆue
+(
+	`Sec⁄ds
+(
+èrgë_dt
+)));
+
+143 
+˛õ¡
+.
+	`SëAâribuã
+("wödow", 
+	`TimeVÆue
+(
+	`Time
+(
+wödow
+)));
+
+144 
+Aµliˇti⁄C⁄èöî
+ 
+˛õ¡Aµ
+ = 
+˛õ¡
+.
+	`In°Æl
+(
+wifiSèNodes
+.
+	`Gë
+(
+u£r
+ + 1));
+
+145 
+˛õ¡Aµ
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.25));
+
+146 
+˛õ¡Aµ
+.
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+));
+
+148 
+˛õ¡s
+.
+	`push_back
+(
+˛õ¡
+);
+
+149 
+˛õ¡Aµs
+.
+	`push_back
+(
+˛õ¡Aµ
+);
+
+153 
+DashSîvîHñ≥r
+ 
+	`£rvî
+("ns3::TcpSocketFactory",
+
+154 
+	`I√tSockëAddªss
+(
+Ipv4Addªss
+::
+	`GëAny
+(), 
+p‹t
+));
+
+155 
+Aµliˇti⁄C⁄èöî
+ 
+£rvîAµs
+ = 
+£rvî
+.
+	`In°Æl
+(
+wifiSèNodes
+.
+	`Gë
+(0));
+
+156 
+£rvîAµs
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.0));
+
+157 
+£rvîAµs
+.
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+ + 5.0));
+
+159 
+uöt32_t
+ 
+bulk
+ = 0; bulk < 
+bulkNo
+; bulk++)
+
+161 
+BulkSídHñ≥r
+ 
+	`sour˚
+("ns3::TcpSocketFactory",
+
+162 
+	`I√tSockëAddªss
+(
+öãrÁ˚s
+.
+	`GëAddªss
+(1 + 
+u£rs
+ + 
+bulk
+), 
+p‹t
+));
+
+164 
+sour˚
+.
+	`SëAâribuã
+("MaxByãs", 
+	`UöãgîVÆue
+(
+maxByãs
+));
+
+165 
+Aµliˇti⁄C⁄èöî
+ 
+sour˚Aµs
+ = 
+sour˚
+.
+	`In°Æl
+(
+wifiSèNodes
+.
+	`Gë
+(0));
+
+166 
+sour˚Aµs
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.0));
+
+167 
+sour˚Aµs
+.
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+));
+
+169 
+PackëSökHñ≥r
+ 
+	`sök
+("ns3::TcpSocketFactory",
+
+170 
+	`I√tSockëAddªss
+(
+Ipv4Addªss
+::
+	`GëAny
+(), 
+p‹t
+));
+
+171 
+Aµliˇti⁄C⁄èöî
+ 
+sökAµs
+ = 
+sök
+.
+	`In°Æl
+(
+
+172 
+wifiSèNodes
+.
+	`Gë
+(1 + 
+u£rs
+ + 
+bulk
+));
+
+173 
+sökAµs
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.0));
+
+174 
+sökAµs
+.
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+));
+
+191 
+Simuœt‹
+::
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+));
+
+192 
+Anim©i⁄I¡îÁ˚
+ 
+	`™im
+("dash-wifi.xml");
+
+193 
+Simuœt‹
+::
+	`Run
+();
+
+194 
+Simuœt‹
+::
+	`De°roy
+();
+
+196 
+uöt32_t
+ 
+k
+;
+
+197 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+199 
+På
+<
+DashClõ¡
+> 
+≠p
+ = 
+Dy«micCa°
+<DashClõ¡>(
+˛õ¡Aµs
+[
+k
+].
+	`Gë
+(0));
+
+200 
+°d
+::
+cout
+ << 
+¥Ÿocﬁs
+[
+k
+ % 
+¥ŸoNum
+] << "-Node: " << k;
+
+201 
+≠p
+->
+	`GëSèts
+();
+
+205 
+	}
+}
+
+	@examples/link-example.cc
+
+27 
+	~<°rög
+>
+
+28 
+	~<f°ªam
+>
+
+29 
+	~"ns3/c‹e-moduÀ.h
+"
+
+30 
+	~"ns3/poöt-to-poöt-moduÀ.h
+"
+
+31 
+	~"ns3/öã∫ë-moduÀ.h
+"
+
+32 
+	~"ns3/≠∂iˇti⁄s-moduÀ.h
+"
+
+33 
+	~"ns3/√tw‹k-moduÀ.h
+"
+
+34 
+	~"ns3/dash-moduÀ.h
+"
+
+35 
+	~"../modñ/∑ø.h
+"
+
+36 
+usög
+ 
+«me•a˚
+ 
+	gns3
+;
+
+38 
+NS_LOG_COMPONENT_DEFINE
+("DashExample");
+
+40 
+	#SIZE
+ 100
+
+	)
+
+41 
+	glöe
+[
+SIZE
+];
+
+44 
+CÆlBack
+(
+På
+<
+NëDevi˚
+> 
+devi˚
+, 
+°d
+::
+°rög
+ 
+øã
+)
+
+46 
+°d
+::
+cout
+ << "============================================\n"
+
+47 "==CALLBACK:ÇewÑ©e: " << 
+øã
+ << " =====\n"
+
+48 "============================================" << 
+°d
+::
+ídl
+;
+
+50 
+	gdevi˚
+->
+SëAâribuã
+("D©aR©e", 
+SåögVÆue
+(
+øã
+));
+
+55 
+SwôchCÆlBack
+(
+På
+<
+NëDevi˚
+> 
+devi˚
+, c⁄° 
+°d
+::
+°rög
+ & 
+swôchTime
+,
+
+56 c⁄° 
+°d
+::
+°rög
+ & 
+lowR©e
+, c⁄° std::°rög & 
+highR©e
+, 
+boﬁ
+ 
+Êag
+)
+
+59 
+	g°d
+::
+cout
+ << "============================================\n"
+
+60 "==CALLBACK:ÇewÑ©e: " << (
+Êag
+ ? 
+lowR©e
+ : 
+highR©e
+) << " =====\n"
+
+61 "============================================" << 
+°d
+::
+ídl
+;
+
+63 
+	gdevi˚
+->
+SëAâribuã
+("DataRate",
+
+64 
+Êag
+ ? 
+SåögVÆue
+(
+lowR©e
+Ë: SåögVÆue(
+highR©e
+));
+
+65 
+	gÊag
+ = !
+Êag
+;
+
+67 
+	gSimuœt‹
+::
+ScheduÀ
+(
+Time
+(
+swôchTime
+), 
+SwôchCÆlBack
+, 
+devi˚
+, switchTime,
+
+68 
+lowR©e
+, 
+highR©e
+, 
+Êag
+);
+
+72 
+	$maö
+(
+¨gc
+, *
+¨gv
+[])
+
+74 
+boﬁ
+ 
+åacög
+ = 
+Ál£
+;
+
+75 
+uöt32_t
+ 
+maxByãs
+ = 100;
+
+76 
+uöt32_t
+ 
+u£rs
+ = 1;
+
+77 
+èrgë_dt
+ = 35.0;
+
+78 
+°›Time
+ = 500.0;
+
+79 
+lökHigh
+ = 200.0;
+
+80 
+lökLow
+ = 400.0;
+
+81 
+°d
+::
+°rög
+ 
+lökR©e
+ = "1000000";
+
+82 
+°d
+::
+°rög
+ 
+highR©e
+ = "2000000";
+
+83 
+°d
+::
+°rög
+ 
+lowR©e
+ = "1000000";
+
+84 
+°d
+::
+°rög
+ 
+dñay
+ = "5ms";
+
+85 
+°d
+::
+°rög
+ 
+swôchTime
+ = "0s";
+
+86 
+°d
+::
+°rög
+ 
+swôchSèπ
+ = "190s";
+
+87 
+°d
+::
+°rög
+ 
+¥Ÿocﬁ
+ = "ns3::DashClient";
+
+88 
+°d
+::
+°rög
+ 
+wödow
+ = "10s";
+
+97 
+Comm™dLöe
+ 
+cmd
+;
+
+98 
+cmd
+.
+	`AddVÆue
+("åacög", "FœgÅÿíabÀ/dißbÀÅøcög", 
+åacög
+);
+
+99 
+cmd
+.
+	`AddVÆue
+("maxBytes", "TotalÇumber of bytes forápplicationÅo send",
+
+100 
+maxByãs
+);
+
+101 
+cmd
+.
+	`AddVÆue
+("u£rs", "Thênumbî o‡c⁄cuºíàvideos", 
+u£rs
+);
+
+102 
+cmd
+.
+	`AddVÆue
+("targetDt",
+
+104 
+èrgë_dt
+);
+
+105 
+cmd
+.
+	`AddVÆue
+("stopTime",
+
+106 "ThêtimêwhíÅhê˛õ¡†wû»°›Ñeque°ög segmíts", 
+°›Time
+);
+
+107 
+cmd
+.
+	`AddVÆue
+("linkRate",
+
+109 
+lökR©e
+);
+
+110 
+cmd
+.
+	`AddVÆue
+("delay",
+
+112 
+dñay
+);
+
+113 
+cmd
+.
+	`AddVÆue
+("switchTime",
+
+115 
+swôchTime
+);
+
+116 
+cmd
+.
+	`AddVÆue
+("protocol",
+
+118 
+¥Ÿocﬁ
+);
+
+119 
+cmd
+.
+	`AddVÆue
+("window",
+
+120 "Thêwödow f‹ mósurögÅhêavîagêthroughpuà(Time).", 
+wödow
+);
+
+121 
+cmd
+.
+	`P¨£
+(
+¨gc
+, 
+¨gv
+);
+
+125 
+if°ªam
+ 
+	`fûe
+("3x3_test.csv");
+
+126 
+°rög
+ 
+°r
+;
+
+127 if(!
+fûe
+Ë
+cout
+<<"nÿfûe"<<
+ídl
+;
+
+128 
+	`gëlöe
+(
+fûe
+,
+°r
+)){
+
+129 
+video_num
+.
+	`push_back
+(
+	`°oi
+(
+°r
+));
+
+135 
+	`NS_LOG_INFO
+("CreateÇodes.");
+
+136 
+NodeC⁄èöî
+ 
+nodes
+;
+
+137 
+nodes
+.
+	`Cª©e
+(2);
+
+139 
+	`NS_LOG_INFO
+("Create channels.");
+
+144 
+PoötToPoötHñ≥r
+ 
+poötToPoöt
+;
+
+145 
+poötToPoöt
+.
+	`SëDevi˚Aâribuã
+("D©aR©e", 
+	`SåögVÆue
+(
+lökR©e
+));
+
+146 
+poötToPoöt
+.
+	`SëCh™√lAâribuã
+("Dñay", 
+	`SåögVÆue
+(
+dñay
+));
+
+148 
+NëDevi˚C⁄èöî
+ 
+devi˚s
+;
+
+149 
+devi˚s
+ = 
+poötToPoöt
+.
+	`In°Æl
+(
+nodes
+);
+
+151 i‡(
+	`Time
+(
+swôchTime
+Ë=
+	`Sec⁄ds
+(0))
+
+153 
+Simuœt‹
+::
+	`ScheduÀ
+(
+	`Sec⁄ds
+(
+lökHigh
+), 
+CÆlBack
+, 
+devi˚s
+.
+	`Gë
+(0),
+
+154 
+highR©e
+);
+
+155 
+Simuœt‹
+::
+	`ScheduÀ
+(
+	`Sec⁄ds
+(
+lökLow
+), 
+CÆlBack
+, 
+devi˚s
+.
+	`Gë
+(0), 
+lowR©e
+);
+
+156 
+Simuœt‹
+::
+	`ScheduÀ
+(
+	`Sec⁄ds
+(
+lökHigh
+), 
+CÆlBack
+, 
+devi˚s
+.
+	`Gë
+(1),
+
+157 
+highR©e
+);
+
+158 
+Simuœt‹
+::
+	`ScheduÀ
+(
+	`Sec⁄ds
+(
+lökLow
+), 
+CÆlBack
+, 
+devi˚s
+.
+	`Gë
+(1), 
+lowR©e
+);
+
+162 
+Simuœt‹
+::
+	`ScheduÀ
+(
+	`Time
+(
+swôchSèπ
+), 
+SwôchCÆlBack
+, 
+devi˚s
+.
+	`Gë
+(0),
+
+163 
+swôchTime
+, 
+lowR©e
+, 
+highR©e
+, 
+Ál£
+);
+
+164 
+Simuœt‹
+::
+	`ScheduÀ
+(
+	`Time
+(
+swôchSèπ
+), 
+SwôchCÆlBack
+, 
+devi˚s
+.
+	`Gë
+(1),
+
+165 
+swôchTime
+, 
+lowR©e
+, 
+highR©e
+, 
+Ál£
+);
+
+170 
+I¡î√tSèckHñ≥r
+ 
+öã∫ë
+;
+
+171 
+öã∫ë
+.
+	`In°Æl
+(
+nodes
+);
+
+176 
+	`NS_LOG_INFO
+("Assign IP Addresses.");
+
+177 
+Ipv4AddªssHñ≥r
+ 
+ùv4
+;
+
+178 
+ùv4
+.
+	`SëBa£
+("10.1.1.0", "255.255.255.0");
+
+179 
+Ipv4I¡îÁ˚C⁄èöî
+ 
+i
+ = 
+ùv4
+.
+	`Assign
+(
+devi˚s
+);
+
+181 
+	`NS_LOG_INFO
+("Create Applications.");
+
+183 
+°d
+::
+ve˘‹
+<°d::
+°rög
+> 
+¥Ÿocﬁs
+;
+
+184 
+°d
+::
+°rög°ªam
+ 
+	`ss
+(
+¥Ÿocﬁ
+);
+
+185 
+°d
+::
+°rög
+ 
+¥Ÿo
+;
+
+186 
+uöt32_t
+ 
+¥ŸoNum
+ = 0;
+
+187 
+°d
+::
+	`gëlöe
+(
+ss
+, 
+¥Ÿo
+, ','Ë&& 
+¥ŸoNum
+++ < 
+u£rs
+)
+
+189 
+¥Ÿocﬁs
+.
+	`push_back
+(
+¥Ÿo
+);
+
+192 
+uöt16_t
+ 
+p‹t
+ = 80;
+
+194 
+°d
+::
+ve˘‹
+<
+DashClõ¡Hñ≥r
+> 
+˛õ¡s
+;
+
+195 
+°d
+::
+ve˘‹
+<
+Aµliˇti⁄C⁄èöî
+> 
+˛õ¡Aµs
+;
+
+197 
+uöt32_t
+ 
+u£r
+ = 0; u£∏< 
+u£rs
+; user++)
+
+199 
+DashClõ¡Hñ≥r
+ 
+	`˛õ¡
+("ns3::TcpSocketFactory",
+
+200 
+	`I√tSockëAddªss
+(
+i
+.
+	`GëAddªss
+(1), 
+p‹t
+), 
+¥Ÿocﬁs
+[
+u£r
+ % 
+¥ŸoNum
+]);
+
+202 
+˛õ¡
+.
+	`SëAâribuã
+("T¨gëDt", 
+	`TimeVÆue
+(
+	`Sec⁄ds
+(
+èrgë_dt
+)));
+
+203 
+˛õ¡
+.
+	`SëAâribuã
+("VideoId", 
+	`UöãgîVÆue
+(
+u£r
+ + 1));
+
+204 
+˛õ¡
+.
+	`SëAâribuã
+("wödow",
+	`TimeVÆue
+(
+	`Time
+(
+wödow
+)));
+
+206 
+Aµliˇti⁄C⁄èöî
+ 
+˛õ¡Aµ
+ = 
+˛õ¡
+.
+	`In°Æl
+(
+nodes
+.
+	`Gë
+(0));
+
+207 
+˛õ¡Aµ
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.25));
+
+210 
+˛õ¡s
+.
+	`push_back
+(
+˛õ¡
+);
+
+211 
+˛õ¡Aµs
+.
+	`push_back
+(
+˛õ¡Aµ
+);
+
+215 
+DashSîvîHñ≥r
+ 
+	`£rvî
+("ns3::TcpSocketFactory",
+
+216 
+	`I√tSockëAddªss
+(
+Ipv4Addªss
+::
+	`GëAny
+(), 
+p‹t
+));
+
+217 
+Aµliˇti⁄C⁄èöî
+ 
+£rvîAµs
+ = 
+£rvî
+.
+	`In°Æl
+(
+nodes
+.
+	`Gë
+(1));
+
+218 
+£rvîAµs
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.0));
+
+224 i‡(
+åacög
+)
+
+226 
+AsciiTø˚Hñ≥r
+ 
+ascii
+;
+
+227 
+poötToPoöt
+.
+	`E«bÀAsciiAŒ
+(
+ascii
+.
+	`Cª©eFûeSåóm
+("dash-send.tr"));
+
+228 
+poötToPoöt
+.
+	`E«bÀPˇpAŒ
+("dash-£nd", 
+Ál£
+);
+
+234 
+	`NS_LOG_INFO
+("Run Simulation.");
+
+235 
+Simuœt‹
+::
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+));
+
+236 
+Simuœt‹
+::
+	`Run
+();
+
+237 
+Simuœt‹
+::
+	`De°roy
+();
+
+238 
+	`NS_LOG_INFO
+("Done.");
+
+240 
+uöt32_t
+ 
+k
+;
+
+241 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+243 
+På
+<
+DashClõ¡
+> 
+≠p
+ = 
+Dy«micCa°
+<DashClõ¡>(
+˛õ¡Aµs
+[
+k
+].
+	`Gë
+(0));
+
+244 
+°d
+::
+cout
+ << 
+¥Ÿocﬁs
+[
+k
+ % 
+¥ŸoNum
+] << "-Node: " << k;
+
+245 
+≠p
+->
+	`GëSèts
+();
+
+248 
+	}
+}
+
+	@helper/dash-client-helper.cc
+
+23 
+	~"dash-˛õ¡-hñ≥r.h
+"
+
+24 
+	~"ns3/öë-sockë-addªss.h
+"
+
+25 
+	~"ns3/∑ckë-sockë-addªss.h
+"
+
+26 
+	~"ns3/°rög.h
+"
+
+27 
+	~"ns3/«mes.h
+"
+
+29 
+«me•a˚
+ 
+	gns3
+ {
+
+31 
+	gDashClõ¡Hñ≥r
+::
+DashClõ¡Hñ≥r
+ (
+°d
+::
+°rög
+ 
+t˝PrŸocﬁ
+, 
+Addªss
+ 
+addªss
+)
+
+33 
+	gm_Á˘‹y
+.
+SëTy≥Id
+ ("ns3::DashClient");
+
+34 
+	gm_Á˘‹y
+.
+Së
+ ("PrŸocﬁ", 
+SåögVÆue
+ (
+t˝PrŸocﬁ
+));
+
+35 
+	gm_Á˘‹y
+.
+Së
+ ("RemŸe", 
+AddªssVÆue
+ (
+addªss
+));
+
+38 
+	gDashClõ¡Hñ≥r
+::
+DashClõ¡Hñ≥r
+ (
+°d
+::
+°rög
+ 
+t˝PrŸocﬁ
+, 
+Addªss
+ 
+addªss
+, std::°rög 
+Æg‹ôhm
+)
+
+40 
+m_Á˘‹y
+.
+SëTy≥Id
+ (
+Æg‹ôhm
+);
+
+41 
+	gm_Á˘‹y
+.
+Së
+ ("PrŸocﬁ", 
+SåögVÆue
+ (
+t˝PrŸocﬁ
+));
+
+42 
+	gm_Á˘‹y
+.
+Së
+ ("RemŸe", 
+AddªssVÆue
+ (
+addªss
+));
+
+45 
+	gDashClõ¡Hñ≥r
+::
+SëAâribuã
+ (
+°d
+::
+°rög
+ 
+«me
+, c⁄° 
+AâribuãVÆue
+ &
+vÆue
+)
+
+47 
+	gm_Á˘‹y
+.
+Së
+ (
+«me
+, 
+vÆue
+);
+
+50 
+Aµliˇti⁄C⁄èöî
+
+
+51 
+	gDashClõ¡Hñ≥r
+::
+In°Æl
+ (
+På
+<
+Node
+> 
+node
+) const
+
+53  
+Aµliˇti⁄C⁄èöî
+ (
+In°ÆlPriv
+ (
+node
+));
+
+56 
+Aµliˇti⁄C⁄èöî
+
+
+57 
+	gDashClõ¡Hñ≥r
+::
+In°Æl
+ (
+°d
+::
+°rög
+ 
+nodeName
+) const
+
+59 
+På
+<
+Node
+> 
+node
+ = 
+Names
+::
+Föd
+<Node> (
+nodeName
+);
+
+60  
+Aµliˇti⁄C⁄èöî
+ (
+In°ÆlPriv
+ (
+node
+));
+
+63 
+Aµliˇti⁄C⁄èöî
+
+
+64 
+	gDashClõ¡Hñ≥r
+::
+In°Æl
+ (
+NodeC⁄èöî
+ 
+c
+) const
+
+66 
+Aµliˇti⁄C⁄èöî
+ 
+≠ps
+;
+
+67 
+	gNodeC⁄èöî
+::
+Iãøt‹
+ 
+i
+ = 
+c
+.
+Begö
+ (); 
+	gi
+ !c.
+End
+ (); ++i)
+
+69 
+	g≠ps
+.
+Add
+ (
+In°ÆlPriv
+ (*
+i
+));
+
+72  
+	g≠ps
+;
+
+75 
+	gPå
+<
+	gAµliˇti⁄
+>
+
+76 
+	gDashClõ¡Hñ≥r
+::
+In°ÆlPriv
+ (
+På
+<
+Node
+> 
+node
+) const
+
+78 
+På
+<
+Aµliˇti⁄
+> 
+≠p
+ = 
+m_Á˘‹y
+.
+Cª©e
+<Application> ();
+
+79 
+	gnode
+->
+AddAµliˇti⁄
+ (
+≠p
+);
+
+81  
+	g≠p
+;
+
+	@helper/dash-client-helper.h
+
+23 #i‚de‡
+DASH_CLIENT_HELPER_H
+
+
+24 
+	#DASH_CLIENT_HELPER_H
+
+
+	)
+
+26 
+	~<°döt.h
+>
+
+27 
+	~<°rög
+>
+
+28 
+	~"ns3/obje˘-Á˘‹y.h
+"
+
+29 
+	~"ns3/addªss.h
+"
+
+30 
+	~"ns3/©åibuã.h
+"
+
+31 
+	~"ns3/√t-devi˚.h
+"
+
+32 
+	~"ns3/node-c⁄èöî.h
+"
+
+33 
+	~"ns3/≠∂iˇti⁄-c⁄èöî.h
+"
+
+35 
+«me•a˚
+ 
+	gns3
+ {
+
+41 ˛as†
+	cDashClõ¡Hñ≥r
+
+
+43 
+	gpublic
+:
+
+54 
+DashClõ¡Hñ≥r
+ (
+°d
+::
+°rög
+ 
+t˝PrŸocﬁ
+, 
+Addªss
+ 
+addªss
+);
+
+69 
+DashClõ¡Hñ≥r
+ (
+°d
+::
+°rög
+ 
+t˝PrŸocﬁ
+, 
+Addªss
+ 
+addªss
+, std::°rög 
+Æg‹ôhm
+);
+
+78 
+SëAâribuã
+ (
+°d
+::
+°rög
+ 
+«me
+, c⁄° 
+AâribuãVÆue
+ &
+vÆue
+);
+
+88 
+Aµliˇti⁄C⁄èöî
+ 
+In°Æl
+ (
+NodeC⁄èöî
+ 
+c
+) const;
+
+97 
+Aµliˇti⁄C⁄èöî
+ 
+In°Æl
+ (
+På
+<
+Node
+> 
+node
+) const;
+
+106 
+Aµliˇti⁄C⁄èöî
+ 
+In°Æl
+ (
+°d
+::
+°rög
+ 
+nodeName
+) const;
+
+108 
+	g¥iv©e
+:
+
+117 
+På
+<
+Aµliˇti⁄
+> 
+In°ÆlPriv
+ (På<
+Node
+> 
+node
+) const;
+
+118 
+	g°d
+::
+°rög
+ 
+m_¥Ÿocﬁ
+;
+
+119 
+Addªss
+ 
+	gm_ªmŸe
+;
+
+120 
+Obje˘Fa˘‹y
+ 
+	gm_Á˘‹y
+;
+
+	@helper/dash-server-helper.cc
+
+23 
+	~"dash-£rvî-hñ≥r.h
+"
+
+24 
+	~"ns3/°rög.h
+"
+
+25 
+	~"ns3/öë-sockë-addªss.h
+"
+
+26 
+	~"ns3/«mes.h
+"
+
+28 
+«me•a˚
+ 
+	gns3
+ {
+
+30 
+	gDashSîvîHñ≥r
+::
+DashSîvîHñ≥r
+ (
+°d
+::
+°rög
+ 
+¥Ÿocﬁ
+, 
+Addªss
+ 
+addªss
+)
+
+32 
+	gm_Á˘‹y
+.
+SëTy≥Id
+ ("ns3::DashServer");
+
+33 
+	gm_Á˘‹y
+.
+Së
+ ("PrŸocﬁ", 
+SåögVÆue
+ (
+¥Ÿocﬁ
+));
+
+34 
+	gm_Á˘‹y
+.
+Së
+ ("Loˇl", 
+AddªssVÆue
+ (
+addªss
+));
+
+38 
+	gDashSîvîHñ≥r
+::
+SëAâribuã
+ (
+°d
+::
+°rög
+ 
+«me
+, c⁄° 
+AâribuãVÆue
+ &
+vÆue
+)
+
+40 
+	gm_Á˘‹y
+.
+Së
+ (
+«me
+, 
+vÆue
+);
+
+43 
+Aµliˇti⁄C⁄èöî
+
+
+44 
+	gDashSîvîHñ≥r
+::
+In°Æl
+ (
+På
+<
+Node
+> 
+node
+) const
+
+46  
+Aµliˇti⁄C⁄èöî
+ (
+In°ÆlPriv
+ (
+node
+));
+
+49 
+Aµliˇti⁄C⁄èöî
+
+
+50 
+	gDashSîvîHñ≥r
+::
+In°Æl
+ (
+°d
+::
+°rög
+ 
+nodeName
+) const
+
+52 
+På
+<
+Node
+> 
+node
+ = 
+Names
+::
+Föd
+<Node> (
+nodeName
+);
+
+53  
+Aµliˇti⁄C⁄èöî
+ (
+In°ÆlPriv
+ (
+node
+));
+
+56 
+Aµliˇti⁄C⁄èöî
+
+
+57 
+	gDashSîvîHñ≥r
+::
+In°Æl
+ (
+NodeC⁄èöî
+ 
+c
+) const
+
+59 
+Aµliˇti⁄C⁄èöî
+ 
+≠ps
+;
+
+60 
+	gNodeC⁄èöî
+::
+Iãøt‹
+ 
+i
+ = 
+c
+.
+Begö
+ (); 
+	gi
+ !c.
+End
+ (); ++i)
+
+62 
+	g≠ps
+.
+Add
+ (
+In°ÆlPriv
+ (*
+i
+));
+
+65  
+	g≠ps
+;
+
+68 
+	gPå
+<
+	gAµliˇti⁄
+>
+
+69 
+	gDashSîvîHñ≥r
+::
+In°ÆlPriv
+ (
+På
+<
+Node
+> 
+node
+) const
+
+71 
+På
+<
+Aµliˇti⁄
+> 
+≠p
+ = 
+m_Á˘‹y
+.
+Cª©e
+<Application> ();
+
+72 
+	gnode
+->
+AddAµliˇti⁄
+ (
+≠p
+);
+
+74  
+	g≠p
+;
+
+	@helper/dash-server-helper.h
+
+22 #i‚de‡
+DASH_SERVER_HELPER_H
+
+
+23 
+	#DASH_SERVER_HELPER_H
+
+
+	)
+
+25 
+	~"ns3/obje˘-Á˘‹y.h
+"
+
+26 
+	~"ns3/ùv4-addªss.h
+"
+
+27 
+	~"ns3/node-c⁄èöî.h
+"
+
+28 
+	~"ns3/≠∂iˇti⁄-c⁄èöî.h
+"
+
+30 
+«me•a˚
+ 
+	gns3
+ {
+
+36 ˛as†
+	cDashSîvîHñ≥r
+
+
+38 
+	gpublic
+:
+
+49 
+DashSîvîHñ≥r
+ (
+°d
+::
+°rög
+ 
+¥Ÿocﬁ
+, 
+Addªss
+ 
+addªss
+);
+
+57 
+SëAâribuã
+ (
+°d
+::
+°rög
+ 
+«me
+, c⁄° 
+AâribuãVÆue
+ &
+vÆue
+);
+
+66 
+Aµliˇti⁄C⁄èöî
+ 
+In°Æl
+ (
+NodeC⁄èöî
+ 
+c
+) const;
+
+74 
+Aµliˇti⁄C⁄èöî
+ 
+In°Æl
+ (
+På
+<
+Node
+> 
+node
+) const;
+
+82 
+Aµliˇti⁄C⁄èöî
+ 
+In°Æl
+ (
+°d
+::
+°rög
+ 
+nodeName
+) const;
+
+84 
+	g¥iv©e
+:
+
+88 
+På
+<
+Aµliˇti⁄
+> 
+In°ÆlPriv
+ (På<
+Node
+> 
+node
+) const;
+
+89 
+Obje˘Fa˘‹y
+ 
+	gm_Á˘‹y
+;
+
+	@model/algorithms/aaash-client.cc
+
+8 
+	~"Øash-˛õ¡.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuœt‹.h
+>
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("AaashClient");
+
+15 
+«me•a˚
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+AØshClõ¡
+);
+
+19 
+Ty≥Id
+
+
+20 
+	gAØshClõ¡
+::
+GëTy≥Id
+()
+
+22 
+Ty≥Id
+ 
+tid
+ =
+
+23 
+Ty≥Id
+("ns3::AØshClõ¡").
+SëP¨ít
+<
+DashClõ¡
+>().
+AddC⁄°ru˘‹
+<
+
+24 
+AØshClõ¡
+>();
+
+25  
+	gtid
+;
+
+28 
+	gAØshClõ¡
+::
+AØshClõ¡
+() :
+
+29 
+m_ru¬ög_Á°_°¨t
+(
+åue
+)
+
+35 
+AØshClõ¡
+::~AaashClient()
+
+41 
+AØshClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+42 
+Time
+ & 
+dñay
+)
+
+44 
+uöt32_t
+ 
+	gøãs
+[] =
+
+51 
+uöt32_t
+ 
+	gøãs_size
+ = (
+øãs
+) / (rates[0]);
+
+53 
+	ga1
+ = 0.75;
+
+54 
+	ga2
+ = 0.33;
+
+55 
+	ga3
+ = 0.5;
+
+56 
+	ga4
+ = 0.75;
+
+57 
+	ga5
+ = 0.9;
+
+59 
+Time
+ 
+b_mö
+("10s");
+
+60 
+Time
+ 
+b_low
+("20s");
+
+61 
+Time
+ 
+b_high
+("50s");
+
+62 
+Time
+ 
+	gb_›t
+ = 
+Sec⁄ds
+((
+b_low
+ + 
+b_high
+).
+GëSec⁄ds
+() * 0.5);
+
+64 
+Time
+ 
+èf
+(
+MûliSec⁄ds
+(
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+));
+
+66 
+Time
+ 
+	gb_t
+ = 
+m_buf„rSèã
+.
+rbegö
+()->
+£c⁄d
+;
+
+69 
+uöt32_t
+ 
+	gøãInd
+ = 
+øãs_size
+;
+
+70 
+uöt32_t
+ 
+	gi
+ = 0; i < 
+	gøãs_size
+; i++)
+
+72 i‡(
+	gøãs
+[
+i
+] =
+cuºR©e
+)
+
+74 
+øãInd
+ = 
+i
+;
+
+78 i‡(
+	gøãInd
+ =
+øãs_size
+)
+
+80 
+NS_FATAL_ERROR
+("WrongÑate");
+
+83 
+	g√xtR©e
+ = 
+cuºR©e
+;
+
+84 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+86 
+uöt32_t
+ 
+	gr_up
+ = 
+øãs
+[
+øãInd
+];
+
+87 
+uöt32_t
+ 
+	gr_down
+ = 
+øãs
+[
+øãInd
+];
+
+88 i‡(
+	gøãInd
+ + 1 < 
+	gøãs_size
+)
+
+90 
+	gr_up
+ = 
+øãs
+[
+øãInd
+ + 1];
+
+92 i‡(
+	gøãInd
+ >= 1)
+
+94 
+r_down
+ = 
+øãs
+[
+øãInd
+ - 1];
+
+99 i‡(
+	gm_ru¬ög_Á°_°¨t
+ && (
+	gøãInd
+ !
+øãs_size
+ - 1Ë&& 
+Buf„rInc
+()
+
+100 && (
+cuºR©e
+ <
+a1
+ * 
+m_bôøãE°im©e
+))
+
+102 i‡(
+b_t
+ < 
+b_mö
+)
+
+104 i‡(
+r_up
+ <
+a2
+ * 
+m_bôøãE°im©e
+)
+
+106 
+√xtR©e
+ = 
+r_up
+;
+
+109 i‡(
+	gb_t
+ < 
+	gb_low
+)
+
+111 i‡(
+	gr_up
+ <
+a3
+ * 
+m_bôøãE°im©e
+)
+
+113 
+√xtR©e
+ = 
+r_up
+;
+
+118 i‡(
+	gr_up
+ <
+a4
+ * 
+m_bôøãE°im©e
+)
+
+120 
+√xtR©e
+ = 
+r_up
+;
+
+122 i‡(
+	gb_t
+ > 
+	gb_high
+)
+
+124 
+	gdñay
+ = 
+b_high
+ - 
+èf
+;
+
+130 
+	gm_ru¬ög_Á°_°¨t
+ = 
+Ál£
+;
+
+131 i‡(
+	gb_t
+ < 
+	gb_mö
+)
+
+133 
+	g√xtR©e
+ = 
+øãs
+[0];
+
+135 i‡(
+	gb_t
+ < 
+	gb_low
+)
+
+137 i‡(
+	gcuºR©e
+ !
+øãs
+[0] && 
+cuºR©e
+ >
+m_bôøãE°im©e
+)
+
+139 
+√xtR©e
+ = 
+r_down
+;
+
+142 i‡(
+	gb_t
+ < 
+	gb_high
+)
+
+144 i‡((
+	gcuºR©e
+ =
+øãs
+[
+øãs_size
+ - 1])
+
+145 || (
+r_up
+ >
+a5
+ * 
+m_bôøãE°im©e
+))
+
+147 
+dñay
+ = 
+°d
+::
+max
+(
+b_t
+ - 
+èf
+, 
+b_›t
+);
+
+152 i‡((
+	gcuºR©e
+ =
+øãs
+[
+øãs_size
+ - 1])
+
+153 || (
+r_up
+ >
+a5
+ * 
+m_bôøãE°im©e
+))
+
+155 
+dñay
+ = 
+°d
+::
+max
+(
+b_t
+ - 
+èf
+, 
+b_›t
+);
+
+159 
+	g√xtR©e
+ = 
+r_up
+;
+
+165 
+NS_LOG_INFO
+(
+
+166 "√xtR©e: " << 
+√xtR©e
+ << "\tb_dñay: " << 
+dñay
+.
+GëSec⁄ds
+(Ë<< "\tb_t: " << 
+b_t
+.GëSec⁄ds(Ë<< "\tb_›t: " << 
+b_›t
+.GetSeconds());
+
+169 
+boﬁ
+
+
+170 
+	gAØshClõ¡
+::
+Buf„rInc
+()
+
+172 
+Time
+ 
+œ°
+(
+Sec⁄ds
+(0));
+
+174 
+	g°d
+::
+m≠
+<
+Time
+, 
+	gTime
+>::
+ôî©‹
+ 
+ô
+ = 
+m_buf„rSèã
+.
+begö
+();
+
+175 
+	gô
+ !
+m_buf„rSèã
+.
+íd
+(); it++)
+
+180 i‡(
+	gô
+->
+	g£c⁄d
+ < 
+	gœ°
+)
+
+182  
+	gÁl£
+;
+
+184 
+	gœ°
+ = 
+ô
+->
+£c⁄d
+;
+
+186  
+	gåue
+;
+
+	@model/algorithms/aaash-client.h
+
+8 #i‚de‡
+AAASH_CLIENT_H_
+
+
+9 
+	#AAASH_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+12 
+«me•a˚
+ 
+	gns3
+
+
+15 ˛as†
+	cAØshClõ¡
+ : 
+public
+ 
+DashClõ¡
+
+
+17 
+public
+:
+
+18 
+Ty≥Id
+
+
+19 
+GëTy≥Id
+();
+
+21 
+AØshClõ¡
+();
+
+23 
+	gvútuÆ
+
+
+24 ~
+AØshClõ¡
+();
+
+26 
+vútuÆ
+ 
+
+27 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+29 
+	g¥iv©e
+:
+
+30 
+boﬁ
+
+
+31 
+Buf„rInc
+();
+
+33 
+boﬁ
+ 
+	gm_ru¬ög_Á°_°¨t
+;
+
+	@model/algorithms/fdash-client.cc
+
+8 
+	~"fdash-˛õ¡.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuœt‹.h
+>
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("FdashClient");
+
+15 
+«me•a˚
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+FdashClõ¡
+);
+
+19 
+Ty≥Id
+
+
+20 
+	gFdashClõ¡
+::
+GëTy≥Id
+()
+
+22 
+Ty≥Id
+ 
+tid
+ =
+
+23 
+Ty≥Id
+("ns3::FdashClõ¡").
+SëP¨ít
+<
+DashClõ¡
+>().
+AddC⁄°ru˘‹
+<
+
+24 
+FdashClõ¡
+>();
+
+25  
+	gtid
+;
+
+28 
+	gFdashClõ¡
+::
+FdashClõ¡
+()
+
+34 
+FdashClõ¡
+::~FdashClient()
+
+40 
+FdashClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+41 
+Time
+ & 
+dñay
+)
+
+43 
+	g¶ow
+ = 0, 
+	gok
+ = 0, 
+	gÁ°
+ = 0, 
+	gÁŒög
+ = 0, 
+	g°ódy
+ = 0, 
+	grisög
+ = 0, 
+	gr1
+ =
+
+44 0, 
+	gr2
+ = 0, 
+	gr3
+ = 0, 
+	gr4
+ = 0, 
+	gr5
+ = 0, 
+	gr6
+ = 0, 
+	gr7
+ = 0, 
+	gr8
+ = 0, 
+	gr9
+ = 0, 
+	gp2
+ =
+
+45 0, 
+	gp1
+ = 0, 
+	gz
+ = 0, 
+	gn1
+ = 0, 
+	gn2
+ = 0, 
+	gouçut
+ = 0;
+
+47 
+	gt
+ = 
+m_èrgë_dt
+.
+GëSec⁄ds
+();
+
+49 
+	gcuºDt
+ = 
+GëBuf„rE°im©e
+();
+
+50 
+	gdiff
+ = 
+GëBuf„rDif„ª¡ül
+();
+
+52 i‡(
+	gcuºDt
+ < 2 * 
+	gt
+ / 3)
+
+54 
+	g¶ow
+ = 1.0;
+
+56 i‡(
+	gcuºDt
+ < 
+	gt
+)
+
+58 
+	g¶ow
+ = 1 - 1 / (
+t
+ / 3Ë* (
+cuºDt
+ - 2 *Å / 3);
+
+59 
+	gok
+ = 1 / (
+t
+ / 3Ë* (
+cuºDt
+ - 2 *Å / 3);
+
+61 i‡(
+	gcuºDt
+ < 4 * 
+	gt
+)
+
+63 
+	gok
+ = 1 - 1 / (3 * 
+t
+Ë* (
+cuºDt
+ -Å);
+
+64 
+	gÁ°
+ = 1 / (3 * 
+t
+Ë* (
+cuºDt
+ -Å);
+
+68 
+	gÁ°
+ = 1;
+
+71 i‡(
+	gdiff
+ < -2 * 
+	gt
+ / 3)
+
+73 
+	gÁŒög
+ = 1;
+
+75 i‡(
+	gdiff
+ < 0)
+
+77 
+	gÁŒög
+ = 1 - 1 / (2 * 
+t
+ / 3Ë* (
+diff
+ + 2 *Å / 3);
+
+78 
+	g°ódy
+ = 1 / (2 * 
+t
+ / 3Ë* (
+diff
+ + 2 *Å / 3);
+
+80 i‡(
+	gdiff
+ < 4 * 
+	gt
+)
+
+82 
+	g°ódy
+ = 1 - 1 / (4 * 
+t
+Ë* 
+diff
+;
+
+83 
+	grisög
+ = 1 / (4 * 
+t
+Ë* 
+diff
+;
+
+87 
+	grisög
+ = 1;
+
+90 
+	gr1
+ = 
+°d
+::
+mö
+(
+¶ow
+, 
+ÁŒög
+);
+
+91 
+	gr2
+ = 
+°d
+::
+mö
+(
+ok
+, 
+ÁŒög
+);
+
+92 
+	gr3
+ = 
+°d
+::
+mö
+(
+Á°
+, 
+ÁŒög
+);
+
+93 
+	gr4
+ = 
+°d
+::
+mö
+(
+¶ow
+, 
+°ódy
+);
+
+94 
+	gr5
+ = 
+°d
+::
+mö
+(
+ok
+, 
+°ódy
+);
+
+95 
+	gr6
+ = 
+°d
+::
+mö
+(
+Á°
+, 
+°ódy
+);
+
+96 
+	gr7
+ = 
+°d
+::
+mö
+(
+¶ow
+, 
+risög
+);
+
+97 
+	gr8
+ = 
+°d
+::
+mö
+(
+ok
+, 
+risög
+);
+
+98 
+	gr9
+ = 
+°d
+::
+mö
+(
+Á°
+, 
+risög
+);
+
+100 
+	gp2
+ = 
+°d
+::
+sqπ
+(°d::
+pow
+(
+r9
+, 2));
+
+101 
+	gp1
+ = 
+°d
+::
+sqπ
+(°d::
+pow
+(
+r6
+, 2Ë+ std::pow(
+r8
+, 2));
+
+102 
+	gz
+ = 
+°d
+::
+sqπ
+(°d::
+pow
+(
+r3
+, 2Ë+ std::pow(
+r5
+, 2Ë+ std::pow(
+r7
+, 2));
+
+103 
+	gn1
+ = 
+°d
+::
+sqπ
+(°d::
+pow
+(
+r2
+, 2Ë+ std::pow(
+r4
+, 2));
+
+104 
+	gn2
+ = 
+°d
+::
+sqπ
+(°d::
+pow
+(
+r1
+, 2));
+
+107 
+	gouçut
+ = (
+n2
+ * 0.25 + 
+n1
+ * 0.5 + 
+z
+ * 1 + 
+p1
+ * 2 + 
+p2
+ * 4)
+
+108 / (
+n2
+ + 
+n1
+ + 
+z
+ + 
+p1
+ + 
+p2
+);
+
+110 
+NS_LOG_INFO
+(
+
+111 "cuºDt: " << 
+cuºDt
+ << " diff: " << 
+diff
+ << " slow: " << 
+¶ow
+ << " ok: " << 
+ok
+ << " fa°: " << 
+Á°
+ << " fÆlög: " << 
+ÁŒög
+ << " sãady: " << 
+°ódy
+ << "Ñisög: " << 
+risög
+ << "Ñ1: " << 
+r1
+ << "Ñ2: " << 
+r2
+ << "Ñ3: " << 
+r3
+ << "Ñ4: " << 
+r4
+ << "Ñ5: " << 
+r5
+ << "Ñ6: " << 
+r6
+ << "Ñ7: " << 
+r7
+ << "Ñ8: " << 
+r8
+ << "Ñ9: " << 
+r9
+ << "Ö2: " << 
+p2
+ << "Ö1: " << 
+p1
+ << " z: " << 
+z
+ << "Ç1: " << 
+n1
+ << "Ç2: " << 
+n2
+ << " ouçut: " << 
+ouçut
+);
+
+113 
+uöt32_t
+ 
+	gªsu…
+ = 0;
+
+115 
+	gªsu…
+ = 
+ouçut
+ * 
+m_bôøãE°im©e
+;
+
+117 
+uöt32_t
+ 
+	gøãs
+[] =
+
+124 
+uöt32_t
+ 
+	gøãs_size
+ = (
+øãs
+) / (rates[0]);
+
+126 
+uöt32_t
+ 
+	gi
+;
+
+128 
+	g√xtR©e
+ = 
+øãs
+[0];
+
+130 
+	gi
+ = 0; i < 
+	gøãs_size
+; i++)
+
+132 i‡(
+	gªsu…
+ > 
+	gøãs
+[
+i
+])
+
+134 
+	g√xtR©e
+ = 
+øãs
+[
+i
+];
+
+138 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+139 i‡(
+	g√xtR©e
+ > 
+	gcuºR©e
+)
+
+153 
+	gt_60
+ = 
+cuºDt
+ + (
+m_bôøãE°im©e
+ / 
+√xtR©e
+ - 1) * 60;
+
+155 i‡(
+	gt_60
+ < 
+	gt
+)
+
+157 
+	g√xtR©e
+ = 
+cuºR©e
+;
+
+158 
+	gt_60
+ = 
+cuºDt
+ + (
+m_bôøãE°im©e
+ / 
+√xtR©e
+ - 1) * 60;
+
+160 i‡(
+	gt_60
+ > 
+	gt
+)
+
+167 i‡(
+	g√xtR©e
+ < 
+	gcuºR©e
+)
+
+169 
+	gt_60
+ = 
+cuºDt
+ + (
+m_bôøãE°im©e
+ / 
+√xtR©e
+ - 1) * 60;
+
+171 i‡(
+	gt_60
+ > 
+	gt
+)
+
+173 
+	gt_60
+ = 
+cuºDt
+ + (
+m_bôøãE°im©e
+ / 
+cuºR©e
+ - 1) * 60;
+
+174 i‡(
+	gt_60
+ > 
+	gt
+)
+
+176 
+	g√xtR©e
+ = 
+cuºR©e
+;
+
+182 
+NS_LOG_INFO
+(
+cuºR©e
+ << " " << 
+ouçut
+ << " " << 
+ªsu…
+);
+
+	@model/algorithms/fdash-client.h
+
+8 #i‚de‡
+FDASH_CLIENT_H_
+
+
+9 
+	#FDASH_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+12 
+«me•a˚
+ 
+	gns3
+
+
+15 ˛as†
+	cFdashClõ¡
+ : 
+public
+ 
+DashClõ¡
+
+
+17 
+public
+:
+
+18 
+Ty≥Id
+
+
+19 
+GëTy≥Id
+();
+
+21 
+FdashClõ¡
+();
+
+23 
+	gvútuÆ
+
+
+24 ~
+FdashClõ¡
+();
+
+26 
+vútuÆ
+ 
+
+27 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+29 
+	g¥iv©e
+:
+
+30 
+boﬁ
+
+
+31 
+Buf„rInc
+();
+
+	@model/algorithms/osmp-client.cc
+
+8 
+	~"osmp-˛õ¡.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuœt‹.h
+>
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("OsmpClient");
+
+15 
+«me•a˚
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+OsmpClõ¡
+);
+
+19 
+Ty≥Id
+
+
+20 
+	gOsmpClõ¡
+::
+GëTy≥Id
+()
+
+22 
+Ty≥Id
+ 
+tid
+ =
+
+23 
+Ty≥Id
+("ns3::OsmpClõ¡").
+SëP¨ít
+<
+DashClõ¡
+>().
+AddC⁄°ru˘‹
+<
+
+24 
+OsmpClõ¡
+>();
+
+25  
+	gtid
+;
+
+28 
+	gOsmpClõ¡
+::
+OsmpClõ¡
+()
+
+34 
+OsmpClõ¡
+::~OsmpClient()
+
+40 
+OsmpClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+41 
+Time
+ & 
+dñay
+)
+
+43 
+uöt32_t
+ 
+	gøãs
+[] =
+
+48 
+uöt32_t
+ 
+	gøãs_size
+ = (
+øãs
+) / (rates[0]);
+
+50 
+	g°d
+::
+m≠
+<
+Time
+, 
+	gTime
+>::
+ôî©‹
+ 
+ô
+;
+
+51 
+	gô
+ = 
+m_buf„rSèã
+.
+íd
+();
+
+53 
+	gô
+--;
+
+54 
+Time
+ 
+	gnow
+ = 
+ô
+->
+fú°
+;
+
+56 i‡(
+	gô
+ !
+m_buf„rSèã
+.
+begö
+())
+
+58 
+ô
+--;
+
+62 
+Time
+ 
+	gt_œ°_‰ag
+ = 
+now
+ - 
+ô
+->
+fú°
+;
+
+65 
+	gl_cur
+ = 0;
+
+66 
+	gøãs
+[
+l_cur
+] !
+cuºR©e
+)
+
+68 
+l_cur
+++;
+
+71 
+	gl_nxt
+ = 0;
+
+72 
+	gl_mö
+ = 0;
+
+73 
+	gl_max
+ = 
+øãs_size
+ - 1;
+
+75 
+	gr_dow∆ﬂd
+ = 100;
+
+76 i‡(
+	gt_œ°_‰ag
+.
+GëMûliSec⁄ds
+() > 0)
+
+78 
+	gr_dow∆ﬂd
+ = (1.0 * 
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+)
+
+79 / 
+t_œ°_‰ag
+.
+GëMûliSec⁄ds
+();
+
+85 i‡(
+	gr_dow∆ﬂd
+ < 1)
+
+87 i‡(
+	gl_cur
+ > 
+	gl_mö
+)
+
+89 i‡(
+	gr_dow∆ﬂd
+ < ((1.0 * 
+	gøãs
+[
+l_cur
+ - 1]) /Ñates[l_cur]))
+
+91 
+	gl_nxt
+ = 
+l_mö
+;
+
+95 
+	gl_nxt
+ = 
+l_cur
+ - 1;
+
+101 i‡(
+	gl_cur
+ < 
+	gl_max
+)
+
+103 i‡(
+	gl_cur
+ == 0
+
+104 || 
+r_dow∆ﬂd
+ > ((1.0 * 
+øãs
+[
+l_cur
+ - 1]) /Ñates[l_cur]))
+
+108 
+l_nxt
+ =Ü_nxt + 1;
+
+110 !(
+	gl_nxt
+ =
+l_max
+
+
+111 || 
+r_dow∆ﬂd
+ < ((1.0 * 
+øãs
+[
+l_nxt
+ + 1]Ë/Ñ©es[
+l_cur
+])));
+
+117 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+118 
+	g√xtR©e
+ = 
+øãs
+[
+l_nxt
+];
+
+	@model/algorithms/osmp-client.h
+
+8 #i‚de‡
+OSMP_CLIENT_H_
+
+
+9 
+	#OSMP_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+12 
+«me•a˚
+ 
+	gns3
+
+
+15 ˛as†
+	cOsmpClõ¡
+ : 
+public
+ 
+DashClõ¡
+
+
+17 
+public
+:
+
+18 
+Ty≥Id
+
+
+19 
+GëTy≥Id
+();
+
+21 
+OsmpClõ¡
+();
+
+23 
+	gvútuÆ
+
+
+24 ~
+OsmpClõ¡
+();
+
+26 
+vútuÆ
+ 
+
+27 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+	@model/algorithms/raahs-client.cc
+
+8 
+	~"øahs-˛õ¡.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuœt‹.h
+>
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("RaahsClient");
+
+15 
+«me•a˚
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+RØhsClõ¡
+);
+
+19 
+Ty≥Id
+
+
+20 
+	gRØhsClõ¡
+::
+GëTy≥Id
+()
+
+22 
+Ty≥Id
+ 
+tid
+ =
+
+23 
+Ty≥Id
+("ns3::RØhsClõ¡").
+SëP¨ít
+<
+DashClõ¡
+>().
+AddC⁄°ru˘‹
+<
+
+24 
+RØhsClõ¡
+>();
+
+25  
+	gtid
+;
+
+28 
+	gRØhsClõ¡
+::
+RØhsClõ¡
+()
+
+34 
+RØhsClõ¡
+::~RaahsClient()
+
+40 
+RØhsClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+41 
+Time
+ & 
+dñay
+)
+
+43 
+uöt32_t
+ 
+	gøãs
+[] =
+
+50 
+uöt32_t
+ 
+	gøãs_size
+ = (
+øãs
+) / (rates[0]);
+
+53 
+	gmsd
+ = 
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+ / 1000.0;
+
+54 
+	gs·
+ = 
+GëSegmítFëchTime
+();
+
+56 
+	gmi
+ = 
+msd
+ / 
+s·
+;
+
+58 
+	gt_mö
+ = 9;
+
+60 
+	gïsû⁄
+ = 0.0;
+
+61 
+uöt32_t
+ 
+	gi
+;
+
+62 
+	gi
+ = 0; i < 
+	gøãs_size
+ - 1; i++)
+
+64 
+	gïsû⁄
+ = 
+°d
+::
+max
+(
+ïsû⁄
+, (1.0 * 
+øãs
+[
+i
+ + 1] -Ñates[i]) /Ñates[i]);
+
+67 
+	ggamma_d
+ = 0.67;
+
+69 
+	gøãInd
+ = 
+øãs_size
+;
+
+70 
+uöt32_t
+ 
+	gi
+ = 0; i < 
+	gøãs_size
+; i++)
+
+72 i‡(
+	gøãs
+[
+i
+] =
+cuºR©e
+)
+
+74 
+øãInd
+ = 
+i
+;
+
+78 i‡(
+	gøãInd
+ =
+øãs_size
+)
+
+80 
+NS_FATAL_ERROR
+("WrongÑate");
+
+83 i‡(
+	gmi
+ > 1 + 
+	gïsû⁄
+)
+
+85 i‡(
+	gøãInd
+ < 
+	gøãs_size
+ - 1)
+
+87 
+	g√xtR©e
+ = 
+øãs
+[()
+øãInd
+ + 1];
+
+90 i‡(
+	gmi
+ < 
+	ggamma_d
+)
+
+92 
+	gi
+ = 
+øãInd
+ - 1;
+
+93 
+	gi
+ = 0; i < 
+	gøãInd
+ - 1; i--)
+
+95 i‡(
+	gøãs
+[
+i
+] < 
+mi
+ * 
+	gcuºR©e
+)
+
+97 
+	g√xtR©e
+ = 
+øãs
+[
+i
+];
+
+107 
+	gts
+ = 
+GëBuf„rE°im©e
+(Ë- 
+t_mö
+ - 
+cuºR©e
+ * 
+msd
+ / 
+øãs
+[0];
+
+109 i‡(
+	gts
+ > 0)
+
+111 
+	gdñay
+ = 
+Sec⁄ds
+(
+ts
+);
+
+115 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+	@model/algorithms/raahs-client.h
+
+8 #i‚de‡
+RAAHS_CLIENT_H_
+
+
+9 
+	#RAAHS_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+12 
+«me•a˚
+ 
+	gns3
+
+
+15 ˛as†
+	cRØhsClõ¡
+ : 
+public
+ 
+DashClõ¡
+
+
+17 
+public
+:
+
+18 
+Ty≥Id
+
+
+19 
+GëTy≥Id
+();
+
+21 
+RØhsClõ¡
+();
+
+23 
+	gvútuÆ
+
+
+24 ~
+RØhsClõ¡
+();
+
+26 
+vútuÆ
+ 
+
+27 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+29 
+	g¥iv©e
+:
+
+	@model/algorithms/sftm-client.cc
+
+8 
+	~"s·m-˛õ¡.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuœt‹.h
+>
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("SftmClient");
+
+15 
+«me•a˚
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+S·mClõ¡
+);
+
+19 
+Ty≥Id
+
+
+20 
+	gS·mClõ¡
+::
+GëTy≥Id
+()
+
+22 
+Ty≥Id
+ 
+tid
+ =
+
+23 
+Ty≥Id
+("ns3::S·mClõ¡").
+SëP¨ít
+<
+DashClõ¡
+>().
+AddC⁄°ru˘‹
+<
+
+24 
+S·mClõ¡
+>();
+
+25  
+	gtid
+;
+
+28 
+	gS·mClõ¡
+::
+S·mClõ¡
+() :
+
+29 
+m_rs·_ex˚eded
+(
+Ál£
+)
+
+35 
+S·mClõ¡
+::~SftmClient()
+
+41 
+S·mClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+42 
+Time
+ & 
+dñay
+)
+
+44 
+uöt32_t
+ 
+	gøãs
+[] =
+
+51 
+uöt32_t
+ 
+	gøãs_size
+ = (
+øãs
+) / (rates[0]);
+
+54 
+	gmsd
+ = 
+MPEG_FRAMES_PER_SEGMENT
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+ / 1000.0;
+
+55 
+	gs·
+ = 
+GëSegmítFëchTime
+();
+
+56 
+	gtbmt
+ = 
+m_èrgë_dt
+.
+GëSec⁄ds
+();
+
+57 
+	gts_ns
+ = 
+m_£gmítId
+ * 
+msd
+;
+
+58 
+	gts_o
+ = 
+GëPœyî
+().
+m_‰amesPœyed
+ * 
+MPEG_TIME_BETWEEN_FRAMES
+
+
+60 
+	grs·
+ = 
+ts_ns
+ - 
+ts_o
+ - 
+tbmt
+;
+
+61 
+	grho
+ = 0.75;
+
+63 
+	grs·_s
+ = 
+rho
+ * 
+msd
+;
+
+64 i‡(
+	grs·
+ < 
+	grs·_s
+ && !
+	gm_rs·_ex˚eded
+)
+
+66 
+	grs·
+ = 
+rs·_s
+;
+
+70 
+	gm_rs·_ex˚eded
+ = 
+åue
+;
+
+73 
+	gs·m
+ = 
+°d
+::
+mö
+(
+msd
+, 
+rs·
+Ë/ 
+	gs·
+;
+
+75 
+uöt32_t
+ 
+	gøãInd
+ = 
+øãs_size
+;
+
+76 
+uöt32_t
+ 
+	gi
+ = 0; i < 
+	gøãs_size
+; i++)
+
+78 i‡(
+	gøãs
+[
+i
+] =
+cuºR©e
+)
+
+80 
+øãInd
+ = 
+i
+;
+
+84 i‡(
+	gøãInd
+ =
+øãs_size
+)
+
+86 
+NS_FATAL_ERROR
+("WrongÑate");
+
+89 
+	gec_u
+ =
+
+90 
+øãInd
+ < 
+øãs_size
+ - 1 ?
+
+91 (1.0 * 
+øãs
+[
+øãInd
+ + 1] -Ñates[rateInd]) /Ñates[rateInd] :
+
+92 
+°d
+::
+numîic_limôs
+<>::
+max
+();
+
+94 
+	gemax_u
+ = 0;
+
+95 
+uöt32_t
+ 
+	gi
+ = 0; i < 
+	gøãs_size
+ - 1; i++)
+
+97 
+	ge
+ = (1.0 * 
+øãs
+[
+i
+ + 1] -Ñates[i]) /Ñates[i];
+
+98 
+	gemax_u
+ = 
+°d
+::
+max
+(
+emax_u
+, 
+e
+);
+
+101 
+	ge_u
+ = 
+°d
+::
+mö
+(
+emax_u
+, 2 * 
+ec_u
+);
+
+103 
+	gec_d
+ =
+
+104 
+øãInd
+ > 0 ?
+
+105 (1.0 * 
+øãs
+[
+øãInd
+] -Ñates[rateInd - 1]) /Ñates[rateInd] : 1.0;
+
+107 
+	gemö_d
+ = 
+°d
+::
+numîic_limôs
+<>::
+max
+();
+
+108 
+uöt32_t
+ 
+	gi
+ = 1; i < 
+	gøãs_size
+; i++)
+
+110 
+	ge
+ = (1.0 * 
+øãs
+[
+i
+] -Ñates[i - 1]) /Ñates[i];
+
+111 
+	gemö_d
+ = 
+°d
+::
+mö
+(
+emö_d
+, 
+e
+);
+
+114 
+	ge_d
+ = 
+°d
+::
+max
+(2 * 
+emö_d
+, 
+ec_d
+);
+
+116 i‡(
+	gs·m
+ > 1 + 
+	ge_u
+ && 
+	gøãInd
+ < 
+	gøãs_size
+ - 1)
+
+118 
+	g√xtR©e
+ = 
+øãs
+[
+øãInd
+ + 1];
+
+120 i‡(
+	gs·m
+ < 1 - 
+	ge_d
+ && 
+	gøãInd
+ != 0)
+
+122 
+uöt32_t
+ 
+i
+ = 0; 
+	gi
+ < 
+	gøãInd
+; i++)
+
+124 i‡(
+	gøãs
+[
+i
+] >
+s·m
+ * 
+øãs
+[
+øãInd
+])
+
+128 
+	g√xtR©e
+ = 
+øãs
+[
+i
+];
+
+132 
+	gbmt_mö
+ = 0;
+
+133 
+	gbmt_c
+ = 
+GëBuf„rE°im©e
+();
+
+134 
+	gb_max
+ = 
+øãs
+[
+øãs_size
+ - 1];
+
+135 
+	gb_mö
+ = 
+øãs
+[0];
+
+136 
+	gt_id
+ = 
+bmt_c
+ - 
+bmt_mö
+ - 
+msd
+ * 
+b_max
+ / 
+b_mö
+;
+
+138 i‡(
+	gt_id
+ > 0)
+
+140 
+	gdñay
+ = 
+Sec⁄ds
+(
+t_id
+);
+
+144 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+	@model/algorithms/sftm-client.h
+
+8 #i‚de‡
+SFTM_CLIENT_H_
+
+
+9 
+	#SFTM_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+12 
+«me•a˚
+ 
+	gns3
+
+
+15 ˛as†
+	cS·mClõ¡
+ : 
+public
+ 
+DashClõ¡
+
+
+17 
+public
+:
+
+18 
+Ty≥Id
+
+
+19 
+GëTy≥Id
+();
+
+21 
+S·mClõ¡
+();
+
+23 
+	gvútuÆ
+
+
+24 ~
+S·mClõ¡
+();
+
+26 
+vútuÆ
+ 
+
+27 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+29 
+	g¥iv©e
+:
+
+30 
+boﬁ
+ 
+m_rs·_ex˚eded
+;
+
+	@model/algorithms/svaa-client.cc
+
+8 
+	~"svØ-˛õ¡.h
+"
+
+9 
+	~<ns3/log.h
+>
+
+10 
+	~<ns3/simuœt‹.h
+>
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+13 
+NS_LOG_COMPONENT_DEFINE
+("SvaaClient");
+
+15 
+«me•a˚
+ 
+	gns3
+
+
+17 
+NS_OBJECT_ENSURE_REGISTERED
+(
+SvØClõ¡
+);
+
+19 
+Ty≥Id
+
+
+20 
+	gSvØClõ¡
+::
+GëTy≥Id
+()
+
+22 
+Ty≥Id
+ 
+tid
+ =
+
+23 
+Ty≥Id
+("ns3::SvØClõ¡").
+SëP¨ít
+<
+DashClõ¡
+>().
+AddC⁄°ru˘‹
+<
+
+24 
+SvØClõ¡
+>();
+
+25  
+	gtid
+;
+
+28 
+	gSvØClõ¡
+::
+SvØClõ¡
+() :
+
+29 
+m_m_k_1
+(0), 
+m_m_k_2
+(0), 
+m_cou¡î
+(0)
+
+35 
+	gSvØClõ¡
+::~
+SvØClõ¡
+()
+
+41 
+SvØClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+42 
+Time
+ & 
+dñay
+)
+
+44 
+uöt32_t
+ 
+	gøãs
+[] =
+
+49 
+uöt32_t
+ 
+	gøãs_size
+ = (
+øãs
+) / (rates[0]);
+
+50 
+	gdiff
+ = 
+GëBuf„rDif„ª¡ül
+();
+
+52 
+	gq_tk
+ = 
+GëBuf„rE°im©e
+();
+
+53 
+	gq_ªf
+ = 
+m_èrgë_dt
+.
+GëSec⁄ds
+();
+
+54 
+	gp
+ = 1.0;
+
+55 
+	gf_q
+ = 2 * 
+°d
+::
+exp
+(
+p
+ * (
+q_tk
+ - 
+q_ªf
+))
+
+56 / (1 + 
+°d
+::
+exp
+(
+p
+ * (
+q_tk
+ - 
+q_ªf
+)));
+
+57 
+	gdñè
+ = 
+MPEG_TIME_BETWEEN_FRAMES
+ * 
+MPEG_FRAMES_PER_SEGMENT
+ / 1000.0;
+
+58 
+	gf_t
+ = 
+dñè
+ / (dñè - 
+diff
+);
+
+59 
+	gf_u
+ = 1;
+
+61 
+	gf
+ = 
+f_q
+ * 
+f_t
+ * 
+f_u
+;
+
+63 
+	gt_k
+ = 
+m_bôøãE°im©e
+;
+
+65 
+	gu_k
+ = 
+f
+ * 
+t_k
+;
+
+67 
+	gm_k
+ = 0;
+
+68 i‡(
+	gdiff
+ >0.4 * 
+dñè
+)
+
+70 
+m_k
+ = 1;
+
+72 i‡(
+	gdiff
+ >0.2 * 
+dñè
+)
+
+74 
+m_k
+ = 5;
+
+76 i‡(
+	gdiff
+ >= 0)
+
+78 
+m_k
+ = 15;
+
+82 
+	gm_k
+ = 20;
+
+85 
+	gm
+ = (
+m_k
+ + 
+m_m_k_1
+ + 
+m_m_k_2
+) / 3;
+
+86 
+	gm_m_k_2
+ = 
+m_m_k_1
+;
+
+87 
+	gm_m_k_1
+ = 
+m_k
+;
+
+89 i‡(
+	gq_tk
+ < 
+	gq_ªf
+ / 2)
+
+91 
+	gi
+ = 
+øãs_size
+ - 1;
+
+92 
+	gøãs
+[
+i
+] > 
+	gt_k
+ && 
+	gi
+ > 0)
+
+94 
+	gi
+--;
+
+96 
+	g√xtR©e
+ = 
+øãs
+[
+i
+];
+
+97 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+100 i‡(
+	gu_k
+ > 
+	gcuºR©e
+)
+
+102 
+	gm_cou¡î
+++;
+
+103 i‡(
+	gm_cou¡î
+ > 
+	gm
+)
+
+105 
+	gi
+ = 
+øãs_size
+ - 1;
+
+106 
+	gøãs
+[
+i
+] > 
+	gt_k
+ && 
+	gi
+ > 0)
+
+108 
+	gi
+--;
+
+110 
+	g√xtR©e
+ = 
+øãs
+[
+i
+];
+
+111 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+112 
+	gm_cou¡î
+ = 0;
+
+116 i‡(
+	gu_k
+ < 
+	gcuºR©e
+)
+
+118 
+	gm_cou¡î
+ = 0;
+
+120 
+	g√xtR©e
+ = 
+cuºR©e
+;
+
+121 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+	@model/algorithms/svaa-client.h
+
+8 #i‚de‡
+SVAA_CLIENT_H_
+
+
+9 
+	#SVAA_CLIENT_H_
+
+
+	)
+
+11 
+	~<ns3/dash-˛õ¡.h
+>
+
+12 
+«me•a˚
+ 
+	gns3
+
+
+15 ˛as†
+	cSvØClõ¡
+ : 
+public
+ 
+DashClõ¡
+
+
+17 
+public
+:
+
+18 
+Ty≥Id
+
+
+19 
+GëTy≥Id
+();
+
+21 
+SvØClõ¡
+();
+
+23 
+	gvútuÆ
+
+
+24 ~
+SvØClõ¡
+();
+
+26 
+vútuÆ
+ 
+
+27 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+29 
+	g¥iv©e
+:
+
+30 
+m_m_k_1
+;
+
+31 
+	gm_m_k_2
+;
+
+32 
+	gm_cou¡î
+;
+
+	@model/dash-client.cc
+
+21 
+	~<ns3/log.h
+>
+
+22 
+	~<ns3/uöãgî.h
+>
+
+23 
+	~<ns3/t˝-sockë-Á˘‹y.h
+>
+
+24 
+	~<ns3/simuœt‹.h
+>
+
+25 
+	~<ns3/öë-sockë-addªss.h
+>
+
+26 
+	~<ns3/öë6-sockë-addªss.h
+>
+
+27 
+	~"hâp-hódî.h
+"
+
+28 
+	~"dash-˛õ¡.h
+"
+
+29 
+	~"∑ø.h
+"
+
+31 
+NS_LOG_COMPONENT_DEFINE
+("DashClient");
+
+32 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+34 
+	gve˘‹
+ <> 
+	gvideo_num
+;
+
+35 
+	göô_buf„r
+;
+
+36 
+	g£g_Àngth
+;
+
+38 
+«me•a˚
+ 
+	gns3
+
+
+41 
+NS_OBJECT_ENSURE_REGISTERED
+(
+DashClõ¡
+);
+
+43 
+	gDashClõ¡
+::
+m_cou¡Objs
+ = 0;
+
+45 
+Ty≥Id
+
+
+46 
+	gDashClõ¡
+::
+GëTy≥Id
+()
+
+48 
+Ty≥Id
+ 
+tid
+ =
+
+49 
+Ty≥Id
+("ns3::DashClõ¡").
+SëP¨ít
+<
+Aµliˇti⁄
+>().
+AddC⁄°ru˘‹
+<
+
+50 
+DashClõ¡
+>().
+AddAâribuã
+("VideoId",
+
+51 "ThêId o‡thêvideÿth© i†∂ayed.", 
+UöãgîVÆue
+(0),
+
+52 
+MakeUöãgîAc˚ss‹
+(&
+DashClõ¡
+::
+m_videoId
+),
+
+53 
+MakeUöãgîCheckî
+<
+uöt32_t
+>(1)).
+AddAâribuã
+("Remote",
+
+54 "Thêaddªs†o‡thêde°ö©i⁄", 
+AddªssVÆue
+(),
+
+55 
+MakeAddªssAc˚ss‹
+(&
+DashClõ¡
+::
+m_≥î
+), 
+MakeAddªssCheckî
+()).
+AddAâribuã
+(
+
+57 
+Ty≥IdVÆue
+(
+T˝SockëFa˘‹y
+::
+GëTy≥Id
+()),
+
+58 
+MakeTy≥IdAc˚ss‹
+(&
+DashClõ¡
+::
+m_tid
+), 
+MakeTy≥IdCheckî
+()).
+AddAâribuã
+(
+
+59 "T¨gëDt", "Thêèrgë buf„rögÅime", 
+TimeVÆue
+(
+Time
+("35s")),
+
+60 
+MakeTimeAc˚ss‹
+(&
+DashClõ¡
+::
+m_èrgë_dt
+), 
+MakeTimeCheckî
+()).
+AddAâribuã
+(
+
+62 
+TimeVÆue
+(
+Time
+("10s")), 
+MakeTimeAc˚ss‹
+(&
+DashClõ¡
+::
+m_wödow
+),
+
+63 
+MakeTimeCheckî
+()
+
+65 ).
+AddTø˚Sour˚
+("Tx", "AÇewÖacket is createdánd is sent",
+
+66 
+MakeTø˚Sour˚Ac˚ss‹
+(&
+DashClõ¡
+::
+m_txTø˚
+));
+
+67  
+	gtid
+;
+
+70 
+	gDashClõ¡
+::
+DashClõ¡
+() :
+
+71 
+m_øãCh™ges
+(0), 
+m_èrgë_dt
+("35s"), 
+m_bôøãE°im©e
+(0.0), 
+m_£gmítId
+(
+
+72 0), 
+m_sockë
+(0), 
+m_c⁄√˘ed
+(
+Ál£
+), 
+m_tŸByãs
+(0), 
+m_°¨ãdRe˚ivög
+(
+
+73 
+Sec⁄ds
+(0)), 
+m_sumDt
+(Sec⁄ds(0)), 
+m_œ°Dt
+(Sec⁄ds(-1)), 
+m_id
+(
+
+74 
+m_cou¡Objs
+++), 
+m_ªque°Time
+("0s"), 
+m_£gmít_byãs
+(0), 
+m_bôR©e
+(
+
+75 50000), 
+m_wödow
+(
+Sec⁄ds
+(10)), 
+m_£gmítFëchTime
+(Seconds(0))
+
+77 
+NS_LOG_FUNCTION
+(
+this
+);
+
+78 
+	gm_∑r£r
+.
+SëAµ
+(
+this
+);
+
+81 
+	gDashClõ¡
+::~
+DashClõ¡
+()
+
+83 
+NS_LOG_FUNCTION
+(
+this
+);
+
+86 
+	gPå
+<
+	gSockë
+>
+
+87 
+	gDashClõ¡
+::
+GëSockë
+() const
+
+89 
+NS_LOG_FUNCTION
+(
+this
+);
+
+90  
+	gm_sockë
+;
+
+94 
+	gDashClõ¡
+::
+DoDi•o£
+()
+
+96 
+NS_LOG_FUNCTION
+(
+this
+);
+
+98 
+	gm_sockë
+ = 0;
+
+100 
+	gAµliˇti⁄
+::
+DoDi•o£
+();
+
+105 
+	gDashClõ¡
+::
+SèπAµliˇti⁄
+()
+
+107 
+NS_LOG_FUNCTION
+(
+this
+);
+
+111 i‡(!
+	gm_sockë
+)
+
+113 
+	gm_sockë
+ = 
+Sockë
+::
+Cª©eSockë
+(
+GëNode
+(), 
+m_tid
+);
+
+116 i‡(
+	gm_sockë
+->
+GëSockëTy≥
+(Ë!
+Sockë
+::
+NS3_SOCK_STREAM
+
+
+117 && 
+m_sockë
+->
+GëSockëTy≥
+(Ë!
+Sockë
+::
+NS3_SOCK_SEQPACKET
+)
+
+119 
+NS_FATAL_ERROR
+("Using HTTP withán incompatible socketÅype. "
+
+124 i‡(
+	gI√t6SockëAddªss
+::
+IsM©chögTy≥
+(
+m_≥î
+))
+
+126 
+m_sockë
+->
+Böd6
+();
+
+128 i‡(
+	gI√tSockëAddªss
+::
+IsM©chögTy≥
+(
+m_≥î
+))
+
+130 
+m_sockë
+->
+Böd
+();
+
+133 
+	gm_sockë
+->
+C⁄√˘
+(
+m_≥î
+);
+
+134 
+	gm_sockë
+->
+SëRecvCÆlback
+(
+MakeCÆlback
+(&
+DashClõ¡
+::
+H™dÀRód
+, 
+this
+));
+
+135 
+	gm_sockë
+->
+SëC⁄√˘CÆlback
+(
+
+136 
+MakeCÆlback
+(&
+DashClõ¡
+::
+C⁄√˘i⁄Suc˚eded
+, 
+this
+),
+
+137 
+MakeCÆlback
+(&
+DashClõ¡
+::
+C⁄√˘i⁄Faûed
+, 
+this
+));
+
+138 
+	gm_sockë
+->
+SëSídCÆlback
+(
+MakeCÆlback
+(&
+DashClõ¡
+::
+D©aSíd
+, 
+this
+));
+
+143 
+	gDashClõ¡
+::
+St›Aµliˇti⁄
+()
+
+145 
+NS_LOG_FUNCTION
+(
+this
+);
+
+147 i‡(
+	gm_sockë
+ != 0)
+
+149 
+m_sockë
+->
+Clo£
+();
+
+150 
+	gm_c⁄√˘ed
+ = 
+Ál£
+;
+
+151 
+	gm_∂ayî
+.
+	gm_°©e
+ = 
+MPEG_PLAYER_DONE
+;
+
+155 
+NS_LOG_WARN
+("DashClient foundÇull socketÅo close in StopApplication");
+
+161 
+	gDashClõ¡
+::
+Reque°Segmít
+()
+
+163 
+NS_LOG_FUNCTION
+(
+this
+);
+
+165 i‡(
+	gm_c⁄√˘ed
+ =
+Ál£
+)
+
+170 
+	gPå
+<
+	gPackë
+> 
+	g∑ckë
+ = 
+Cª©e
+<
+Packë
+>(100);
+
+172 
+HTTPHódî
+ 
+	ghâpHódî
+;
+
+173 
+	ghâpHódî
+.
+SëSeq
+(1);
+
+174 
+	ghâpHódî
+.
+SëMesßgeTy≥
+(
+HTTP_REQUEST
+);
+
+175 
+	ghâpHódî
+.
+SëVideoId
+(
+m_videoId
+);
+
+176 
+	ghâpHódî
+.
+SëResﬁuti⁄
+(
+m_bôR©e
+);
+
+177 
+	ghâpHódî
+.
+SëSegmítId
+(
+m_£gmítId
+++);
+
+178 
+	g∑ckë
+->
+AddHódî
+(
+hâpHódî
+);
+
+181 
+	gªs
+ = 0;
+
+182 i‡(((Ë(
+	gªs
+ = 
+m_sockë
+->
+Síd
+(
+∑ckë
+))Ë!∑ckë->
+GëSize
+())
+
+184 
+NS_FATAL_ERROR
+(
+
+185 "Oh oh. Couldn'à£ndÖackë!Ñes=" << 
+ªs
+ << " size=" << 
+∑ckë
+->
+GëSize
+());
+
+188 
+	gm_ªque°Time
+ = 
+Simuœt‹
+::
+Now
+();
+
+189 
+	gm_£gmít_byãs
+ = 0;
+
+194 
+	gDashClõ¡
+::
+H™dÀRód
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+196 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+
+198 
+	gm_∑r£r
+.
+RódSockë
+(
+sockë
+);
+
+203 
+	gDashClõ¡
+::
+C⁄√˘i⁄Suc˚eded
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+205 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+
+206 
+NS_LOG_LOGIC
+("DashClient Connection succeeded");
+
+207 
+	gm_c⁄√˘ed
+ = 
+åue
+;
+
+208 
+Reque°Segmít
+();
+
+212 
+	gDashClõ¡
+::
+C⁄√˘i⁄Faûed
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+214 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+NS_LOG_LOGIC
+(
+
+219 
+	gDashClõ¡
+::
+D©aSíd
+(
+På
+<
+Sockë
+>, 
+uöt32_t
+)
+
+221 
+NS_LOG_FUNCTION
+(
+this
+);
+
+223 i‡(
+	gm_c⁄√˘ed
+)
+
+226 
+NS_LOG_INFO
+("Something was sent");
+
+231 
+NS_LOG_INFO
+("NOT CONNECTED!!!!");
+
+236 
+	gDashClõ¡
+::
+MesßgeRe˚ived
+(
+Packë
+ 
+mesßge
+)
+
+241 
+MPEGHódî
+ 
+m≥gHódî
+;
+
+242 
+HTTPHódî
+ 
+	ghâpHódî
+;
+
+243 
+	g‰ame_num
+++;
+
+245 
+	gm_∂ayî
+.
+Re˚iveFøme
+(&
+mesßge
+);
+
+246 
+	gm_∂ayî
+.
+GëID
+(
+m_id
+);
+
+247 
+	gm_£gmít_byãs
+ +
+mesßge
+.
+GëSize
+();
+
+248 
+	gm_tŸByãs
+ +
+mesßge
+.
+GëSize
+();
+
+249 
+	g°d
+::
+cout
+<<"2,"<<
+m_id
+<<","<<
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+()<<
+°d
+::
+ídl
+;
+
+251 if(
+	g‰ame_num
+==
+video_num
+[
+v_num
+]){
+
+254 
+v_num
+++;
+
+255 if(
+	gv_num
+!=()
+video_num
+.
+size
+())
+
+256 
+tmp_num
+=
+‰ame_num
+;
+
+257 
+	g‰ame_num
+=0;
+
+258 
+	g£g_num
+++;
+
+260 i‡(
+	g£g_num
+==(60/
+£g_Àngth
+)Ë
+DashClõ¡
+::
+St›Aµliˇti⁄
+();
+
+262 
+	gmesßge
+.
+RemoveHódî
+(
+m≥gHódî
+);
+
+263 
+	gmesßge
+.
+RemoveHódî
+(
+hâpHódî
+);
+
+267 
+	gm_∂ayî
+.
+	gm_°©e
+)
+
+269 
+	gMPEG_PLAYER_PLAYING
+:
+
+270 
+m_sumDt
+ +
+m_∂ayî
+.
+GëRólPœyTime
+(
+m≥gHódî
+.
+GëPœybackTime
+());
+
+272 
+	gMPEG_PLAYER_PAUSED
+:
+
+274 
+	gMPEG_PLAYER_DONE
+:
+
+276 
+	gMPEG_PLAYER_NOT_STARTED
+:
+
+279 
+NS_FATAL_ERROR
+("WRONG STATE");
+
+284 if(
+	gv_num
+>0 && (
+	gtmp_num
+ =
+video_num
+[
+v_num
+-1]))
+
+286 
+tmp_num
+=0;
+
+291 
+	gm_£gmítFëchTime
+ = 
+Simuœt‹
+::
+Now
+(Ë- 
+m_ªque°Time
+;
+
+292 
+NS_LOG_INFO
+(
+
+293 
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+(Ë<< " byãs: " << 
+m_£gmít_byãs
+ << " segmítTime: " << 
+m_£gmítFëchTime
+.GetSeconds() << " segmentRate: " << 8 * m_segment_bytes / m_segmentFetchTime.GetSeconds());
+
+295 
+AddBôR©e
+(
+Simuœt‹
+::
+Now
+(),
+
+296 8 * 
+m_£gmít_byãs
+ / 
+m_£gmítFëchTime
+.
+GëSec⁄ds
+());
+
+298 
+Time
+ 
+	gcuºDt
+ = 
+m_∂ayî
+.
+GëRólPœyTime
+(
+m≥gHódî
+.
+GëPœybackTime
+());
+
+300 
+LogBuf„rLevñ
+(
+cuºDt
+);
+
+302 
+uöt32_t
+ 
+	gﬁd
+ = 
+m_bôR©e
+;
+
+305 
+Time
+ 
+	gbuf„rDñay
+;
+
+310 
+uöt32_t
+ 
+	g¥evBôøã
+ = 
+m_bôR©e
+;
+
+319 
+	gDashClõ¡
+::
+CÆcNextSegmít
+(
+¥evBôøã
+, 
+m_bôR©e
+, 
+buf„rDñay
+);
+
+321 i‡(
+	g¥evBôøã
+ !
+m_bôR©e
+)
+
+323 
+m_øãCh™ges
+++;
+
+326 i‡(
+	gbuf„rDñay
+ =
+Sec⁄ds
+(0))
+
+328 
+Reque°Segmít
+();
+
+332 
+	gm_∂ayî
+.
+SchduÀBuf„rWakeup
+(
+buf„rDñay
+, 
+this
+);
+
+355 
+NS_LOG_INFO
+(
+
+356 "===La° fømêª˚ived. Reque°ög segmíà" << 
+m_£gmítId
+);
+
+359 
+NS_LOG_INFO
+(
+
+360 "!@#$#@!$@#\t" << 
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+(Ë<< " old: " << 
+ﬁd
+ << "Çew: " << 
+m_bôR©e
+ << "Å: " << 
+cuºDt
+.GëSec⁄ds(Ë<< " dt: " << (cuºDà- 
+m_œ°Dt
+).GetSeconds());
+
+362 
+	gm_œ°Dt
+ = 
+cuºDt
+;
+
+369 
+	gDashClõ¡
+::
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+,
+
+370 
+Time
+ & 
+dñay
+)
+
+378 
+	g√xtR©e
+ = 
+cuºR©e
+;
+
+379 
+	gdñay
+ = 
+Sec⁄ds
+(0);
+
+383 
+	gDashClõ¡
+::
+GëSèts
+()
+
+385 
+°d
+::
+cout
+ << " InterruptionTime: "
+
+386 << 
+m_∂ayî
+.
+m_öãºu±i⁄_time
+.
+GëSec⁄ds
+() << " interruptions: "
+
+387 << 
+m_∂ayî
+.
+m_öãºru±i⁄s
+ << "ávgRate: "
+
+388 << (1.0 * 
+m_∂ayî
+.
+m_tŸÆR©e
+Ë/ m_∂ayî.
+m_‰amesPœyed
+
+
+389 << " möR©e: " << 
+m_∂ayî
+.
+m_möR©e
+ << " AvgDt: "
+
+390 << 
+m_sumDt
+.
+GëSec⁄ds
+(Ë/ 
+m_∂ayî
+.
+m_‰amesPœyed
+ << " changes: "
+
+391 << 
+m_øãCh™ges
+ << 
+°d
+::
+ídl
+;
+
+396 
+	gDashClõ¡
+::
+LogBuf„rLevñ
+(
+Time
+ 
+t
+)
+
+398 
+m_buf„rSèã
+[
+Simuœt‹
+::
+Now
+()] = 
+t
+;
+
+399 
+	g°d
+::
+m≠
+<
+Time
+, 
+	gTime
+>::
+ôî©‹
+ 
+ô
+ = 
+m_buf„rSèã
+.
+begö
+();
+
+400 
+	gô
+ !
+m_buf„rSèã
+.
+íd
+(); ++it)
+
+402 i‡(
+	gô
+->
+	gfú°
+ < (
+	gSimuœt‹
+::
+Now
+(Ë- 
+m_wödow
+))
+
+404 
+m_buf„rSèã
+.
+îa£
+(
+ô
+->
+fú°
+);
+
+410 
+	gDashClõ¡
+::
+GëBuf„rE°im©e
+()
+
+412 
+sum
+ = 0;
+
+413 
+	gcou¡
+ = 0;
+
+414 
+	g°d
+::
+m≠
+<
+Time
+, 
+	gTime
+>::
+ôî©‹
+ 
+ô
+ = 
+m_buf„rSèã
+.
+begö
+();
+
+415 
+	gô
+ !
+m_buf„rSèã
+.
+íd
+(); ++it)
+
+417 
+	gsum
+ +
+ô
+->
+£c⁄d
+.
+GëSec⁄ds
+();
+
+418 
+	gcou¡
+++;
+
+420  
+	gsum
+ / 
+	gcou¡
+;
+
+424 
+	gDashClõ¡
+::
+GëBuf„rDif„ª¡ül
+()
+
+426 
+°d
+::
+m≠
+<
+Time
+, 
+	gTime
+>::
+ôî©‹
+ 
+ô
+ = 
+m_buf„rSèã
+.
+íd
+();
+
+428 i‡(
+	gô
+ =
+m_buf„rSèã
+.
+begö
+())
+
+433 
+	gô
+--;
+
+434 
+Time
+ 
+	gœ°
+ = 
+ô
+->
+£c⁄d
+;
+
+436 i‡(
+	gô
+ =
+m_buf„rSèã
+.
+begö
+())
+
+441 
+	gô
+--;
+
+442 
+Time
+ 
+	g¥ev
+ = 
+ô
+->
+£c⁄d
+;
+
+443  (
+	gœ°
+ - 
+	g¥ev
+).
+GëSec⁄ds
+();
+
+447 
+	gDashClõ¡
+::
+GëSegmítFëchTime
+()
+
+449  
+m_£gmítFëchTime
+.
+GëSec⁄ds
+();
+
+453 
+	gDashClõ¡
+::
+AddBôR©e
+(
+Time
+ 
+time
+, 
+bôøã
+)
+
+455 
+	gm_bôøãs
+[
+time
+] = 
+bôøã
+;
+
+456 
+	gsum
+ = 0;
+
+457 
+	gcou¡
+ = 0;
+
+458 
+	g°d
+::
+m≠
+<
+Time
+, >::
+ôî©‹
+ 
+ô
+ = 
+m_bôøãs
+.
+begö
+();
+
+459 
+	gô
+ !
+m_bôøãs
+.
+íd
+(); ++it)
+
+461 i‡(
+	gô
+->
+	gfú°
+ < (
+	gSimuœt‹
+::
+Now
+(Ë- 
+m_wödow
+))
+
+463 
+m_bôøãs
+.
+îa£
+(
+ô
+->
+fú°
+);
+
+467 
+	gsum
+ +
+ô
+->
+£c⁄d
+;
+
+468 
+	gcou¡
+++;
+
+471 
+	gm_bôøãE°im©e
+ = 
+sum
+ / 
+cou¡
+;
+
+	@model/dash-client.h
+
+21 #i‚de‡
+DASH_CLIENT_H
+
+
+22 
+	#DASH_CLIENT_H
+
+
+	)
+
+24 
+	~"ns3/≠∂iˇti⁄.h
+"
+
+25 
+	~"ns3/±r.h
+"
+
+26 
+	~"ns3/sockë.h
+"
+
+27 
+	~"m≥g-∂ayî.h
+"
+
+28 
+	~"ns3/åa˚d-ˇŒback.h
+"
+
+29 
+	~"hâp-∑r£r.h
+"
+
+32 
+«me•a˚
+ 
+	gns3
+
+
+60 ˛as†
+	cDashClõ¡
+ : 
+public
+ 
+Aµliˇti⁄
+
+
+62 
+‰õnd
+ 
+˛ass
+ 
+M≥gPœyî
+;
+
+63 
+‰õnd
+ 
+˛ass
+ 
+	gHâpP¨£r
+;
+
+64 
+	gpublic
+:
+
+65 
+Ty≥Id
+
+
+66 
+GëTy≥Id
+();
+
+68 
+DashClõ¡
+();
+
+70 
+	gvútuÆ
+
+
+71 ~
+DashClõ¡
+();
+
+76 
+	gPå
+<
+	gSockë
+>
+
+77 
+GëSockë
+() const;
+
+83 
+GëSèts
+();
+
+90 
+ölöe
+ 
+	gM≥gPœyî
+ &
+
+91 
+GëPœyî
+()
+
+93  
+	gm_∂ayî
+;
+
+96 
+	g¥Ÿe˘ed
+:
+
+97 
+vútuÆ
+ 
+
+98 
+DoDi•o£
+();
+
+100 
+ölöe
+
+
+101 
+GëBôR©eE°im©e
+()
+
+103  
+	gm_bôøãE°im©e
+;
+
+106 
+GëBuf„rDif„ª¡ül
+();
+
+109 
+AddBôR©e
+(
+Time
+ 
+time
+, 
+bôøã
+);
+
+112 
+GëBuf„rE°im©e
+();
+
+115 
+GëSegmítFëchTime
+();
+
+117 
+	g°d
+::
+m≠
+<
+Time
+, 
+	gTime
+> 
+	gm_buf„rSèã
+;
+
+118 
+uöt32_t
+ 
+	gm_øãCh™ges
+;
+
+119 
+Time
+ 
+	gm_èrgë_dt
+;
+
+120 
+	g°d
+::
+m≠
+<
+Time
+, > 
+	gm_bôøãs
+;
+
+121 
+	gm_bôøãE°im©e
+;
+
+122 
+uöt32_t
+ 
+	gm_£gmítId
+;
+
+124 
+	g¥iv©e
+:
+
+132 
+Reque°Segmít
+();
+
+141 
+MesßgeRe˚ived
+(
+Packë
+ 
+mesßge
+);
+
+144 
+vútuÆ
+ 
+
+145 
+SèπAµliˇti⁄
+();
+
+146 
+vútuÆ
+ 
+
+147 
+St›Aµliˇti⁄
+();
+
+149 
+C⁄√˘i⁄Suc˚eded
+(
+På
+<
+Sockë
+> 
+sockë
+);
+
+151 
+C⁄√˘i⁄Faûed
+(
+På
+<
+Sockë
+> 
+sockë
+);
+
+153 
+D©aSíd
+(
+På
+<
+Sockë
+>, 
+uöt32_t
+);
+
+155 
+H™dÀRód
+(
+På
+<
+Sockë
+>);
+
+156 
+vútuÆ
+ 
+
+157 
+CÆcNextSegmít
+(
+uöt32_t
+ 
+cuºR©e
+, uöt32_à& 
+√xtR©e
+, 
+Time
+ & 
+dñay
+);
+
+159 
+LogBuf„rLevñ
+(
+Time
+ 
+t
+);
+
+160 
+ölöe
+
+
+161 
+SëWödow
+(
+Time
+ 
+time
+)
+
+163 
+	gm_wödow
+ = 
+time
+;
+
+166 
+M≥gPœyî
+ 
+	gm_∂ayî
+;
+
+167 
+HâpP¨£r
+ 
+	gm_∑r£r
+;
+
+168 
+	gPå
+<
+	gSockë
+> 
+	gm_sockë
+;
+
+169 
+Addªss
+ 
+	gm_≥î
+;
+
+170 
+boﬁ
+ 
+	gm_c⁄√˘ed
+;
+
+171 
+uöt32_t
+ 
+	gm_tŸByãs
+;
+
+172 
+Ty≥Id
+ 
+	gm_tid
+;
+
+173 
+	gTø˚dCÆlback
+<
+	gPå
+<c⁄° 
+	gPackë
+> > 
+	gm_txTø˚
+;
+
+174 
+uöt32_t
+ 
+	gm_videoId
+;
+
+175 
+Time
+ 
+	gm_°¨ãdRe˚ivög
+;
+
+176 
+Time
+ 
+	gm_sumDt
+;
+
+177 
+Time
+ 
+	gm_œ°Dt
+;
+
+178 
+	gm_cou¡Objs
+;
+
+179 
+	gm_id
+;
+
+180 
+	gv_num
+=0;
+
+181 
+	g‰ame_num
+=0;
+
+182 
+	g£g_num
+=0;
+
+183 
+	gÊag
+=0;
+
+184 
+	gtmp_num
+=0;
+
+185 
+Time
+ 
+	gm_ªque°Time
+;
+
+186 
+uöt32_t
+ 
+	gm_£gmít_byãs
+;
+
+187 
+uöt32_t
+ 
+	gm_bôR©e
+;
+
+188 
+Time
+ 
+	gm_wödow
+;
+
+189 
+Time
+ 
+	gm_£gmítFëchTime
+;
+
+	@model/dash-server.cc
+
+21 
+	~"ns3/addªss.h
+"
+
+22 
+	~"ns3/addªss-utûs.h
+"
+
+23 
+	~"ns3/log.h
+"
+
+24 
+	~"ns3/öë-sockë-addªss.h
+"
+
+25 
+	~"ns3/öë6-sockë-addªss.h
+"
+
+26 
+	~"ns3/node.h
+"
+
+27 
+	~"ns3/sockë.h
+"
+
+28 
+	~"ns3/udp-sockë.h
+"
+
+29 
+	~"ns3/simuœt‹.h
+"
+
+30 
+	~"ns3/sockë-Á˘‹y.h
+"
+
+31 
+	~"ns3/∑ckë.h
+"
+
+32 
+	~"ns3/åa˚-sour˚-ac˚ss‹.h
+"
+
+33 
+	~"ns3/udp-sockë-Á˘‹y.h
+"
+
+34 
+	~"dash-£rvî.h
+"
+
+35 
+	~"hâp-hódî.h
+"
+
+36 
+	~"m≥g-hódî.h
+"
+
+37 
+	~<ns3/øndom-v¨übÀ-°ªam.h
+>
+
+38 
+	~<ns3/t˝-sockë.h
+>
+
+39 
+	~<ns3/doubÀ.h
+>
+
+40 
+	~"∑ø.h
+"
+
+41 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+44 
+«me•a˚
+ 
+	gns3
+
+
+46 
+NS_LOG_COMPONENT_DEFINE
+("DashServer");
+
+47 
+NS_OBJECT_ENSURE_REGISTERED
+(
+DashSîvî
+);
+
+49 
+Ty≥Id
+
+
+50 
+	gDashSîvî
+::
+GëTy≥Id
+()
+
+52 
+Ty≥Id
+ 
+tid
+ =
+
+53 
+Ty≥Id
+("ns3::DashSîvî").
+SëP¨ít
+<
+Aµliˇti⁄
+>().
+AddC⁄°ru˘‹
+<
+
+54 
+DashSîvî
+>().
+AddAâribuã
+("Local",
+
+55 "ThêAddªs†⁄ whichÅÿBödÅhêrx sockë.", 
+AddªssVÆue
+(),
+
+56 
+MakeAddªssAc˚ss‹
+(&
+DashSîvî
+::
+m_loˇl
+), 
+MakeAddªssCheckî
+()).
+AddAâribuã
+(
+
+58 
+Ty≥IdVÆue
+(
+UdpSockëFa˘‹y
+::
+GëTy≥Id
+()),
+
+59 
+MakeTy≥IdAc˚ss‹
+(&
+DashSîvî
+::
+m_tid
+), 
+MakeTy≥IdCheckî
+()).
+AddTø˚Sour˚
+(
+
+61 
+MakeTø˚Sour˚Ac˚ss‹
+(&
+DashSîvî
+::
+m_rxTø˚
+));
+
+62  
+	gtid
+;
+
+65 
+	gDashSîvî
+::
+DashSîvî
+()
+
+67 
+NS_LOG_FUNCTION
+(
+this
+);
+
+68 
+	gm_sockë
+ = 0;
+
+69 
+	gm_tŸÆRx
+ = 0;
+
+72 
+	gDashSîvî
+::~
+DashSîvî
+()
+
+74 
+NS_LOG_FUNCTION
+(
+this
+);
+
+77 
+	gPå
+<
+	gSockë
+>
+
+78 
+	gDashSîvî
+::
+GëLi°íögSockë
+() const
+
+80 
+NS_LOG_FUNCTION
+(
+this
+);
+
+81  
+	gm_sockë
+;
+
+84 
+	g°d
+::
+li°
+<
+På
+<
+Sockë
+> >
+
+85 
+DashSîvî
+::
+GëAc˚±edSockës
+() const
+
+87 
+NS_LOG_FUNCTION
+(
+this
+);
+
+88  
+	gm_sockëLi°
+;
+
+92 
+	gDashSîvî
+::
+DoDi•o£
+()
+
+94 
+NS_LOG_FUNCTION
+(
+this
+);
+
+95 
+	gm_sockë
+ = 0;
+
+96 
+	gm_sockëLi°
+.
+˛ór
+();
+
+99 
+	gAµliˇti⁄
+::
+DoDi•o£
+();
+
+104 
+	gDashSîvî
+::
+SèπAµliˇti⁄
+()
+
+106 
+NS_LOG_FUNCTION
+(
+this
+);
+
+108 i‡(!
+	gm_sockë
+)
+
+110 
+	gm_sockë
+ = 
+Sockë
+::
+Cª©eSockë
+(
+GëNode
+(), 
+m_tid
+);
+
+111 
+	gm_sockë
+->
+Böd
+(
+m_loˇl
+);
+
+112 
+	gm_sockë
+->
+Li°í
+();
+
+114 i‡(
+	gaddªssUtûs
+::
+IsMu…iˇ°
+(
+m_loˇl
+))
+
+116 
+På
+<
+UdpSockë
+> 
+udpSockë
+ = 
+Dy«micCa°
+<UdpSockë>(
+m_sockë
+);
+
+117 i‡(
+	gudpSockë
+)
+
+120 
+	gudpSockë
+->
+Mu…iˇ°JoöGroup
+(0, 
+m_loˇl
+);
+
+124 
+NS_FATAL_ERROR
+("Error: joining multicast onáÇon-UDP socket");
+
+129 
+	gm_sockë
+->
+SëRecvCÆlback
+(
+MakeCÆlback
+(&
+DashSîvî
+::
+H™dÀRód
+, 
+this
+));
+
+131 
+	gm_sockë
+->
+SëAc˚±CÆlback
+(
+
+132 
+MakeNuŒCÆlback
+<
+boﬁ
+, 
+På
+<
+Sockë
+>, c⁄° 
+Addªss
+ &>(),
+
+133 
+MakeCÆlback
+(&
+DashSîvî
+::
+H™dÀAc˚±
+, 
+this
+));
+
+134 
+	gm_sockë
+->
+SëClo£CÆlbacks
+(
+
+135 
+MakeCÆlback
+(&
+DashSîvî
+::
+H™dÀPìrClo£
+, 
+this
+),
+
+136 
+MakeCÆlback
+(&
+DashSîvî
+::
+H™dÀPìrEº‹
+, 
+this
+));
+
+140 
+	gDashSîvî
+::
+St›Aµliˇti⁄
+()
+
+142 
+NS_LOG_FUNCTION
+(
+this
+);
+
+143 !
+	gm_sockëLi°
+.
+em±y
+())
+
+145 
+	gPå
+<
+	gSockë
+> 
+	gac˚±edSockë
+ = 
+m_sockëLi°
+.
+‰⁄t
+();
+
+146 
+	gm_sockëLi°
+.
+p›_‰⁄t
+();
+
+147 
+	gac˚±edSockë
+->
+Clo£
+();
+
+149 i‡(
+	gm_sockë
+)
+
+151 
+	gm_sockë
+->
+Clo£
+();
+
+152 
+	gm_sockë
+->
+SëRecvCÆlback
+(
+MakeNuŒCÆlback
+<, 
+På
+<
+Sockë
+> >());
+
+157 
+	gDashSîvî
+::
+H™dÀRód
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+159 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+
+160 
+	gPå
+<
+	gPackë
+> 
+	g∑ckë
+;
+
+161 
+Addªss
+ 
+	g‰om
+;
+
+162 (
+	g∑ckë
+ = 
+sockë
+->
+RecvFrom
+(
+‰om
+)))
+
+164 i‡(
+∑ckë
+->
+GëSize
+() == 0)
+
+168 
+	gm_tŸÆRx
+ +
+∑ckë
+->
+GëSize
+();
+
+170 
+HTTPHódî
+ 
+	ghódî
+;
+
+171 
+	g∑ckë
+->
+RemoveHódî
+(
+hódî
+);
+
+175 
+SídSegmít
+(
+hódî
+.
+GëVideoId
+(), hódî.
+GëResﬁuti⁄
+(),
+
+176 
+hódî
+.
+GëSegmítId
+(), 
+sockë
+);
+
+178 i‡(
+	gI√tSockëAddªss
+::
+IsM©chögTy≥
+(
+‰om
+))
+
+180 
+NS_LOG_INFO
+(
+
+181 "Aàtimê" << 
+Simuœt‹
+::
+Now
+ ().
+GëSec⁄ds
+ (Ë<< "†∑ckë sökÑe˚ived " << 
+∑ckë
+->
+GëSize
+ (Ë<< " byã†‰om " << 
+I√tSockëAddªss
+::
+C⁄vîtFrom
+(
+‰om
+).
+GëIpv4
+ (Ë<< "Ö‹à" << I√tSockëAddªss::C⁄vîtFrom (‰om).
+GëP‹t
+ (Ë<< "ÅŸÆ Rx " << 
+m_tŸÆRx
+ << " bytes");
+
+183 i‡(
+	gI√t6SockëAddªss
+::
+IsM©chögTy≥
+(
+‰om
+))
+
+185 
+NS_LOG_INFO
+(
+
+186 "Aàtimê" << 
+Simuœt‹
+::
+Now
+ ().
+GëSec⁄ds
+ (Ë<< "†∑ckë sökÑe˚ived " << 
+∑ckë
+->
+GëSize
+ (Ë<< " byã†‰om " << 
+I√t6SockëAddªss
+::
+C⁄vîtFrom
+(
+‰om
+).
+GëIpv6
+ (Ë<< "Ö‹à" << I√t6SockëAddªss::C⁄vîtFrom (‰om).
+GëP‹t
+ (Ë<< "ÅŸÆ Rx " << 
+m_tŸÆRx
+ << " bytes");
+
+188 
+m_rxTø˚
+(
+∑ckë
+, 
+‰om
+);
+
+193 
+	gDashSîvî
+::
+H™dÀPìrClo£
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+195 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+
+199 
+	gDashSîvî
+::
+H™dÀPìrEº‹
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+201 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+
+205 
+	gDashSîvî
+::
+H™dÀAc˚±
+(
+På
+<
+Sockë
+> 
+s
+, c⁄° 
+Addªss
+& 
+‰om
+)
+
+207 
+NS_LOG_FUNCTION
+(
+this
+ << 
+s
+ << 
+‰om
+);
+
+208 
+	gs
+->
+SëRecvCÆlback
+(
+MakeCÆlback
+(&
+DashSîvî
+::
+H™dÀRód
+, 
+this
+));
+
+209 
+	gs
+->
+SëSídCÆlback
+(
+MakeCÆlback
+(&
+DashSîvî
+::
+D©aSíd
+, 
+this
+));
+
+210 
+	gm_sockëLi°
+.
+push_back
+(
+s
+);
+
+215 
+	gDashSîvî
+::
+D©aSíd
+(
+På
+<
+Sockë
+> 
+sockë
+, 
+uöt32_t
+)
+
+217 
+NS_LOG_FUNCTION
+(
+this
+);
+
+218 
+	g°d
+::
+m≠
+<
+På
+<
+Sockë
+>, std::
+queue
+<
+Packë
+> >::
+ôî©‹
+ 
+ôî
+ =
+
+219 
+m_queues
+.
+begö
+(); 
+	gôî
+ !m_queues.
+íd
+(); ++iter)
+
+221 
+HTTPHódî
+ 
+	ghâpHódî
+;
+
+222 
+MPEGHódî
+ 
+	gm≥gHódî
+;
+
+224 i‡(
+	gôî
+->
+	g£c⁄d
+.
+size
+())
+
+226 
+	gPå
+<
+	gPackë
+> 
+	g‰ame
+ = 
+ôî
+->
+£c⁄d
+.
+‰⁄t
+().
+C›y
+();
+
+228 
+	g‰ame
+->
+RemoveHódî
+(
+m≥gHódî
+);
+
+229 
+	g‰ame
+->
+RemoveHódî
+(
+hâpHódî
+);
+
+231 
+NS_LOG_INFO
+(
+
+232 "VidId: " << 
+hâpHódî
+.
+GëVideoId
+(Ë<< "ÑxAv" << 
+ôî
+->
+fú°
+->
+GëRxAvaûabÀ
+(Ë<< " queue"<< iãr->
+£c⁄d
+.
+size
+(Ë<< "Ñes" << hâpHódî.
+GëResﬁuti⁄
+());
+
+235 !
+	gm_queues
+[
+sockë
+].
+em±y
+())
+
+238 
+	gbyãs
+;
+
+239 
+	gPå
+<
+	gPackë
+> 
+	g‰ame
+ = 
+m_queues
+[
+sockë
+].
+‰⁄t
+().
+C›y
+();
+
+247 
+	g°d
+::
+cout
+<<"1,"<<
+sockë
+<<","<<
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+()<<
+°d
+::
+ídl
+;
+
+249 i‡((
+	gbyãs
+ = 
+sockë
+->
+Síd
+(
+‰ame
+)Ë!(Ë‰ame->
+GëSize
+())
+
+251 
+°d
+::
+cout
+<<"CouldÇŸ síd føme"<<°d::
+ídl
+;
+
+252 
+NS_LOG_INFO
+("CouldÇot send frame");
+
+253 i‡(
+	gbyãs
+ != -1)
+
+255 
+NS_FATAL_ERROR
+("Oops, we sent halfá frame :(");
+
+260 
+	gm_queues
+[
+sockë
+].
+p›
+();
+
+263 
+NS_LOG_INFO
+("DATA WAS JUST SENT!!!");
+
+268 
+	gDashSîvî
+::
+SídSegmít
+(
+uöt32_t
+ 
+video_id
+, uöt32_à
+ªsﬁuti⁄
+,
+
+269 
+uöt32_t
+ 
+£gmít_id
+, 
+På
+<
+Sockë
+> 
+sockë
+)
+
+284 
+	gv_num
+[
+video_id
+]++;
+
+286 
+	gavg_∑ckësize
+ = 
+ªsﬁuti⁄
+ / (50 * 8);
+
+288 
+HTTPHódî
+ 
+	ghâp_hódî_tmp
+;
+
+289 
+MPEGHódî
+ 
+	gm≥g_hódî_tmp
+;
+
+291 
+	gPå
+<
+	gUnif‹mR™domV¨übÀ
+> 
+	g‰ame_size_gí
+ = 
+Cª©eObje˘
+<
+Unif‹mR™domV¨übÀ
+> ();
+
+293 
+	g‰ame_size_gí
+->
+SëAâribuã
+ ("Mö", 
+DoubÀVÆue
+ (1288));
+
+302 
+	g‰ame_size_gí
+->
+SëAâribuã
+ ("Max", 
+DoubÀVÆue
+ (1288));
+
+305 
+uöt32_t
+ 
+	gf_id
+ = 0; f_id < (Ë
+	gvideo_num
+[
+v_num
+[
+video_id
+]]; f_id++)
+
+307 
+uöt32_t
+ 
+	g‰ame_size
+ = (Ë
+‰ame_size_gí
+->
+GëVÆue
+();
+
+312 
+HTTPHódî
+ 
+	ghâp_hódî
+;
+
+313 
+	ghâp_hódî
+.
+SëMesßgeTy≥
+(
+HTTP_RESPONSE
+);
+
+314 
+	ghâp_hódî
+.
+SëVideoId
+(
+video_id
+);
+
+315 
+	ghâp_hódî
+.
+SëResﬁuti⁄
+(
+ªsﬁuti⁄
+);
+
+316 
+	ghâp_hódî
+.
+SëSegmítId
+(
+£gmít_id
+);
+
+318 
+MPEGHódî
+ 
+	gm≥g_hódî
+;
+
+319 
+	gm≥g_hódî
+.
+SëFømeId
+(
+f_id
+);
+
+320 
+	gm≥g_hódî
+.
+SëPœybackTime
+(
+
+321 
+MûliSec⁄ds
+(
+
+322 (
+f_id
+ + (
+£gmít_id
+ * 
+MPEG_FRAMES_PER_SEGMENT
+))
+
+323 * 
+MPEG_TIME_BETWEEN_FRAMES
+));
+
+329 
+	gm≥g_hódî
+.
+SëTy≥
+('B');
+
+330 
+	gm≥g_hódî
+.
+SëSize
+(
+‰ame_size
+);
+
+332 
+	gPå
+<
+	gPackë
+> 
+	g‰ame
+ = 
+Cª©e
+<
+Packë
+>(
+‰ame_size
+);
+
+333 
+	g‰ame
+->
+AddHódî
+(
+hâp_hódî
+);
+
+334 
+	g‰ame
+->
+AddHódî
+(
+m≥g_hódî
+);
+
+335 
+NS_LOG_INFO
+(
+
+336 "SENDING PACKET " << 
+f_id
+ << " " << 
+‰ame
+->
+GëSize
+(Ë<< "Ñes=" << 
+hâp_hódî
+.
+GëResﬁuti⁄
+(Ë<< " size=" << 
+m≥g_hódî
+.GëSize(Ë<< "ávg=" << 
+avg_∑ckësize
+);
+
+338 
+	gm_queues
+[
+sockë
+].
+push
+(*
+‰ame
+);
+
+340 
+D©aSíd
+(
+sockë
+, 0);
+
+	@model/dash-server.h
+
+21 #i‚de‡
+DASH_SERVER_H
+
+
+22 
+	#DASH_SERVER_H
+
+
+	)
+
+24 
+	~"ns3/≠∂iˇti⁄.h
+"
+
+25 
+	~"ns3/evít-id.h
+"
+
+26 
+	~"ns3/±r.h
+"
+
+27 
+	~"ns3/åa˚d-ˇŒback.h
+"
+
+28 
+	~"ns3/addªss.h
+"
+
+29 
+	~<m≠
+>
+
+30 
+	~<queue
+>
+
+32 
+«me•a˚
+ 
+	gns3
+
+
+35 
+˛ass
+ 
+	gAddªss
+;
+
+36 
+˛ass
+ 
+	gSockë
+;
+
+37 
+˛ass
+ 
+	gPackë
+;
+
+52 ˛as†
+	cDashSîvî
+ : 
+public
+ 
+Aµliˇti⁄
+
+
+54 
+public
+:
+
+55 
+Ty≥Id
+
+
+56 
+GëTy≥Id
+();
+
+57 
+DashSîvî
+();
+
+59 
+	gvútuÆ
+
+
+60 ~
+DashSîvî
+();
+
+65 
+	gPå
+<
+	gSockë
+>
+
+66 
+GëLi°íögSockë
+() const;
+
+71 
+	g°d
+::
+li°
+<
+På
+<
+Sockë
+> >
+
+72 
+GëAc˚±edSockës
+() const;
+
+74 
+	g¥Ÿe˘ed
+:
+
+75 
+vútuÆ
+ 
+
+76 
+DoDi•o£
+();
+
+77 
+	g¥iv©e
+:
+
+79 
+vútuÆ
+ 
+
+80 
+SèπAµliˇti⁄
+();
+
+81 
+vútuÆ
+ 
+
+82 
+St›Aµliˇti⁄
+();
+
+85 
+H™dÀRód
+(
+På
+<
+Sockë
+>);
+
+87 
+D©aSíd
+(
+På
+<
+Sockë
+>, 
+uöt32_t
+);
+
+90 
+SídSegmít
+(
+uöt32_t
+ 
+video_id
+, uöt32_à
+ªsﬁuti⁄
+, uöt32_à
+£gmít_id
+,
+
+91 
+På
+<
+Sockë
+> 
+sockë
+);
+
+93 
+H™dÀAc˚±
+(
+På
+<
+Sockë
+>, c⁄° 
+Addªss
+& 
+‰om
+);
+
+95 
+H™dÀPìrClo£
+(
+På
+<
+Sockë
+>);
+
+97 
+H™dÀPìrEº‹
+(
+På
+<
+Sockë
+>);
+
+101 
+	gPå
+<
+	gSockë
+> 
+	gm_sockë
+;
+
+102 
+	g°d
+::
+li°
+<
+På
+<
+Sockë
+> > 
+m_sockëLi°
+;
+
+104 
+Addªss
+ 
+	gm_loˇl
+;
+
+105 
+uöt32_t
+ 
+	gm_tŸÆRx
+;
+
+106 
+Ty≥Id
+ 
+	gm_tid
+;
+
+107 
+	gTø˚dCÆlback
+<
+	gPå
+<c⁄° 
+	gPackë
+>, c⁄° 
+	gAddªss
+ &> 
+	gm_rxTø˚
+;
+
+110 
+	g°d
+::
+m≠
+<
+På
+<
+Sockë
+>, std::
+queue
+<
+Packë
+> > 
+m_queues
+;
+
+111 
+	gv_num
+[4]={-1,-1,-1,-1};
+
+	@model/http-header.cc
+
+21 
+	~"ns3/as£π.h
+"
+
+22 
+	~"ns3/log.h
+"
+
+23 
+	~"ns3/hódî.h
+"
+
+24 
+	~"ns3/simuœt‹.h
+"
+
+25 
+	~"hâp-hódî.h
+"
+
+27 
+NS_LOG_COMPONENT_DEFINE
+("HTTPHeader");
+
+29 
+«me•a˚
+ 
+	gns3
+
+
+32 
+NS_OBJECT_ENSURE_REGISTERED
+ (
+HTTPHódî
+)
+
+35 
+	gHTTPHódî
+::
+HTTPHódî
+() :
+
+36 
+m_£q
+(0), 
+m_ts
+(
+Simuœt‹
+::
+Now
+().
+GëTimeSãp
+()), 
+m_mesßge_ty≥
+(
+
+37 
+HTTP_REQUEST
+), 
+m_video_id
+(0), 
+m_ªsﬁuti⁄
+(0), 
+m_£gmít_id
+(0)
+
+40 
+NS_LOG_FUNCTION
+(
+this
+);
+
+44 
+	gHTTPHódî
+::
+SëSeq
+(
+uöt32_t
+ 
+£q
+)
+
+46 
+NS_LOG_FUNCTION
+(
+this
+ << 
+£q
+);
+
+47 
+	gm_£q
+ = 
+£q
+;
+
+49 
+uöt32_t
+
+
+50 
+	gHTTPHódî
+::
+GëSeq
+() const
+
+52 
+NS_LOG_FUNCTION
+(
+this
+);
+
+53  
+	gm_£q
+;
+
+57 
+	gHTTPHódî
+::
+SëMesßgeTy≥
+(
+uöt32_t
+ 
+mesßge_ty≥
+)
+
+59 
+NS_LOG_FUNCTION
+(
+this
+ << 
+mesßge_ty≥
+);
+
+60 
+	gm_mesßge_ty≥
+ = 
+mesßge_ty≥
+;
+
+63 
+uöt32_t
+
+
+64 
+	gHTTPHódî
+::
+GëMesßgeTy≥
+() const
+
+66 
+NS_LOG_FUNCTION
+(
+this
+);
+
+67  
+	gm_mesßge_ty≥
+;
+
+70 
+	gHTTPHódî
+::
+SëVideoId
+(
+uöt32_t
+ 
+video_id
+)
+
+73 
+NS_LOG_FUNCTION
+(
+this
+ << 
+video_id
+);
+
+74 
+	gm_video_id
+ = 
+video_id
+;
+
+76 
+uöt32_t
+
+
+77 
+	gHTTPHódî
+::
+GëVideoId
+() const
+
+80 
+NS_LOG_FUNCTION
+(
+this
+);
+
+81  
+	gm_video_id
+;
+
+84 
+	gHTTPHódî
+::
+SëResﬁuti⁄
+(
+uöt32_t
+ 
+ªsﬁuti⁄
+)
+
+87 
+NS_LOG_FUNCTION
+(
+this
+ << 
+ªsﬁuti⁄
+);
+
+88 
+	gm_ªsﬁuti⁄
+ = 
+ªsﬁuti⁄
+;
+
+90 
+uöt32_t
+
+
+91 
+	gHTTPHódî
+::
+GëResﬁuti⁄
+() const
+
+93 
+NS_LOG_FUNCTION
+(
+this
+);
+
+94  
+	gm_ªsﬁuti⁄
+;
+
+98 
+	gHTTPHódî
+::
+SëSegmítId
+(
+uöt32_t
+ 
+£gmít_id
+)
+
+100 
+NS_LOG_FUNCTION
+(
+this
+ << 
+£gmít_id
+);
+
+101 
+	gm_£gmít_id
+ = 
+£gmít_id
+;
+
+103 
+uöt32_t
+
+
+104 
+	gHTTPHódî
+::
+GëSegmítId
+() const
+
+106 
+NS_LOG_FUNCTION
+(
+this
+);
+
+107  
+	gm_£gmít_id
+;
+
+110 
+Time
+
+
+111 
+	gHTTPHódî
+::
+GëTs
+() const
+
+113 
+NS_LOG_FUNCTION
+(
+this
+);
+
+114  
+TimeSãp
+(
+m_ts
+);
+
+117 
+Ty≥Id
+
+
+118 
+	gHTTPHódî
+::
+GëTy≥Id
+()
+
+120 
+Ty≥Id
+ 
+tid
+ =
+
+121 
+Ty≥Id
+("ns3::HTTPHódî").
+SëP¨ít
+<
+Hódî
+>().
+AddC⁄°ru˘‹
+<
+HTTPHódî
+>();
+
+122  
+	gtid
+;
+
+124 
+Ty≥Id
+
+
+125 
+	gHTTPHódî
+::
+GëIn°™˚Ty≥Id
+() const
+
+127  
+GëTy≥Id
+();
+
+130 
+	gHTTPHódî
+::
+Pröt
+(
+°d
+::
+o°ªam
+ &
+os
+) const
+
+132 
+NS_LOG_FUNCTION
+(
+this
+ << &
+os
+);
+
+133 
+	gos
+ << "(£q=" << 
+	gm_£q
+ << "Åime=" << 
+TimeSãp
+(
+m_ts
+).
+GëSec⁄ds
+() << ")";
+
+135 
+uöt32_t
+
+
+136 
+	gHTTPHódî
+::
+GëSîülizedSize
+() const
+
+138 
+NS_LOG_FUNCTION
+(
+this
+);
+
+143 
+	gHTTPHódî
+::
+Sîülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+) const
+
+145 
+NS_LOG_FUNCTION
+(
+this
+ << &
+°¨t
+);
+
+146 
+	gBuf„r
+::
+Iãøt‹
+ 
+i
+ = 
+°¨t
+;
+
+147 
+	gi
+.
+WrôeHt⁄U32
+(
+m_£q
+);
+
+148 
+	gi
+.
+WrôeHt⁄U64
+(
+m_ts
+);
+
+149 
+	gi
+.
+WrôeHt⁄U32
+(
+m_mesßge_ty≥
+);
+
+150 
+	gi
+.
+WrôeHt⁄U32
+(
+m_video_id
+);
+
+151 
+	gi
+.
+WrôeHt⁄U32
+(
+m_ªsﬁuti⁄
+);
+
+152 
+	gi
+.
+WrôeHt⁄U32
+(
+m_£gmít_id
+);
+
+154 
+uöt32_t
+
+
+155 
+	gHTTPHódî
+::
+De£rülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+)
+
+157 
+NS_LOG_FUNCTION
+(
+this
+ << &
+°¨t
+);
+
+158 
+	gBuf„r
+::
+Iãøt‹
+ 
+i
+ = 
+°¨t
+;
+
+159 
+	gm_£q
+ = 
+i
+.
+RódNtohU32
+();
+
+160 
+	gm_ts
+ = 
+i
+.
+RódNtohU64
+();
+
+161 
+	gm_mesßge_ty≥
+ = 
+i
+.
+RódNtohU32
+();
+
+162 
+	gm_video_id
+ = 
+i
+.
+RódNtohU32
+();
+
+163 
+	gm_ªsﬁuti⁄
+ = 
+i
+.
+RódNtohU32
+();
+
+164 
+	gm_£gmít_id
+ = 
+i
+.
+RódNtohU32
+();
+
+165  
+GëSîülizedSize
+();
+
+	@model/http-header.h
+
+21 #i‚de‡
+HTTP_TS_HEADER_H
+
+
+22 
+	#HTTP_TS_HEADER_H
+
+
+	)
+
+24 
+	~"ns3/hódî.h
+"
+
+25 
+	~"ns3/n°ime.h
+"
+
+27 
+«me•a˚
+ 
+	gns3
+
+
+35 
+	#HTTP_REQUEST
+ 0
+
+	)
+
+36 
+	#HTTP_RESPONSE
+ 1
+
+	)
+
+38 ˛as†
+	cHTTPHódî
+ : 
+public
+ 
+Hódî
+
+
+40 
+public
+:
+
+41 
+HTTPHódî
+();
+
+47 
+SëSeq
+(
+uöt32_t
+ 
+£q
+);
+
+52 
+uöt32_t
+
+
+53 
+GëSeq
+() const;
+
+59 
+SëMesßgeTy≥
+(
+uöt32_t
+ 
+mesßge_ty≥
+);
+
+60 
+uöt32_t
+
+
+61 
+GëMesßgeTy≥
+() const;
+
+64 
+SëVideoId
+(
+uöt32_t
+ 
+video_id
+);
+
+65 
+uöt32_t
+
+
+66 
+GëVideoId
+() const;
+
+69 
+SëResﬁuti⁄
+(
+uöt32_t
+ 
+ªsﬁuti⁄
+);
+
+70 
+uöt32_t
+
+
+71 
+GëResﬁuti⁄
+() const;
+
+74 
+SëSegmítId
+(
+uöt32_t
+ 
+£gmít_id
+);
+
+75 
+uöt32_t
+
+
+76 
+GëSegmítId
+() const;
+
+78 
+Time
+
+
+79 
+GëTs
+() const;
+
+81 
+Ty≥Id
+
+
+82 
+GëTy≥Id
+();
+
+84 
+vútuÆ
+ 
+uöt32_t
+
+
+85 
+GëSîülizedSize
+() const;
+
+87 
+	g¥iv©e
+:
+
+88 
+vútuÆ
+ 
+Ty≥Id
+
+
+89 
+GëIn°™˚Ty≥Id
+() const;
+
+90 
+vútuÆ
+ 
+
+91 
+Pröt
+(
+°d
+::
+o°ªam
+ &
+os
+) const;
+
+92 
+vútuÆ
+ 
+
+93 
+Sîülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+) const;
+
+94 
+vútuÆ
+ 
+uöt32_t
+
+
+95 
+De£rülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+);
+
+97 
+uöt32_t
+ 
+	gm_£q
+;
+
+98 
+uöt64_t
+ 
+	gm_ts
+;
+
+100 
+uöt32_t
+ 
+	gm_mesßge_ty≥
+;
+
+101 
+uöt32_t
+ 
+	gm_video_id
+;
+
+102 
+uöt32_t
+ 
+	gm_ªsﬁuti⁄
+;
+
+103 
+uöt32_t
+ 
+	gm_£gmít_id
+;
+
+	@model/http-parser.cc
+
+21 
+	~"hâp-∑r£r.h
+"
+
+22 
+	~"ns3/log.h
+"
+
+23 
+	~"ns3/addªss.h
+"
+
+24 
+	~"ns3/sockë.h
+"
+
+25 
+	~"ns3/∑ckë.h
+"
+
+26 
+	~"ns3/simuœt‹.h
+"
+
+27 
+	~"hâp-hódî.h
+"
+
+28 
+	~"m≥g-hódî.h
+"
+
+29 
+	~"dash-˛õ¡.h
+"
+
+31 
+NS_LOG_COMPONENT_DEFINE
+("HttpParser");
+
+33 
+«me•a˚
+ 
+	gns3
+
+
+36 
+	gHâpP¨£r
+::
+HâpP¨£r
+() :
+
+37 
+m_byãs
+(0), 
+m_≠p
+(
+NULL
+), 
+m_œ°mósuªmít
+("0s")
+
+39 
+NS_LOG_FUNCTION
+(
+this
+);
+
+42 
+	gHâpP¨£r
+::~
+HâpP¨£r
+()
+
+44 
+NS_LOG_FUNCTION
+(
+this
+);
+
+48 
+	gHâpP¨£r
+::
+SëAµ
+(
+DashClõ¡
+ *
+≠p
+)
+
+50 
+NS_LOG_FUNCTION
+(
+this
+ << 
+≠p
+);
+
+51 
+	gm_≠p
+ = 
+≠p
+;
+
+54 
+	gHâpP¨£r
+::
+RódSockë
+(
+På
+<
+Sockë
+> 
+sockë
+)
+
+56 
+NS_LOG_FUNCTION
+(
+this
+ << 
+sockë
+);
+
+57 
+Addªss
+ 
+	g‰om
+;
+
+58 
+	gbyãs
+ = 
+sockë
+->
+RecvFrom
+(&
+m_buf„r
+[
+m_byãs
+], 
+MPEG_MAX_MESSAGE
+ - m_bytes,
+
+59 0, 
+‰om
+);
+
+61 
+MPEGHódî
+ 
+	gm≥g_hódî
+;
+
+62 
+HTTPHódî
+ 
+	ghâp_hódî
+;
+
+64 
+uöt32_t
+ 
+	ghódîsize
+ = 
+m≥g_hódî
+.
+GëSîülizedSize
+()
+
+65 + 
+hâp_hódî
+.
+GëSîülizedSize
+();
+
+67 i‡(
+	gbyãs
+ > 0)
+
+69 
+	gm_byãs
+ +
+byãs
+;
+
+71 i‡(
+	gm_œ°mósuªmít
+ > 
+Time
+("0s"))
+
+73 
+NS_LOG_INFO
+(
+
+74 
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+(Ë<< " byãs: " << 
+byãs
+ << " dt: " << (Simuœt‹::Now(Ë- 
+m_œ°mósuªmít
+).GëSec⁄ds(Ë<< " bôøã: " << (8 * (byã†+ 
+hódîsize
+)/ (Simulator::Now() - m_lastmeasurement).GetSeconds()));
+
+76 
+	gm_œ°mósuªmít
+ = 
+Simuœt‹
+::
+Now
+();
+
+79 
+NS_LOG_INFO
+(
+
+80 "### Buf„∏•a˚: " << 
+m_byãs
+ << " QueuêÀngth " << 
+m_≠p
+->
+GëPœyî
+().
+GëQueueSize
+());
+
+82 i‡(
+	gm_byãs
+ < 
+	ghódîsize
+)
+
+87 
+Packë
+ 
+hódîPackë
+(
+m_buf„r
+, 
+hódîsize
+);
+
+88 
+	ghódîPackë
+.
+RemoveHódî
+(
+m≥g_hódî
+);
+
+90 
+uöt32_t
+ 
+	gmesßge_size
+ = 
+hódîsize
+ + 
+m≥g_hódî
+.
+GëSize
+();
+
+92 i‡(
+	gm_byãs
+ < 
+	gmesßge_size
+)
+
+96 
+Packë
+ 
+mesßge
+(
+m_buf„r
+, 
+mesßge_size
+);
+
+98 
+memmove
+(
+m_buf„r
+, &m_buf„r[
+mesßge_size
+], 
+m_byãs
+ - message_size);
+
+99 
+	gm_byãs
+ -
+mesßge_size
+;
+
+100 
+	gm_≠p
+->
+MesßgeRe˚ived
+(
+mesßge
+);
+
+102 
+RódSockë
+(
+sockë
+);
+
+	@model/http-parser.h
+
+21 #i‚de‡
+HTTP_PARSER_H_
+
+
+22 
+	#HTTP_PARSER_H_
+
+
+	)
+
+24 
+	~<ns3/±r.h
+>
+
+25 
+	~"m≥g-hódî.h
+"
+
+27 
+«me•a˚
+ 
+	gns3
+
+
+30 
+˛ass
+ 
+	gSockë
+;
+
+31 
+˛ass
+ 
+	gDashClõ¡
+;
+
+33 ˛as†
+	cHâpP¨£r
+
+
+35 
+	gpublic
+:
+
+36 
+HâpP¨£r
+();
+
+37 
+	gvútuÆ
+
+
+38 ~
+HâpP¨£r
+();
+
+40 
+RódSockë
+(
+På
+<
+Sockë
+> 
+sockë
+);
+
+42 
+SëAµ
+(
+DashClõ¡
+ *
+≠p
+);
+
+44 
+	g¥iv©e
+:
+
+45 
+uöt8_t
+ 
+m_buf„r
+[
+MPEG_MAX_MESSAGE
+];
+
+46 
+uöt32_t
+ 
+	gm_byãs
+;
+
+47 
+DashClõ¡
+ *
+	gm_≠p
+;
+
+49 
+Time
+ 
+	gm_œ°mósuªmít
+;
+
+	@model/mpeg-header.cc
+
+21 
+	~"ns3/as£π.h
+"
+
+22 
+	~"ns3/log.h
+"
+
+23 
+	~"ns3/hódî.h
+"
+
+24 
+	~"ns3/simuœt‹.h
+"
+
+25 
+	~"m≥g-hódî.h
+"
+
+27 
+NS_LOG_COMPONENT_DEFINE
+("MPEGHeader");
+
+29 
+«me•a˚
+ 
+	gns3
+
+
+32 
+NS_OBJECT_ENSURE_REGISTERED
+ (
+MPEGHódî
+)
+
+35 
+	gMPEGHódî
+::
+MPEGHódî
+() :
+
+36 
+m_£q
+(0), 
+m_ts
+(
+Simuœt‹
+::
+Now
+().
+GëTimeSãp
+()), 
+m_‰ame_id
+(0), 
+m_∂ayback_time
+(
+
+37 0), 
+m_ty≥
+('B')
+
+40 
+NS_LOG_FUNCTION
+(
+this
+);
+
+44 
+	gMPEGHódî
+::
+SëSeq
+(
+uöt32_t
+ 
+£q
+)
+
+46 
+NS_LOG_FUNCTION
+(
+this
+ << 
+£q
+);
+
+47 
+	gm_£q
+ = 
+£q
+;
+
+49 
+uöt32_t
+
+
+50 
+	gMPEGHódî
+::
+GëSeq
+() const
+
+52 
+NS_LOG_FUNCTION
+(
+this
+);
+
+53  
+	gm_£q
+;
+
+57 
+	gMPEGHódî
+::
+SëFømeId
+(
+uöt32_t
+ 
+‰ame_id
+)
+
+59 
+NS_LOG_FUNCTION
+(
+this
+);
+
+60 
+	gm_‰ame_id
+ = 
+‰ame_id
+;
+
+62 
+uöt32_t
+
+
+63 
+	gMPEGHódî
+::
+GëFømeId
+() const
+
+65 
+NS_LOG_FUNCTION
+(
+this
+);
+
+66  
+	gm_‰ame_id
+;
+
+70 
+	gMPEGHódî
+::
+SëPœybackTime
+(
+Time
+ 
+∂ayback_time
+)
+
+72 
+NS_LOG_FUNCTION
+(
+this
+);
+
+73 
+	gm_∂ayback_time
+ = 
+∂ayback_time
+.
+GëTimeSãp
+();
+
+75 
+Time
+
+
+76 
+	gMPEGHódî
+::
+GëPœybackTime
+() const
+
+78 
+NS_LOG_FUNCTION
+(
+this
+);
+
+79  
+TimeSãp
+(
+m_∂ayback_time
+);
+
+83 
+	gMPEGHódî
+::
+SëTy≥
+(
+uöt32_t
+ 
+ty≥
+)
+
+85 
+NS_LOG_FUNCTION
+(
+this
+);
+
+86 
+	gm_ty≥
+ = 
+ty≥
+;
+
+88 
+uöt32_t
+
+
+89 
+	gMPEGHódî
+::
+GëTy≥
+() const
+
+91 
+NS_LOG_FUNCTION
+(
+this
+);
+
+92  
+	gm_ty≥
+;
+
+96 
+	gMPEGHódî
+::
+SëSize
+(
+uöt32_t
+ 
+size
+)
+
+98 
+NS_LOG_FUNCTION
+(
+this
+);
+
+99 
+	gm_size
+ = 
+size
+;
+
+102 
+uöt32_t
+
+
+103 
+	gMPEGHódî
+::
+GëSize
+() const
+
+105 
+NS_LOG_FUNCTION
+(
+this
+);
+
+106  
+	gm_size
+;
+
+108 
+Time
+
+
+109 
+	gMPEGHódî
+::
+GëTs
+() const
+
+111 
+NS_LOG_FUNCTION
+(
+this
+);
+
+112  
+TimeSãp
+(
+m_ts
+);
+
+115 
+Ty≥Id
+
+
+116 
+	gMPEGHódî
+::
+GëTy≥Id
+()
+
+118 
+Ty≥Id
+ 
+tid
+ =
+
+119 
+Ty≥Id
+("ns3::MPEGHódî").
+SëP¨ít
+<
+Hódî
+>().
+AddC⁄°ru˘‹
+<
+MPEGHódî
+>();
+
+120  
+	gtid
+;
+
+122 
+Ty≥Id
+
+
+123 
+	gMPEGHódî
+::
+GëIn°™˚Ty≥Id
+() const
+
+125  
+GëTy≥Id
+();
+
+128 
+	gMPEGHódî
+::
+Pröt
+(
+°d
+::
+o°ªam
+ &
+os
+) const
+
+130 
+NS_LOG_FUNCTION
+(
+this
+ << &
+os
+);
+
+131 
+	gos
+ << "(£q=" << 
+	gm_£q
+ << "Åime=" << 
+TimeSãp
+(
+m_ts
+).
+GëSec⁄ds
+() << ")";
+
+133 
+uöt32_t
+
+
+134 
+	gMPEGHódî
+::
+GëSîülizedSize
+() const
+
+136 
+NS_LOG_FUNCTION
+(
+this
+);
+
+141 
+	gMPEGHódî
+::
+Sîülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+) const
+
+143 
+NS_LOG_FUNCTION
+(
+this
+ << &
+°¨t
+);
+
+144 
+	gBuf„r
+::
+Iãøt‹
+ 
+i
+ = 
+°¨t
+;
+
+145 
+	gi
+.
+WrôeHt⁄U32
+(
+m_£q
+);
+
+146 
+	gi
+.
+WrôeHt⁄U64
+(
+m_ts
+);
+
+147 
+	gi
+.
+WrôeHt⁄U32
+(
+m_‰ame_id
+);
+
+148 
+	gi
+.
+WrôeHt⁄U64
+(
+m_∂ayback_time
+);
+
+149 
+	gi
+.
+WrôeHt⁄U32
+(
+m_ty≥
+);
+
+150 
+	gi
+.
+WrôeHt⁄U32
+(
+m_size
+);
+
+152 
+uöt32_t
+
+
+153 
+	gMPEGHódî
+::
+De£rülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+)
+
+155 
+NS_LOG_FUNCTION
+(
+this
+ << &
+°¨t
+);
+
+156 
+	gBuf„r
+::
+Iãøt‹
+ 
+i
+ = 
+°¨t
+;
+
+157 
+	gm_£q
+ = 
+i
+.
+RódNtohU32
+();
+
+158 
+	gm_ts
+ = 
+i
+.
+RódNtohU64
+();
+
+159 
+	gm_‰ame_id
+ = 
+i
+.
+RódNtohU32
+();
+
+160 
+	gm_∂ayback_time
+ = 
+i
+.
+RódNtohU64
+();
+
+161 
+	gm_ty≥
+ = 
+i
+.
+RódNtohU32
+();
+
+162 
+	gm_size
+ = 
+i
+.
+RódNtohU32
+();
+
+163  
+GëSîülizedSize
+();
+
+	@model/mpeg-header.h
+
+21 #i‚de‡
+MPEG_HEADER_H
+
+
+22 
+	#MPEG_HEADER_H
+
+
+	)
+
+24 
+	~"ns3/hódî.h
+"
+
+25 
+	~"ns3/n°ime.h
+"
+
+27 
+«me•a˚
+ 
+	gns3
+
+
+37 
+	#MPEG_MAX_MESSAGE
+ 100000
+
+	)
+
+38 
+	#MPEG_FRAMES_PER_SEGMENT
+ 1
+
+39 
+	#MPEG_TIME_BETWEEN_FRAMES
+ 20
+
+40 ˛as†
+	cMPEGHódî
+ : 
+public
+ 
+Hódî
+
+
+	)
+
+42 
+	gpublic
+:
+
+43 
+MPEGHódî
+();
+
+49 
+SëSeq
+(
+uöt32_t
+ 
+£q
+);
+
+53 
+uöt32_t
+
+
+54 
+GëSeq
+() const;
+
+60 
+SëFømeId
+(
+uöt32_t
+ 
+‰ame_id
+);
+
+61 
+uöt32_t
+
+
+62 
+GëFømeId
+() const;
+
+65 
+SëPœybackTime
+(
+Time
+ 
+∂ayback_time
+);
+
+66 
+Time
+
+
+67 
+GëPœybackTime
+() const;
+
+70 
+SëTy≥
+(
+uöt32_t
+ 
+ty≥
+);
+
+71 
+uöt32_t
+
+
+72 
+GëTy≥
+() const;
+
+75 
+SëSize
+(
+uöt32_t
+ 
+size
+);
+
+76 
+uöt32_t
+
+
+77 
+GëSize
+() const;
+
+79 
+Time
+
+
+80 
+GëTs
+() const;
+
+82 
+Ty≥Id
+
+
+83 
+GëTy≥Id
+();
+
+85 
+vútuÆ
+ 
+uöt32_t
+
+
+86 
+GëSîülizedSize
+() const;
+
+88 
+	g¥iv©e
+:
+
+89 
+vútuÆ
+ 
+Ty≥Id
+
+
+90 
+GëIn°™˚Ty≥Id
+() const;
+
+91 
+vútuÆ
+ 
+
+92 
+Pröt
+(
+°d
+::
+o°ªam
+ &
+os
+) const;
+
+93 
+vútuÆ
+ 
+
+94 
+Sîülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+) const;
+
+95 
+vútuÆ
+ 
+uöt32_t
+
+
+96 
+De£rülize
+(
+Buf„r
+::
+Iãøt‹
+ 
+°¨t
+);
+
+98 
+uöt32_t
+ 
+	gm_£q
+;
+
+99 
+uöt64_t
+ 
+	gm_ts
+;
+
+101 
+uöt32_t
+ 
+	gm_‰ame_id
+;
+
+102 
+uöt64_t
+ 
+	gm_∂ayback_time
+;
+
+103 
+uöt32_t
+ 
+	gm_ty≥
+;
+
+104 
+uöt32_t
+ 
+	gm_size
+;
+
+	@model/mpeg-player.cc
+
+21 
+	~"ns3/log.h
+"
+
+22 
+	~"ns3/n°ime.h
+"
+
+23 
+	~"ns3/simuœt‹.h
+"
+
+24 
+	~"hâp-hódî.h
+"
+
+25 
+	~"m≥g-hódî.h
+"
+
+26 
+	~"m≥g-∂ayî.h
+"
+
+27 
+	~"dash-˛õ¡.h
+"
+
+28 
+	~<cm©h
+>
+
+29 
+	~"∑ø.h
+"
+
+30 
+NS_LOG_COMPONENT_DEFINE
+("MpegPlayer");
+
+33 
+«me•a˚
+ 
+	gns3
+
+
+36 
+	gM≥gPœyî
+::
+M≥gPœyî
+() :
+
+37 
+m_°©e
+(
+MPEG_PLAYER_NOT_STARTED
+), 
+m_öãºru±i⁄s
+(0), 
+m_tŸÆR©e
+(0), 
+m_möR©e
+(
+
+38 100000000), 
+m_‰amesPœyed
+(0), 
+m_buf„rDñay
+("0s")
+
+40 
+NS_LOG_FUNCTION
+(
+this
+);
+
+43 
+	gM≥gPœyî
+::~
+M≥gPœyî
+()
+
+45 
+NS_LOG_FUNCTION
+(
+this
+);
+
+49 
+	gM≥gPœyî
+::
+GëQueueSize
+()
+
+51  
+m_queue
+.
+size
+();
+
+54 
+Time
+
+
+55 
+	gM≥gPœyî
+::
+GëRólPœyTime
+(
+Time
+ 
+∂ayTime
+)
+
+57 
+NS_LOG_INFO
+(
+
+58 " Sèπ: " << 
+m_°¨t_time
+.
+GëSec⁄ds
+(Ë<< " I¡î: " << 
+m_öãºu±i⁄_time
+.GëSec⁄ds(Ë<< "Öœytime: " << 
+∂ayTime
+.GëSec⁄ds(Ë<< "Çow: " << 
+Simuœt‹
+::
+Now
+().GetSeconds() << "áctual: " << (m_start_time + m_interruption_time +ÖlayTime).GetSeconds());
+
+60  
+	gm_°¨t_time
+ + 
+	gm_öãºu±i⁄_time
+
+
+61 + (
+	gm_°©e
+ =
+MPEG_PLAYER_PAUSED
+ ?
+
+62 (
+Simuœt‹
+::
+Now
+(Ë- 
+m_œ°∑u£d
+Ë: 
+Sec⁄ds
+(0)Ë+ 
+∂ayTime
+
+
+63 - 
+Simuœt‹
+::
+Now
+();
+
+67 
+	gM≥gPœyî
+::
+Re˚iveFøme
+(
+På
+<
+Packë
+> 
+mesßge
+)
+
+70 
+NS_LOG_FUNCTION
+(
+this
+ << 
+mesßge
+);
+
+71 
+NS_LOG_INFO
+("Re˚ived Fømê" << 
+m_°©e
+);
+
+73 
+	gPå
+<
+	gPackë
+> 
+	gmsg
+ = 
+mesßge
+->
+C›y
+();
+
+75 
+	gm_queue
+.
+push
+(
+msg
+);
+
+77 i‡(
+	gm_°©e
+ =
+MPEG_PLAYER_PAUSED
+)
+
+79 if(
+m_queue
+.
+size
+()>(Ë
+video_num
+[
+v_num
+]){
+
+80 
+NS_LOG_INFO
+("PlayÑesumed");
+
+81 
+	gm_°©e
+ = 
+MPEG_PLAYER_PLAYING
+;
+
+82 
+	gm_öãºu±i⁄_time
+ +(
+Simuœt‹
+::
+Now
+(Ë- 
+m_œ°∑u£d
+);
+
+84 
+	g°d
+::
+cout
+<<"4,"<<
+u£rID
+<<","<<
+m_öãºru±i⁄s
+<<","<<(
+Simuœt‹
+::
+Now
+(Ë- 
+m_œ°∑u£d
+).
+GëSec⁄ds
+()<<
+°d
+::
+ídl
+;
+
+85 
+PœyFøme
+();
+
+88 i‡(
+	gm_°©e
+ =
+MPEG_PLAYER_NOT_STARTED
+)
+
+91 
+öôül_buf„r
+=0;
+
+92 
+	gi
+=0; i<
+	göô_buf„r
+; i++){
+
+93 
+	göôül_buf„r
++=
+video_num
+[
+i
+];
+
+96 if(
+	gm_queue
+.
+size
+()>(Ë
+	göôül_buf„r
+){
+
+97 
+NS_LOG_INFO
+("Play started");
+
+98 
+	gm_°©e
+ = 
+MPEG_PLAYER_PLAYING
+;
+
+99 
+	gm_°¨t_time
+ = 
+Simuœt‹
+::
+Now
+();
+
+101 
+	g°d
+::
+cout
+<<"3,"<<
+u£rID
+<<","<<
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+()<<
+°d
+::
+ídl
+;
+
+102 
+PœyFøme
+();
+
+108 
+	gM≥gPœyî
+::
+GëID
+(
+m_id
+)
+
+110 
+u£rID
+=
+m_id
+;
+
+114 
+	gM≥gPœyî
+::
+Sèπ
+()
+
+116 
+NS_LOG_FUNCTION
+(
+this
+);
+
+117 
+	gm_°©e
+ = 
+MPEG_PLAYER_PLAYING
+;
+
+118 
+	gm_öãºu±i⁄_time
+ = 
+Sec⁄ds
+(0);
+
+123 
+	gM≥gPœyî
+::
+PœyFøme
+()
+
+131 
+NS_LOG_FUNCTION
+(
+this
+);
+
+132 i‡(
+	gm_°©e
+ =
+MPEG_PLAYER_DONE
+)
+
+136 i‡(
+	gm_queue
+.
+em±y
+())
+
+138 
+NS_LOG_INFO
+(
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+() << " No framesÅoÖlay");
+
+139 
+	gm_°©e
+ = 
+MPEG_PLAYER_PAUSED
+;
+
+140 
+	gm_œ°∑u£d
+ = 
+Simuœt‹
+::
+Now
+();
+
+141 
+	gm_öãºru±i⁄s
+++;
+
+145 i‡(
+	gm_queue
+.
+size
+()<(Ë
+	gvideo_num
+[
+v_num
+])
+
+147 
+	gm_°©e
+ = 
+MPEG_PLAYER_PAUSED
+;
+
+148 
+	gm_œ°∑u£d
+ = 
+Simuœt‹
+::
+Now
+();
+
+149 
+	gm_öãºru±i⁄s
+++;
+
+155 
+MPEGHódî
+ 
+	gm≥g_hódî
+;
+
+156 
+HTTPHódî
+ 
+	ghâp_hódî
+;
+
+160 
+	gi
+=0;i<()
+	gvideo_num
+[
+v_num
+];i++){
+
+161 
+	gPå
+<
+	gPackë
+> 
+	gmesßge
+ = 
+m_queue
+.
+‰⁄t
+();
+
+162 
+	gm_queue
+.
+p›
+();
+
+163 
+	gmesßge
+->
+RemoveHódî
+(
+m≥g_hódî
+);
+
+164 
+	gmesßge
+->
+RemoveHódî
+(
+hâp_hódî
+);
+
+165 
+	gm_tŸÆR©e
+ +
+hâp_hódî
+.
+GëResﬁuti⁄
+();
+
+166 
+	gm_‰amesPœyed
+++;
+
+169 
+	gv_num
+++;
+
+183 i‡(
+	ghâp_hódî
+.
+GëSegmítId
+() > 0)
+
+185 
+	gm_möR©e
+ =
+
+186 
+hâp_hódî
+.
+GëResﬁuti⁄
+(Ë< 
+m_möR©e
+ ?
+
+187 
+hâp_hódî
+.
+GëResﬁuti⁄
+(Ë: 
+m_möR©e
+;
+
+194 
+Time
+ 
+	gb_t
+ = 
+GëRólPœyTime
+(
+m≥g_hódî
+.
+GëPœybackTime
+());
+
+196 i‡(
+	gm_buf„rDñay
+ > 
+Time
+("0s"Ë&& 
+	gb_t
+ < m_buf„rDñay && 
+	gm_dashClõ¡
+)
+
+198 
+	gm_dashClõ¡
+->
+Reque°Segmít
+();
+
+199 
+	gm_buf„rDñay
+ = 
+Sec⁄ds
+(0);
+
+200 
+	gm_dashClõ¡
+ = 
+NULL
+;
+
+204 
+NS_LOG_INFO
+(
+
+205 
+Simuœt‹
+::
+Now
+().
+GëSec⁄ds
+(Ë<< " PLAYING FRAME: " << " VidId: " << 
+hâp_hódî
+.
+GëVideoId
+(Ë<< " SegId: " << hâp_hódî.
+GëSegmítId
+(Ë<< " Res: " << hâp_hódî.
+GëResﬁuti⁄
+(Ë<< " FømeId: " << 
+m≥g_hódî
+.
+GëFømeId
+(Ë<< " PœyTime: " << m≥g_hódî.
+GëPœybackTime
+().GëSec⁄ds(Ë<< " Ty≥: " << (Ëm≥g_hódî.
+GëTy≥
+(Ë<< " i¡îTime: " << 
+m_öãºu±i⁄_time
+.GëSec⁄ds(Ë<< " queueLígth: " << 
+m_queue
+.
+size
+());
+
+213 
+	gSimuœt‹
+::
+ScheduÀ
+(
+MûliSec⁄ds
+(1000), &
+M≥gPœyî
+::
+PœyFøme
+, 
+this
+);
+
+	@model/mpeg-player.h
+
+21 #i‚de‡
+MPEG_PLAYER_H_
+
+
+22 
+	#MPEG_PLAYER_H_
+
+
+	)
+
+24 
+	~<queue
+>
+
+25 
+	~<m≠
+>
+
+26 
+	~"ns3/±r.h
+"
+
+27 
+	~"ns3/∑ckë.h
+"
+
+29 
+«me•a˚
+ 
+	gns3
+
+
+33 
+	gMPEG_PLAYER_PAUSED
+, 
+	gMPEG_PLAYER_PLAYING
+, 
+	gMPEG_PLAYER_NOT_STARTED
+, 
+	gMPEG_PLAYER_DONE
+
+
+36 
+˛ass
+ 
+	gDashClõ¡
+;
+
+38 ˛as†
+	cM≥gPœyî
+
+
+40 
+	gpublic
+:
+
+41 
+M≥gPœyî
+();
+
+43 
+	gvútuÆ
+
+
+44 ~
+M≥gPœyî
+();
+
+47 
+Re˚iveFøme
+(
+På
+<
+Packë
+> 
+mesßge
+);
+
+50 
+GëQueueSize
+();
+
+53 
+Sèπ
+();
+
+55 
+Time
+
+
+56 
+GëRólPœyTime
+(
+Time
+ 
+∂ayTime
+);
+
+58 
+ölöe
+
+
+59 
+SchduÀBuf„rWakeup
+(c⁄° 
+Time
+ 
+t
+, 
+DashClõ¡
+ * 
+˛õ¡
+)
+
+61 
+	gm_buf„rDñay
+ = 
+t
+;
+
+62 
+	gm_dashClõ¡
+ = 
+˛õ¡
+;
+
+66 
+GëID
+(
+id
+);
+
+68 
+	gm_°©e
+;
+
+69 
+Time
+ 
+	gm_öãºu±i⁄_time
+;
+
+70 
+	gm_öãºru±i⁄s
+;
+
+72 
+Time
+ 
+	gm_°¨t_time
+;
+
+73 
+uöt64_t
+ 
+	gm_tŸÆR©e
+;
+
+74 
+uöt32_t
+ 
+	gm_möR©e
+;
+
+75 
+uöt32_t
+ 
+	gm_‰amesPœyed
+;
+
+77 
+	g¥iv©e
+:
+
+79 
+PœyFøme
+();
+
+81 
+Time
+ 
+	gm_œ°∑u£d
+;
+
+82 
+	g°d
+::
+queue
+<
+På
+<
+Packë
+> > 
+m_queue
+;
+
+83 
+Time
+ 
+	gm_buf„rDñay
+;
+
+84 
+DashClõ¡
+ * 
+	gm_dashClõ¡
+;
+
+85 
+	gu£rID
+;
+
+86 
+size_t
+ 
+	gv_num
+=0;
+
+	@model/para.h
+
+1 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+2 
+	g°d
+::
+°rög
+ 
+checkã°
+;
+
+3 
+£g_Àngth
+;
+
+4 
+öô_buf„r
+;
+
+5 
+ve˘‹
+ <> 
+video_num
+;
+
+	@test/dash-test-suite.cc
+
+4 
+	~"ns3/dash-moduÀ.h
+"
+
+7 
+	~"ns3/ã°.h
+"
+
+9 
+	~<°rög
+>
+
+10 
+	~<f°ªam
+>
+
+11 
+	~"ns3/c‹e-moduÀ.h
+"
+
+12 
+	~"ns3/poöt-to-poöt-moduÀ.h
+"
+
+13 
+	~"ns3/öã∫ë-moduÀ.h
+"
+
+14 
+	~"ns3/≠∂iˇti⁄s-moduÀ.h
+"
+
+15 
+	~"ns3/√tw‹k-moduÀ.h
+"
+
+16 
+	~"ns3/dash-moduÀ.h
+"
+
+20 
+usög
+ 
+«me•a˚
+ 
+	gns3
+;
+
+23 ˛as†
+	cDashTe°Ca£1
+ : 
+public
+ 
+Te°Ca£
+
+
+25 
+public
+:
+
+26 
+DashTe°Ca£1
+ ();
+
+27 
+	mvútuÆ
+ ~
+DashTe°Ca£1
+ ();
+
+29 
+	m¥iv©e
+:
+
+30 
+vútuÆ
+ 
+DoRun
+ ();
+
+34 
+	gDashTe°Ca£1
+::
+	$DashTe°Ca£1
+ ()
+
+35 : 
+	`Te°Ca£
+ ("DashÅest case (doesÇothing)")
+
+37 
+	}
+}
+
+41 
+DashTe°Ca£1
+::~
+	$DashTe°Ca£1
+ ()
+
+43 
+	}
+}
+
+50 
+DashTe°Ca£1
+::
+	$DoRun
+ ()
+
+53 
+boﬁ
+ 
+åacög
+ = 
+Ál£
+;
+
+54 
+uöt32_t
+ 
+u£rs
+ = 1;
+
+55 
+èrgë_dt
+ = 7;
+
+56 
+°›Time
+ = 100.0;
+
+61 
+NodeC⁄èöî
+ 
+nodes
+;
+
+62 
+nodes
+.
+	`Cª©e
+(2);
+
+66 
+PoötToPoötHñ≥r
+ 
+poötToPoöt
+;
+
+67 
+poötToPoöt
+.
+	`SëDevi˚Aâribuã
+("D©aR©e", 
+	`SåögVÆue
+("500Kbps"));
+
+68 
+poötToPoöt
+.
+	`SëCh™√lAâribuã
+("Dñay", 
+	`SåögVÆue
+("5ms"));
+
+69 
+NëDevi˚C⁄èöî
+ 
+devi˚s
+;
+
+70 
+devi˚s
+ = 
+poötToPoöt
+.
+	`In°Æl
+(
+nodes
+);
+
+75 
+I¡î√tSèckHñ≥r
+ 
+öã∫ë
+;
+
+76 
+öã∫ë
+.
+	`In°Æl
+(
+nodes
+);
+
+81 
+Ipv4AddªssHñ≥r
+ 
+ùv4
+;
+
+82 
+ùv4
+.
+	`SëBa£
+("10.1.1.0", "255.255.255.0");
+
+83 
+Ipv4I¡îÁ˚C⁄èöî
+ 
+i
+ = 
+ùv4
+.
+	`Assign
+(
+devi˚s
+);
+
+87 
+uöt16_t
+ 
+p‹t
+ = 80;
+
+89 
+°d
+::
+ve˘‹
+<
+DashClõ¡Hñ≥r
+> 
+˛õ¡s
+;
+
+90 
+°d
+::
+ve˘‹
+<
+Aµliˇti⁄C⁄èöî
+> 
+˛õ¡Aµs
+;
+
+92 
+uöt32_t
+ 
+u£r
+ = 1; u£∏<
+u£rs
+; user++)
+
+94 
+DashClõ¡Hñ≥r
+ 
+	`˛õ¡
+("ns3::TcpSocketFactory",
+
+95 
+	`I√tSockëAddªss
+(
+i
+.
+	`GëAddªss
+(1), 
+p‹t
+));
+
+97 
+˛õ¡
+.
+	`SëAâribuã
+("VideoId", 
+	`UöãgîVÆue
+(
+u£r
+));
+
+98 
+˛õ¡
+.
+	`SëAâribuã
+("wödow", 
+	`TimeVÆue
+(
+	`Sec⁄ds
+(
+èrgë_dt
+)));
+
+99 
+Aµliˇti⁄C⁄èöî
+ 
+˛õ¡Aµ
+ = 
+˛õ¡
+.
+	`In°Æl
+(
+nodes
+.
+	`Gë
+(0));
+
+100 
+˛õ¡Aµ
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(1.0));
+
+101 
+˛õ¡Aµ
+.
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+));
+
+103 
+˛õ¡s
+.
+	`push_back
+(
+˛õ¡
+);
+
+104 
+˛õ¡Aµs
+.
+	`push_back
+(
+˛õ¡Aµ
+);
+
+108 
+DashSîvîHñ≥r
+ 
+	`£rvî
+("ns3::TcpSocketFactory",
+
+109 
+	`I√tSockëAddªss
+(
+Ipv4Addªss
+::
+	`GëAny
+(), 
+p‹t
+));
+
+110 
+Aµliˇti⁄C⁄èöî
+ 
+£rvîAµs
+ = 
+£rvî
+.
+	`In°Æl
+(
+nodes
+.
+	`Gë
+(1));
+
+111 
+£rvîAµs
+.
+	`Sèπ
+(
+	`Sec⁄ds
+(0.0));
+
+112 
+£rvîAµs
+.
+	`St›
+(
+	`Sec⁄ds
+(
+°›Time
+ + 5.0));
+
+117 i‡(
+åacög
+)
+
+119 
+AsciiTø˚Hñ≥r
+ 
+ascii
+;
+
+120 
+poötToPoöt
+.
+	`E«bÀAsciiAŒ
+(
+ascii
+.
+	`Cª©eFûeSåóm
+("dash-send.tr"));
+
+121 
+poötToPoöt
+.
+	`E«bÀPˇpAŒ
+("dash-£nd", 
+Ál£
+);
+
+128 
+Simuœt‹
+::
+	`Run
+();
+
+129 
+Simuœt‹
+::
+	`De°roy
+();
+
+131 
+uöt32_t
+ 
+k
+;
+
+132 
+k
+ = 0; k < 
+u£rs
+; k++)
+
+134 
+På
+<
+DashClõ¡
+> 
+≠p
+ = 
+Dy«micCa°
+<DashClõ¡>(
+˛õ¡Aµs
+[
+k
+].
+	`Gë
+(0));
+
+135 
+°d
+::
+cout
+ << "Node: " << 
+k
+;
+
+136 
+≠p
+->
+	`GëSèts
+();
+
+140 
+	`NS_TEST_ASSERT_MSG_EQ
+ (
+åue
+,Årue, "true doesn'tÉqualÅrue for someÑeason");
+
+142 
+	`NS_TEST_ASSERT_MSG_EQ_TOL
+ (0.01, 0.01, 0.001, "NumbersáreÇotÉqual withinÅolerance");
+
+143 
+	}
+}
+
+149 ˛as†
+	cDashTe°Suôe
+ : 
+public
+ 
+Te°Suôe
+
+
+151 
+public
+:
+
+152 
+DashTe°Suôe
+ ();
+
+155 
+	gDashTe°Suôe
+::
+	$DashTe°Suôe
+ ()
+
+156 : 
+	`Te°Suôe
+ ("dash", 
+UNIT
+)
+
+159 
+	`AddTe°Ca£
+ (
+√w
+ 
+DashTe°Ca£1
+, 
+Te°Ca£
+::
+QUICK
+);
+
+160 
+	}
+}
+
+163 
+DashTe°Suôe
+ 
+	gdashTe°Suôe
+;
+
+	@/usr/include/stdint.h
+
+22 #i‚de‡
+_STDINT_H
+
+
+23 
+	#_STDINT_H
+ 1
+
+	)
+
+25 
+	~<„©uªs.h
+>
+
+26 
+	~<bôs/wch¨.h
+>
+
+27 
+	~<bôs/w‹dsize.h
+>
+
+34 #i‚de‡
+__öt8_t_deföed
+
+
+35 
+	#__öt8_t_deföed
+
+
+	)
+
+36 sig√d 
+	töt8_t
+;
+
+37 
+	töt16_t
+;
+
+38 
+	töt32_t
+;
+
+39 #i‡
+__WORDSIZE
+ == 64
+
+40 
+	töt64_t
+;
+
+42 
+__exãnsi⁄__
+
+
+43 
+	töt64_t
+;
+
+48 
+	tuöt8_t
+;
+
+49 
+	tuöt16_t
+;
+
+50 #i‚de‡
+__uöt32_t_deföed
+
+
+51 
+	tuöt32_t
+;
+
+52 
+	#__uöt32_t_deföed
+
+
+	)
+
+54 #i‡
+__WORDSIZE
+ == 64
+
+55 
+	tuöt64_t
+;
+
+57 
+__exãnsi⁄__
+
+
+58 
+	tuöt64_t
+;
+
+65 sig√d 
+	töt_Àa°8_t
+;
+
+66 
+	töt_Àa°16_t
+;
+
+67 
+	töt_Àa°32_t
+;
+
+68 #i‡
+__WORDSIZE
+ == 64
+
+69 
+	töt_Àa°64_t
+;
+
+71 
+__exãnsi⁄__
+
+
+72 
+	töt_Àa°64_t
+;
+
+76 
+	tuöt_Àa°8_t
+;
+
+77 
+	tuöt_Àa°16_t
+;
+
+78 
+	tuöt_Àa°32_t
+;
+
+79 #i‡
+__WORDSIZE
+ == 64
+
+80 
+	tuöt_Àa°64_t
+;
+
+82 
+__exãnsi⁄__
+
+
+83 
+	tuöt_Àa°64_t
+;
+
+90 sig√d 
+	töt_Á°8_t
+;
+
+91 #i‡
+__WORDSIZE
+ == 64
+
+92 
+	töt_Á°16_t
+;
+
+93 
+	töt_Á°32_t
+;
+
+94 
+	töt_Á°64_t
+;
+
+96 
+	töt_Á°16_t
+;
+
+97 
+	töt_Á°32_t
+;
+
+98 
+__exãnsi⁄__
+
+
+99 
+	töt_Á°64_t
+;
+
+103 
+	tuöt_Á°8_t
+;
+
+104 #i‡
+__WORDSIZE
+ == 64
+
+105 
+	tuöt_Á°16_t
+;
+
+106 
+	tuöt_Á°32_t
+;
+
+107 
+	tuöt_Á°64_t
+;
+
+109 
+	tuöt_Á°16_t
+;
+
+110 
+	tuöt_Á°32_t
+;
+
+111 
+__exãnsi⁄__
+
+
+112 
+	tuöt_Á°64_t
+;
+
+117 #i‡
+__WORDSIZE
+ == 64
+
+118 #i‚de‡
+__öçå_t_deföed
+
+
+119 
+	töçå_t
+;
+
+120 
+	#__öçå_t_deföed
+
+
+	)
+
+122 
+	tuöçå_t
+;
+
+124 #i‚de‡
+__öçå_t_deföed
+
+
+125 
+	töçå_t
+;
+
+126 
+	#__öçå_t_deföed
+
+
+	)
+
+128 
+	tuöçå_t
+;
+
+133 #i‡
+__WORDSIZE
+ == 64
+
+134 
+	tötmax_t
+;
+
+135 
+	tuötmax_t
+;
+
+137 
+__exãnsi⁄__
+
+
+138 
+	tötmax_t
+;
+
+139 
+__exãnsi⁄__
+
+
+140 
+	tuötmax_t
+;
+
+144 #i‡
+__WORDSIZE
+ == 64
+
+145 
+	#__INT64_C
+(
+c
+Ë¯## 
+L
+
+
+	)
+
+146 
+	#__UINT64_C
+(
+c
+Ë¯## 
+UL
+
+
+	)
+
+148 
+	#__INT64_C
+(
+c
+Ë¯## 
+LL
+
+
+	)
+
+149 
+	#__UINT64_C
+(
+c
+Ë¯## 
+ULL
+
+
+	)
+
+155 
+	#INT8_MIN
+ (-128)
+
+	)
+
+156 
+	#INT16_MIN
+ (-32767-1)
+
+	)
+
+157 
+	#INT32_MIN
+ (-2147483647-1)
+
+	)
+
+158 
+	#INT64_MIN
+ (-
+	`__INT64_C
+(9223372036854775807)-1)
+
+	)
+
+160 
+	#INT8_MAX
+ (127)
+
+	)
+
+161 
+	#INT16_MAX
+ (32767)
+
+	)
+
+162 
+	#INT32_MAX
+ (2147483647)
+
+	)
+
+163 
+	#INT64_MAX
+ (
+	`__INT64_C
+(9223372036854775807))
+
+	)
+
+166 
+	#UINT8_MAX
+ (255)
+
+	)
+
+167 
+	#UINT16_MAX
+ (65535)
+
+	)
+
+168 
+	#UINT32_MAX
+ (4294967295U)
+
+	)
+
+169 
+	#UINT64_MAX
+ (
+	`__UINT64_C
+(18446744073709551615))
+
+	)
+
+173 
+	#INT_LEAST8_MIN
+ (-128)
+
+	)
+
+174 
+	#INT_LEAST16_MIN
+ (-32767-1)
+
+	)
+
+175 
+	#INT_LEAST32_MIN
+ (-2147483647-1)
+
+	)
+
+176 
+	#INT_LEAST64_MIN
+ (-
+	`__INT64_C
+(9223372036854775807)-1)
+
+	)
+
+178 
+	#INT_LEAST8_MAX
+ (127)
+
+	)
+
+179 
+	#INT_LEAST16_MAX
+ (32767)
+
+	)
+
+180 
+	#INT_LEAST32_MAX
+ (2147483647)
+
+	)
+
+181 
+	#INT_LEAST64_MAX
+ (
+	`__INT64_C
+(9223372036854775807))
+
+	)
+
+184 
+	#UINT_LEAST8_MAX
+ (255)
+
+	)
+
+185 
+	#UINT_LEAST16_MAX
+ (65535)
+
+	)
+
+186 
+	#UINT_LEAST32_MAX
+ (4294967295U)
+
+	)
+
+187 
+	#UINT_LEAST64_MAX
+ (
+	`__UINT64_C
+(18446744073709551615))
+
+	)
+
+191 
+	#INT_FAST8_MIN
+ (-128)
+
+	)
+
+192 #i‡
+__WORDSIZE
+ == 64
+
+193 
+	#INT_FAST16_MIN
+ (-9223372036854775807L-1)
+
+	)
+
+194 
+	#INT_FAST32_MIN
+ (-9223372036854775807L-1)
+
+	)
+
+196 
+	#INT_FAST16_MIN
+ (-2147483647-1)
+
+	)
+
+197 
+	#INT_FAST32_MIN
+ (-2147483647-1)
+
+	)
+
+199 
+	#INT_FAST64_MIN
+ (-
+	`__INT64_C
+(9223372036854775807)-1)
+
+	)
+
+201 
+	#INT_FAST8_MAX
+ (127)
+
+	)
+
+202 #i‡
+__WORDSIZE
+ == 64
+
+203 
+	#INT_FAST16_MAX
+ (9223372036854775807L)
+
+	)
+
+204 
+	#INT_FAST32_MAX
+ (9223372036854775807L)
+
+	)
+
+206 
+	#INT_FAST16_MAX
+ (2147483647)
+
+	)
+
+207 
+	#INT_FAST32_MAX
+ (2147483647)
+
+	)
+
+209 
+	#INT_FAST64_MAX
+ (
+	`__INT64_C
+(9223372036854775807))
+
+	)
+
+212 
+	#UINT_FAST8_MAX
+ (255)
+
+	)
+
+213 #i‡
+__WORDSIZE
+ == 64
+
+214 
+	#UINT_FAST16_MAX
+ (18446744073709551615UL)
+
+	)
+
+215 
+	#UINT_FAST32_MAX
+ (18446744073709551615UL)
+
+	)
+
+217 
+	#UINT_FAST16_MAX
+ (4294967295U)
+
+	)
+
+218 
+	#UINT_FAST32_MAX
+ (4294967295U)
+
+	)
+
+220 
+	#UINT_FAST64_MAX
+ (
+	`__UINT64_C
+(18446744073709551615))
+
+	)
+
+224 #i‡
+__WORDSIZE
+ == 64
+
+225 
+	#INTPTR_MIN
+ (-9223372036854775807L-1)
+
+	)
+
+226 
+	#INTPTR_MAX
+ (9223372036854775807L)
+
+	)
+
+227 
+	#UINTPTR_MAX
+ (18446744073709551615UL)
+
+	)
+
+229 
+	#INTPTR_MIN
+ (-2147483647-1)
+
+	)
+
+230 
+	#INTPTR_MAX
+ (2147483647)
+
+	)
+
+231 
+	#UINTPTR_MAX
+ (4294967295U)
+
+	)
+
+236 
+	#INTMAX_MIN
+ (-
+	`__INT64_C
+(9223372036854775807)-1)
+
+	)
+
+238 
+	#INTMAX_MAX
+ (
+	`__INT64_C
+(9223372036854775807))
+
+	)
+
+241 
+	#UINTMAX_MAX
+ (
+	`__UINT64_C
+(18446744073709551615))
+
+	)
+
+247 #i‡
+__WORDSIZE
+ == 64
+
+248 
+	#PTRDIFF_MIN
+ (-9223372036854775807L-1)
+
+	)
+
+249 
+	#PTRDIFF_MAX
+ (9223372036854775807L)
+
+	)
+
+251 
+	#PTRDIFF_MIN
+ (-2147483647-1)
+
+	)
+
+252 
+	#PTRDIFF_MAX
+ (2147483647)
+
+	)
+
+256 
+	#SIG_ATOMIC_MIN
+ (-2147483647-1)
+
+	)
+
+257 
+	#SIG_ATOMIC_MAX
+ (2147483647)
+
+	)
+
+260 #i‡
+__WORDSIZE
+ == 64
+
+261 
+	#SIZE_MAX
+ (18446744073709551615UL)
+
+	)
+
+263 #ifde‡
+__WORDSIZE32_SIZE_ULONG
+
+
+264 
+	#SIZE_MAX
+ (4294967295UL)
+
+	)
+
+266 
+	#SIZE_MAX
+ (4294967295U)
+
+	)
+
+271 #i‚de‡
+WCHAR_MIN
+
+
+273 
+	#WCHAR_MIN
+ 
+__WCHAR_MIN
+
+
+	)
+
+274 
+	#WCHAR_MAX
+ 
+__WCHAR_MAX
+
+
+	)
+
+278 
+	#WINT_MIN
+ (0u)
+
+	)
+
+279 
+	#WINT_MAX
+ (4294967295u)
+
+	)
+
+282 
+	#INT8_C
+(
+c
+Ë
+	)
+c
+
+283 
+	#INT16_C
+(
+c
+Ë
+	)
+c
+
+284 
+	#INT32_C
+(
+c
+Ë
+	)
+c
+
+285 #i‡
+__WORDSIZE
+ == 64
+
+286 
+	#INT64_C
+(
+c
+Ë¯## 
+L
+
+
+	)
+
+288 
+	#INT64_C
+(
+c
+Ë¯## 
+LL
+
+
+	)
+
+292 
+	#UINT8_C
+(
+c
+Ë
+	)
+c
+
+293 
+	#UINT16_C
+(
+c
+Ë
+	)
+c
+
+294 
+	#UINT32_C
+(
+c
+Ë¯## 
+U
+
+
+	)
+
+295 #i‡
+__WORDSIZE
+ == 64
+
+296 
+	#UINT64_C
+(
+c
+Ë¯## 
+UL
+
+
+	)
+
+298 
+	#UINT64_C
+(
+c
+Ë¯## 
+ULL
+
+
+	)
+
+302 #i‡
+__WORDSIZE
+ == 64
+
+303 
+	#INTMAX_C
+(
+c
+Ë¯## 
+L
+
+
+	)
+
+304 
+	#UINTMAX_C
+(
+c
+Ë¯## 
+UL
+
+
+	)
+
+306 
+	#INTMAX_C
+(
+c
+Ë¯## 
+LL
+
+
+	)
+
+307 
+	#UINTMAX_C
+(
+c
+Ë¯## 
+ULL
+
+
+	)
+
+	@/usr/include/features.h
+
+18 #i‚def 
+_FEATURES_H
+
+
+19 
+	#_FEATURES_H
+ 1
+
+	)
+
+97 #unde‡
+__USE_ISOC11
+
+
+98 #unde‡
+__USE_ISOC99
+
+
+99 #unde‡
+__USE_ISOC95
+
+
+100 #unde‡
+__USE_ISOCXX11
+
+
+101 #unde‡
+__USE_POSIX
+
+
+102 #unde‡
+__USE_POSIX2
+
+
+103 #unde‡
+__USE_POSIX199309
+
+
+104 #unde‡
+__USE_POSIX199506
+
+
+105 #unde‡
+__USE_XOPEN
+
+
+106 #unde‡
+__USE_XOPEN_EXTENDED
+
+
+107 #unde‡
+__USE_UNIX98
+
+
+108 #unde‡
+__USE_XOPEN2K
+
+
+109 #unde‡
+__USE_XOPEN2KXSI
+
+
+110 #unde‡
+__USE_XOPEN2K8
+
+
+111 #unde‡
+__USE_XOPEN2K8XSI
+
+
+112 #unde‡
+__USE_LARGEFILE
+
+
+113 #unde‡
+__USE_LARGEFILE64
+
+
+114 #unde‡
+__USE_FILE_OFFSET64
+
+
+115 #unde‡
+__USE_MISC
+
+
+116 #unde‡
+__USE_ATFILE
+
+
+117 #unde‡
+__USE_GNU
+
+
+118 #unde‡
+__USE_REENTRANT
+
+
+119 #unde‡
+__USE_FORTIFY_LEVEL
+
+
+120 #unde‡
+__KERNEL_STRICT_NAMES
+
+
+124 #i‚de‡
+_LOOSE_KERNEL_NAMES
+
+
+125 
+	#__KERNEL_STRICT_NAMES
+
+
+	)
+
+135 #i‡
+deföed
+ 
+__GNUC__
+ && deföed 
+__GNUC_MINOR__
+
+
+136 
+	#__GNUC_PREREQ
+(
+maj
+, 
+mö
+) \
+
+137 ((
+__GNUC__
+ << 16Ë+ 
+__GNUC_MINOR__
+ >((
+maj
+Ë<< 16Ë+ (
+mö
+))
+
+	)
+
+139 
+	#__GNUC_PREREQ
+(
+maj
+, 
+mö
+Ë0
+
+	)
+
+146 #i‡(
+deföed
+ 
+_BSD_SOURCE
+ || deföed 
+_SVID_SOURCE
+) \
+
+147 && !
+deföed
+ 
+	g_DEFAULT_SOURCE
+
+
+152 #unde‡
+_DEFAULT_SOURCE
+
+
+153 
+	#_DEFAULT_SOURCE
+ 1
+
+	)
+
+157 #ifde‡
+_GNU_SOURCE
+
+
+158 #unde‡
+_ISOC95_SOURCE
+
+
+159 
+	#_ISOC95_SOURCE
+ 1
+
+	)
+
+160 #unde‡
+_ISOC99_SOURCE
+
+
+161 
+	#_ISOC99_SOURCE
+ 1
+
+	)
+
+162 #unde‡
+_ISOC11_SOURCE
+
+
+163 
+	#_ISOC11_SOURCE
+ 1
+
+	)
+
+164 #unde‡
+_POSIX_SOURCE
+
+
+165 
+	#_POSIX_SOURCE
+ 1
+
+	)
+
+166 #unde‡
+_POSIX_C_SOURCE
+
+
+167 
+	#_POSIX_C_SOURCE
+ 200809L
+
+	)
+
+168 #unde‡
+_XOPEN_SOURCE
+
+
+169 
+	#_XOPEN_SOURCE
+ 700
+
+	)
+
+170 #unde‡
+_XOPEN_SOURCE_EXTENDED
+
+
+171 
+	#_XOPEN_SOURCE_EXTENDED
+ 1
+
+	)
+
+172 #unde‡
+_LARGEFILE64_SOURCE
+
+
+173 
+	#_LARGEFILE64_SOURCE
+ 1
+
+	)
+
+174 #unde‡
+_DEFAULT_SOURCE
+
+
+175 
+	#_DEFAULT_SOURCE
+ 1
+
+	)
+
+176 #unde‡
+_ATFILE_SOURCE
+
+
+177 
+	#_ATFILE_SOURCE
+ 1
+
+	)
+
+182 #i‡(
+deföed
+ 
+_DEFAULT_SOURCE
+ \
+
+183 || (!
+deföed
+ 
+	g__STRICT_ANSI__
+ \
+
+184 && !
+deföed
+ 
+	g_ISOC99_SOURCE
+ \
+
+185 && !
+deföed
+ 
+	g_POSIX_SOURCE
+ && !deföed 
+	g_POSIX_C_SOURCE
+ \
+
+186 && !
+deföed
+ 
+	g_XOPEN_SOURCE
+))
+
+187 #unde‡
+_DEFAULT_SOURCE
+
+
+188 
+	#_DEFAULT_SOURCE
+ 1
+
+	)
+
+192 #i‡(
+deföed
+ 
+_ISOC11_SOURCE
+ \
+
+193 || (
+deföed
+ 
+	g__STDC_VERSION__
+ && __STDC_VERSION__ >= 201112L))
+
+194 
+	#__USE_ISOC11
+ 1
+
+	)
+
+198 #i‡(
+deföed
+ 
+_ISOC99_SOURCE
+ || deföed 
+_ISOC11_SOURCE
+ \
+
+199 || (
+deföed
+ 
+__STDC_VERSION__
+ && __STDC_VERSION__ >= 199901L))
+
+200 
+	#__USE_ISOC99
+ 1
+
+	)
+
+204 #i‡(
+deföed
+ 
+_ISOC99_SOURCE
+ || deföed 
+_ISOC11_SOURCE
+ \
+
+205 || (
+deföed
+ 
+__STDC_VERSION__
+ && __STDC_VERSION__ >= 199409L))
+
+206 
+	#__USE_ISOC95
+ 1
+
+	)
+
+213 #i‡((
+deföed
+ 
+__˝lu•lus
+ && __cplusplus >= 201103L) \
+
+214 || 
+deföed
+ 
+__GXX_EXPERIMENTAL_CXX0X__
+)
+
+215 
+	#__USE_ISOCXX11
+ 1
+
+	)
+
+221 #ifde‡
+_DEFAULT_SOURCE
+
+
+222 #i‡!
+deföed
+ 
+_POSIX_SOURCE
+ && !deföed 
+_POSIX_C_SOURCE
+
+
+223 
+	#__USE_POSIX_IMPLICITLY
+ 1
+
+	)
+
+225 #unde‡
+_POSIX_SOURCE
+
+
+226 
+	#_POSIX_SOURCE
+ 1
+
+	)
+
+227 #unde‡
+_POSIX_C_SOURCE
+
+
+228 
+	#_POSIX_C_SOURCE
+ 200809L
+
+	)
+
+230 #i‡((!
+deföed
+ 
+__STRICT_ANSI__
+ \
+
+231 || (
+deföed
+ 
+_XOPEN_SOURCE
+ && (_XOPEN_SOURCE - 0) >= 500)) \
+
+232 && !
+deföed
+ 
+_POSIX_SOURCE
+ && !deföed 
+_POSIX_C_SOURCE
+)
+
+233 
+	#_POSIX_SOURCE
+ 1
+
+	)
+
+234 #i‡
+deföed
+ 
+_XOPEN_SOURCE
+ && (_XOPEN_SOURCE - 0) < 500
+
+235 
+	#_POSIX_C_SOURCE
+ 2
+
+	)
+
+236 #ñi‡
+deföed
+ 
+_XOPEN_SOURCE
+ && (_XOPEN_SOURCE - 0) < 600
+
+237 
+	#_POSIX_C_SOURCE
+ 199506L
+
+	)
+
+238 #ñi‡
+deföed
+ 
+_XOPEN_SOURCE
+ && (_XOPEN_SOURCE - 0) < 700
+
+239 
+	#_POSIX_C_SOURCE
+ 200112L
+
+	)
+
+241 
+	#_POSIX_C_SOURCE
+ 200809L
+
+	)
+
+243 
+	#__USE_POSIX_IMPLICITLY
+ 1
+
+	)
+
+246 #i‡(
+deföed
+ 
+_POSIX_SOURCE
+ \
+
+247 || (
+deföed
+ 
+_POSIX_C_SOURCE
+ && _POSIX_C_SOURCE >= 1) \
+
+248 || 
+deföed
+ 
+_XOPEN_SOURCE
+)
+
+249 
+	#__USE_POSIX
+ 1
+
+	)
+
+252 #i‡
+deföed
+ 
+_POSIX_C_SOURCE
+ && _POSIX_C_SOURCE >2 || deföed 
+_XOPEN_SOURCE
+
+
+253 
+	#__USE_POSIX2
+ 1
+
+	)
+
+256 #i‡
+deföed
+ 
+_POSIX_C_SOURCE
+ && (_POSIX_C_SOURCE - 0) >= 199309L
+
+257 
+	#__USE_POSIX199309
+ 1
+
+	)
+
+260 #i‡
+deföed
+ 
+_POSIX_C_SOURCE
+ && (_POSIX_C_SOURCE - 0) >= 199506L
+
+261 
+	#__USE_POSIX199506
+ 1
+
+	)
+
+264 #i‡
+deföed
+ 
+_POSIX_C_SOURCE
+ && (_POSIX_C_SOURCE - 0) >= 200112L
+
+265 
+	#__USE_XOPEN2K
+ 1
+
+	)
+
+266 #unde‡
+__USE_ISOC95
+
+
+267 
+	#__USE_ISOC95
+ 1
+
+	)
+
+268 #unde‡
+__USE_ISOC99
+
+
+269 
+	#__USE_ISOC99
+ 1
+
+	)
+
+272 #i‡
+deföed
+ 
+_POSIX_C_SOURCE
+ && (_POSIX_C_SOURCE - 0) >= 200809L
+
+273 
+	#__USE_XOPEN2K8
+ 1
+
+	)
+
+274 #unde‡
+_ATFILE_SOURCE
+
+
+275 
+	#_ATFILE_SOURCE
+ 1
+
+	)
+
+278 #ifdef 
+_XOPEN_SOURCE
+
+
+279 
+	#__USE_XOPEN
+ 1
+
+	)
+
+280 #i‡(
+_XOPEN_SOURCE
+ - 0) >= 500
+
+281 
+	#__USE_XOPEN_EXTENDED
+ 1
+
+	)
+
+282 
+	#__USE_UNIX98
+ 1
+
+	)
+
+283 #unde‡
+_LARGEFILE_SOURCE
+
+
+284 
+	#_LARGEFILE_SOURCE
+ 1
+
+	)
+
+285 #i‡(
+_XOPEN_SOURCE
+ - 0) >= 600
+
+286 #i‡(
+_XOPEN_SOURCE
+ - 0) >= 700
+
+287 
+	#__USE_XOPEN2K8
+ 1
+
+	)
+
+288 
+	#__USE_XOPEN2K8XSI
+ 1
+
+	)
+
+290 
+	#__USE_XOPEN2K
+ 1
+
+	)
+
+291 
+	#__USE_XOPEN2KXSI
+ 1
+
+	)
+
+292 #unde‡
+__USE_ISOC95
+
+
+293 
+	#__USE_ISOC95
+ 1
+
+	)
+
+294 #unde‡
+__USE_ISOC99
+
+
+295 
+	#__USE_ISOC99
+ 1
+
+	)
+
+298 #ifde‡
+_XOPEN_SOURCE_EXTENDED
+
+
+299 
+	#__USE_XOPEN_EXTENDED
+ 1
+
+	)
+
+304 #ifde‡
+_LARGEFILE_SOURCE
+
+
+305 
+	#__USE_LARGEFILE
+ 1
+
+	)
+
+308 #ifde‡
+_LARGEFILE64_SOURCE
+
+
+309 
+	#__USE_LARGEFILE64
+ 1
+
+	)
+
+312 #i‡
+deföed
+ 
+_FILE_OFFSET_BITS
+ && _FILE_OFFSET_BITS == 64
+
+313 
+	#__USE_FILE_OFFSET64
+ 1
+
+	)
+
+316 #i‡
+deföed
+ 
+_DEFAULT_SOURCE
+
+
+317 
+	#__USE_MISC
+ 1
+
+	)
+
+320 #ifdef 
+_ATFILE_SOURCE
+
+
+321 
+	#__USE_ATFILE
+ 1
+
+	)
+
+324 #ifdef 
+_GNU_SOURCE
+
+
+325 
+	#__USE_GNU
+ 1
+
+	)
+
+328 #i‡
+deföed
+ 
+_REENTRANT
+ || deföed 
+_THREAD_SAFE
+
+
+329 
+	#__USE_REENTRANT
+ 1
+
+	)
+
+332 #i‡
+deföed
+ 
+_FORTIFY_SOURCE
+ && _FORTIFY_SOURCE > 0 \
+
+333 && 
+__GNUC_PREREQ
+ (4, 1Ë&& 
+deföed
+ 
+	g__OPTIMIZE__
+ && __OPTIMIZE__ > 0
+
+334 #i‡
+_FORTIFY_SOURCE
+ > 1
+
+335 
+	#__USE_FORTIFY_LEVEL
+ 2
+
+	)
+
+337 
+	#__USE_FORTIFY_LEVEL
+ 1
+
+	)
+
+340 
+	#__USE_FORTIFY_LEVEL
+ 0
+
+	)
+
+345 
+	~<°dc-¥edef.h
+>
+
+353 #unde‡
+__GNU_LIBRARY__
+
+
+354 
+	#__GNU_LIBRARY__
+ 6
+
+	)
+
+358 
+	#__GLIBC__
+ 2
+
+	)
+
+359 
+	#__GLIBC_MINOR__
+ 23
+
+	)
+
+361 
+	#__GLIBC_PREREQ
+(
+maj
+, 
+mö
+) \
+
+362 ((
+__GLIBC__
+ << 16Ë+ 
+__GLIBC_MINOR__
+ >((
+maj
+Ë<< 16Ë+ (
+mö
+))
+
+	)
+
+365 #i‚de‡
+__ASSEMBLER__
+
+
+366 #i‚de‡
+_SYS_CDEFS_H
+
+
+367 
+	~<sys/cdefs.h
+>
+
+372 #i‡
+deföed
+ 
+__USE_FILE_OFFSET64
+ && !deföed 
+__REDIRECT
+
+
+373 
+	#__USE_LARGEFILE
+ 1
+
+	)
+
+374 
+	#__USE_LARGEFILE64
+ 1
+
+	)
+
+380 #i‡
+__GNUC_PREREQ
+ (2, 7Ë&& 
+deföed
+ 
+__OPTIMIZE__
+ \
+
+381 && !
+deföed
+ 
+	g__OPTIMIZE_SIZE__
+ && !deföed 
+	g__NO_INLINE__
+ \
+
+382 && 
+deföed
+ 
+	g__exã∫_ölöe
+
+
+383 
+	#__USE_EXTERN_INLINES
+ 1
+
+	)
+
+391 
+	~<gnu/°ubs.h
+>
+
+	@/usr/include/stdc-predef.h
+
+18 #i‚def 
+_STDC_PREDEF_H
+
+
+19 
+	#_STDC_PREDEF_H
+ 1
+
+	)
+
+36 #ifde‡
+__GCC_IEC_559
+
+
+37 #i‡
+__GCC_IEC_559
+ > 0
+
+38 
+	#__STDC_IEC_559__
+ 1
+
+	)
+
+41 
+	#__STDC_IEC_559__
+ 1
+
+	)
+
+44 #ifde‡
+__GCC_IEC_559_COMPLEX
+
+
+45 #i‡
+__GCC_IEC_559_COMPLEX
+ > 0
+
+46 
+	#__STDC_IEC_559_COMPLEX__
+ 1
+
+	)
+
+49 
+	#__STDC_IEC_559_COMPLEX__
+ 1
+
+	)
+
+55 
+	#__STDC_ISO_10646__
+ 201505L
+
+	)
+
+58 
+	#__STDC_NO_THREADS__
+ 1
+
+	)
+
+	@
+1
+.
+1
+/usr/include
+36
+926
+examples/dash-example.cc
+examples/dash-wifi.cc
+examples/link-example.cc
+helper/dash-client-helper.cc
+helper/dash-client-helper.h
+helper/dash-server-helper.cc
+helper/dash-server-helper.h
+model/algorithms/aaash-client.cc
+model/algorithms/aaash-client.h
+model/algorithms/fdash-client.cc
+model/algorithms/fdash-client.h
+model/algorithms/osmp-client.cc
+model/algorithms/osmp-client.h
+model/algorithms/raahs-client.cc
+model/algorithms/raahs-client.h
+model/algorithms/sftm-client.cc
+model/algorithms/sftm-client.h
+model/algorithms/svaa-client.cc
+model/algorithms/svaa-client.h
+model/dash-client.cc
+model/dash-client.h
+model/dash-server.cc
+model/dash-server.h
+model/http-header.cc
+model/http-header.h
+model/http-parser.cc
+model/http-parser.h
+model/mpeg-header.cc
+model/mpeg-header.h
+model/mpeg-player.cc
+model/mpeg-player.h
+model/para.h
+test/dash-test-suite.cc
+/usr/include/stdint.h
+/usr/include/features.h
+/usr/include/stdc-predef.h
