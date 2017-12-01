@@ -173,7 +173,7 @@ namespace ns3
 //      uint32_t video = header.GetVideoId(); //Jerry
 //	std::cout<<"VidID: "<<video<<"  "<<"segID: "<<ID<<std::endl; // Jerry
         SendSegment(header.GetVideoId(), header.GetResolution(),
-            header.GetSegmentId(), socket);
+            header.GetSegmentId(),header.GetPacketNum(), socket);
 
         if (InetSocketAddress::IsMatchingType(from))
           {
@@ -237,7 +237,7 @@ namespace ns3
 //	std::cout<<"socket: "<<socket<<"  m_queue_size: "<<m_queues[socket].size()<<std::endl; //Jerry
         int bytes;
         Ptr<Packet> frame = m_queues[socket].front().Copy();
-	std::cout<<"1,"<<socket<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
+//	std::cout<<"1,"<<socket<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
         if ((bytes = socket->Send(frame)) != (int) frame->GetSize())
           {
 	    std::cout<<"Could not send frame"<<std::endl;
@@ -258,7 +258,7 @@ namespace ns3
 
   void
   DashServer::SendSegment(uint32_t video_id, uint32_t resolution,
-      uint32_t segment_id, Ptr<Socket> socket)
+      uint32_t segment_id,uint32_t packet_num, Ptr<Socket> socket)
   {
 //   std::cout<<"video_id: "<<video_id<<"  send segment!!!!!!"<<std::endl;
 	/*Jerry*/ 
@@ -293,8 +293,8 @@ namespace ns3
 
     frame_size_gen->SetAttribute ("Max", DoubleValue (1288)); // Jerry
     
-
-    for (uint32_t f_id = 0; f_id < (unsigned) video_num[v_num[video_id]]; f_id++) //MPEG_FRAMES_PER_SEGMENT
+    //video_num[v_num[video_id]]
+    for (uint32_t f_id = 0; f_id < packet_num; f_id++) //MPEG_FRAMES_PER_SEGMENT
       {
         uint32_t frame_size = (unsigned) frame_size_gen->GetValue();
 	

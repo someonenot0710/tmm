@@ -76,12 +76,17 @@ namespace ns3
 
     if (m_state == MPEG_PLAYER_PAUSED)
       {
-	if(m_queue.size()>(unsigned) video_num[v_num]){ //Jerry add if
+	if(m_queue.size()>(unsigned) video_series[userID][v_num]){ //Jerry add if
         NS_LOG_INFO("Play resumed");
         m_state = MPEG_PLAYER_PLAYING;
         m_interruption_time += (Simulator::Now() - m_lastpaused);
-//	cout<<"interrupt,"<<userID<<","<<m_interrruptions<<","<<(Simulator::Now() - m_lastpaused).GetSeconds()<<std::endl;
-	std::cout<<"4,"<<userID<<","<<m_interrruptions<<","<<(Simulator::Now() - m_lastpaused).GetSeconds()<<std::endl; //tmm
+
+	//tmm
+//	std::cout<<"3,"<<userID<<","<<m_lastpaused.GetSeconds()<<","<<Simulator::Now().GetSeconds()<<std::endl;
+	record=1;
+
+//	std::cout<<"4,"<<userID<<","<<m_interrruptions<<","<<(Simulator::Now() - m_lastpaused).GetSeconds()<<std::endl; //tmm
+
         PlayFrame();
 	}
       }
@@ -90,7 +95,7 @@ namespace ns3
 	//tmm
 	int initial_buffer=0;
 	for(int i=0; i<init_buffer; i++){
-		initial_buffer+=video_num[i];
+		initial_buffer+=video_series[userID][i];
 	}
 	
 	if(m_queue.size()>(unsigned) initial_buffer){
@@ -98,7 +103,7 @@ namespace ns3
         m_state = MPEG_PLAYER_PLAYING;
         m_start_time = Simulator::Now();
 //        Simulator::Schedule(Simulator::Now(), &MpegPlayer::PlayFrame, this);
-	std::cout<<"3,"<<userID<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
+//	std::cout<<"3,"<<userID<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
 	PlayFrame();
       	}
       }
@@ -142,7 +147,7 @@ namespace ns3
 //	std::cout<<"here empty???"<<std::endl;
         return;
       }
-    if (m_queue.size()<(unsigned) video_num[v_num])
+    if (m_queue.size()<(unsigned) video_series[userID][v_num])
       {
 	m_state = MPEG_PLAYER_PAUSED;
         m_lastpaused = Simulator::Now();
@@ -151,13 +156,20 @@ namespace ns3
 //	std::cout<<"interruption--------------------"<<m_interrruptions<<std::endl; 
         return;	
       }
+
+	//tmm
+	if (record==0){
+//		std::cout<<"3,"<<userID<<","<<Simulator::Now().GetSeconds()<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
+	}
+	record=0;
+
    
 	MPEGHeader mpeg_header;
         HTTPHeader http_header; 
 
 //	std::cout<<"play time: "<<Simulator::Now().GetSeconds()<<std::endl; //Jerry
 
-    for (int i=0;i<(int)video_num[v_num];i++){
+    for (int i=0;i<(int)video_series[userID][v_num];i++){
 	Ptr<Packet> message = m_queue.front();
 	m_queue.pop();
 	message->RemoveHeader(mpeg_header);

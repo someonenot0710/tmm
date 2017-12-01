@@ -110,20 +110,68 @@ main(int argc, char *argv[])
 	video_num.push_back(stoi(str));	
     }
 */
-   vector<string> tmp_name;
 
-   istringstream sss(input_series);
+
+
+   ifstream file_qp("20x10_qps");
+   string str;
+   if(!file_qp) cout<<"no file"<<endl;
+   for (uint32_t k=0 ; k<users ; k++){
+   getline(file_qp,str);
+ 
+   vector<int> tmp;
+
+   istringstream sss(str);
    string token;
 
    while(std::getline(sss, token, ',')) {
-    std::cout << token << '\n';
-    tmp_name.push_back(token);
+   // std::cout << stoi(token) << '\n';
+    tmp.push_back(stoi(token));
+   }
+    qp_store.push_back(tmp);
+
+   }
+   file_qp.close();
+  
+   ifstream files("20x10_coef_kbps");
+   string str1;
+   if(!files) cout<<"no files"<<endl;
+   for (uint32_t k=0 ; k<users ; k++){
+   vector<double> tmp;   
+   while(getline(files,str1)){
+
+   istringstream sss(str1);
+   string token;
+   int count=-1;
+   while(std::getline(sss, token, ' ')) {
+//    std::cout << stod(token) << '\n';
+//    tmp_name.push_back(token);
+    count++;
+    if(count>2)
+	tmp.push_back(stod(token));
+   }
+   }
+   video_info.push_back(tmp);
+   }
+   
+   files.close();
+ 
+//   std::cout<<video_info[0][0]<<endl;
+     std::cout<<endl;
+    vector<string> tmp_name;
+      for (uint32_t k = 0; k < users; k++){
+        string tmp = "user";
+        stringstream ssss;
+        ssss<<k;
+        tmp = tmp + ssss.str()+".csv";
+        tmp_name.push_back(tmp);
+
    }
 
    for (size_t j=0, max=tmp_name.size() ;j!=max;j++){
 	
     vector <int> tmp;
-    fstream file(tmp_name[j]);
+    ifstream file(tmp_name[j]);
     string str;
     if(!file) cout<<"no file"<<endl;
     while (getline(file,str)){
@@ -132,6 +180,18 @@ main(int argc, char *argv[])
 
     video_series.push_back(tmp);
    }
+
+
+/*
+   for (uint32_t k = 0; k < users; k++){
+	string tmp = "user";
+	stringstream ssss;
+	ssss<<k;
+	tmp = tmp + ssss.str()+".csv";
+        tmp_name.push_back(tmp);	
+
+   }
+*/
 
 /*
     for (size_t j=0, max=video_num.size(); j!=max;j++){
@@ -236,7 +296,7 @@ main(int argc, char *argv[])
 //
   NS_LOG_INFO("Run Simulation.");
   /*Simulator::Stop(Seconds(100.0));*/
-//  Simulator::Run();
+  Simulator::Run();
   Simulator::Destroy();
   NS_LOG_INFO("Done.");
 

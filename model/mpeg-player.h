@@ -84,6 +84,7 @@ namespace ns3
     DashClient * m_dashClient;
     int userID; //Jerry
     size_t v_num=0;
+    int record=0;
   };
 } // namespace ns3
 

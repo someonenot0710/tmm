@@ -27,6 +27,7 @@
 #include "http-header.h"
 #include "dash-client.h"
 #include "para.h"
+#include<cmath>
 
 NS_LOG_COMPONENT_DEFINE("DashClient");
 using namespace std;
@@ -35,6 +36,8 @@ vector <int> video_num; //Jerry
 vector<vector<int>> video_series;
 int init_buffer;
 int seg_length;
+vector<vector<int>> qp_store;
+vector<vector<double>> video_info;
 
 namespace ns3
 {
@@ -168,6 +171,28 @@ namespace ns3
         return;
       }
 
+
+    double sum_bytes=0;
+    for (size_t j=0, max=qp_store[m_id].size() ;j!=max;j++){
+	if(qp_store[m_id][j]!=-1){
+		sum_bytes+=video_info[m_id][j*2] * pow(qp_store[m_id][j],video_info[m_id][j*2+1]);	
+//	double	a=pow(qp_store[m_id][j],video_info[m_id][j*2+1]);
+//		cout<<a<<endl;
+	}
+    }
+    
+    sum_bytes =  sum_bytes*1000/8.0;
+    sum_bytes = sum_bytes/1288.0;
+
+    int packet_number=0;
+    if (sum_bytes-int(sum_bytes) ==0)
+		packet_number = int(sum_bytes);
+    else
+	packet_number = int(sum_bytes)+1;
+    
+    cout<<"packet: "<<packet_number<<endl;
+
+
     Ptr<Packet> packet = Create<Packet>(100);
 
     HTTPHeader httpHeader;
@@ -176,6 +201,7 @@ namespace ns3
     httpHeader.SetVideoId(m_videoId);
     httpHeader.SetResolution(m_bitRate);
     httpHeader.SetSegmentId(m_segmentId++);
+    httpHeader.SetPacketNum(packet_number); //tmm video_series[m_id][v_num]
     packet->AddHeader(httpHeader);
    
    
@@ -247,13 +273,12 @@ namespace ns3
     m_player.GetID(m_id);
     m_segment_bytes += message.GetSize();
     m_totBytes += message.GetSize();
-    std::cout<<"2,"<<m_id<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm    
+//    std::cout<<"2,"<<m_id<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm    
 //    std::cout<<"ID: "<<m_id<<"  frame_num: "<<frame_num<<" video_num: "<<video_num[v_num]<<std::endl; 
-    if(frame_num==video_num[v_num]){
+    if(frame_num==video_series[m_id][v_num]){
 //	std::cout<<"ID: "<<m_id<<"  seg: "<<seg_num<<"  frame: "<<frame_num<<"   Sim Time: "<<Simulator::Now().GetSeconds()<<" ------- "<<"total_bytes: "<<m_totBytes<<std::endl;
-//	std::cout<<"get,"<<m_id<<","<<Simulator::Now().GetSeconds()<<","<<m_totBytes<<std::endl;
 	v_num++;
-	if(v_num!=(int)video_num.size())
+	if(v_num!=(int)video_series[m_id].size())
 	tmp_num=frame_num;
 	frame_num=0;
         seg_num++;
@@ -282,7 +307,7 @@ namespace ns3
     // If we received the last frame of the segment
 //    if (mpegHeader.GetFrameId() == (unsigned) video_num[v_num-1] - 1) //MPEG_FRAMES_PER_SEGMENT
       
-      if(v_num>0 && (tmp_num == video_num[v_num-1]))
+      if(v_num>0 && (tmp_num == video_series[m_id][v_num-1]))
       {
 	tmp_num=0;
 //	std::cout<<"ID: "<<m_id<<"   request segment------"<<std::endl;

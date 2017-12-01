@@ -87,7 +87,7 @@ namespace ns3
     DataSend(Ptr<Socket>, uint32_t); // Called when a new segment is transmitted
                                      // or when new space is aveilable in the buffer
     void
-    SendSegment(uint32_t video_id, uint32_t resolution, uint32_t segment_id,
+    SendSegment(uint32_t video_id, uint32_t resolution, uint32_t segment_id, uint32_t packet_num,
         Ptr<Socket> socket);  // Sends the segment back to the client
     void
     HandleAccept(Ptr<Socket>, const Address& from); // Called hen a new connection is accepted
