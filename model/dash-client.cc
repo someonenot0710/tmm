@@ -27,7 +27,11 @@
 #include "http-header.h"
 #include "dash-client.h"
 #include "para.h"
-#include<cmath>
+#include <cmath>
+#include <fstream>
+#include <stdlib.h>
+#include <sstream>
+#include <iomanip>
 
 NS_LOG_COMPONENT_DEFINE("DashClient");
 using namespace std;
@@ -36,8 +40,26 @@ vector <int> video_num; //Jerry
 vector<vector<int>> video_series;
 int init_buffer;
 int seg_length;
-vector<vector<int>> qp_store;
-vector<vector<double>> video_info;
+vector<vector<vector<float>>> probs;
+vector<vector<double>> brs;
+vector<vector<double>> dists;
+vector<vector<vector<double>>> video_size;
+vector<vector<vector<float>>> pred_info;
+vector<vector<vector<float>>> gt_info;
+vector<string> video_names;
+vector<vector<int>> user_info;
+std::string tile_col, tile_row;
+std::string experiment_dir;
+std::string feature_dir;
+std::string video_info_dir="";
+std::string prob_dir="";
+std::string prob_overall_dir="";
+std::string user_info_file="";
+std::string area_dir="";
+float rho;
+int M;
+int tile_num;
+std::string cur_pre; //Jerry
 
 namespace ns3
 {
@@ -171,30 +193,96 @@ namespace ns3
         return;
       }
 
-
-    double sum_bytes=0;
-    for (size_t j=0, max=qp_store[m_id].size() ;j!=max;j++){
-	if(qp_store[m_id][j]!=-1){
-		sum_bytes+=video_info[m_id][j*2] * pow(qp_store[m_id][j],video_info[m_id][j*2+1]);	
-//	double	a=pow(qp_store[m_id][j],video_info[m_id][j*2+1]);
-//		cout<<a<<endl;
-	}
+    //yibin
+	double sum_bytes=0;
+    cout<<m_id<<": "<<m_segmentId<<endl;
+    std::stringstream s_mid;
+    s_mid << m_id;
+ //   char cmd[300];
+    std::stringstream tmpu;
+    tmpu << std::setw(2) << std::setfill('0') << user_info[m_id][1];
+    std::string cur_user = tmpu.str();
+    std::string u;
+    u="user"+cur_user;
+	int i;
+/*
+    std::string prob_file;
+	prob_file=experiment_dir+"prob_"+s_mid.str();
+	// python predict.py $feature_dir $v user$(printf %02d $u) $n prob
+    sprintf(cmd,"python scripts/predict.py %s %s %s %d %s",feature_dir.c_str(),video_names[user_info[m_id][0]].c_str(),u.c_str(),(m_segmentId+1)*30,prob_file.c_str());
+    system(cmd);
+    ifstream prob(prob_file);
+    vector<float> tmp_probs;
+    std::string tmp_prob;
+	int tile_no=0;
+    while(prob >> tmp_prob){
+//		cout<<tmp_prob<<endl;
+		float p=stof(tmp_prob.c_str());
+        tmp_probs.push_back(p);
+		// check threshold
+		if (p>=rho){
+			sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][tile_no];
+		}
+		tile_no++;
     }
-    
-    sum_bytes =  sum_bytes*1000/8.0;
+    prob.close();
+    probs[m_id][m_segmentId]=tmp_probs;*/
+	// header files
+	if(cur_pre=="pre"){
+	if(m_segmentId==0){
+		sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][0];
+		sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][1];
+	}else if(m_segmentId==1){ // first segment -> no predicted prob. -> using ground truth
+		for(i=0;i<tile_num; i++){
+			if(gt_info[m_id][(m_segmentId-1)][i]>=rho){ //0 or rho?
+                sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][i];
+            }
+		}
+		probs[m_id][m_segmentId]=gt_info[m_id][(m_segmentId-1)];
+	}else{ // has predicted prob.
+		for(i=0; i<tile_num; i++){
+			if(pred_info[m_id][(m_segmentId-2)][i]>=rho){
+				sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][i];
+			}
+		}
+		probs[m_id][m_segmentId]=pred_info[m_id][(m_segmentId-2)];
+	}
+	}
+
+	if (cur_pre=="cur"){
+        if(m_segmentId==0){
+                sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][0];
+                sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][1];
+        }else if(m_segmentId==1){ // first segment -> no predicted prob. -> using ground truth
+                for(i=0;i<tile_num; i++){
+                        if(gt_info[m_id][(m_segmentId-1)][i]>=rho){ //0 or rho?
+                sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][i];
+            }
+                }
+                probs[m_id][m_segmentId]=gt_info[m_id][(m_segmentId-1)];
+        }else{ // has predicted prob.
+                for(i=0; i<tile_num; i++){
+                        if(gt_info[m_id][(m_segmentId-2)][i]>=rho){
+                                sum_bytes+=video_size[user_info[m_id][0]][m_segmentId][i];
+                        }
+                }
+                probs[m_id][m_segmentId]=gt_info[m_id][(m_segmentId-2)];
+        }
+	}
+
+    sum_bytes =  sum_bytes/8.0;
     sum_bytes = sum_bytes/1288.0;
 
     int packet_number=0;
     if (sum_bytes-int(sum_bytes) ==0)
 		packet_number = int(sum_bytes);
     else
-	packet_number = int(sum_bytes)+1;
+	    packet_number = int(sum_bytes)+1;
     
-    cout<<"packet: "<<packet_number<<endl;
-
+    //yibin
+    video_series[m_id][m_segmentId]=packet_number;
 
     Ptr<Packet> packet = Create<Packet>(100);
-
     HTTPHeader httpHeader;
     httpHeader.SetSeq(1);
     httpHeader.SetMessageType(HTTP_REQUEST);
@@ -267,23 +355,37 @@ namespace ns3
 
     MPEGHeader mpegHeader;
     HTTPHeader httpHeader;
+    //yibin
     frame_num++;
+    //user_info[m_id][2]++;
+   // cout<<m_id<<":"<<frame_num<<endl;
     // Send the frame to the player
     m_player.ReceiveFrame(&message);
     m_player.GetID(m_id);
     m_segment_bytes += message.GetSize();
     m_totBytes += message.GetSize();
-//    std::cout<<"2,"<<m_id<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm    
-//    std::cout<<"ID: "<<m_id<<"  frame_num: "<<frame_num<<" video_num: "<<video_num[v_num]<<std::endl; 
+    std::cout<<"2,"<<m_id<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm    
+//    std::cout<<"ID: "<<m_id<<"  frame_num: "<<frame_num<<" video_num: "<<video_num[v_num]<<std::endl;
+ 
     if(frame_num==video_series[m_id][v_num]){
+    //if(user_info[m_id][2]==video_series[m_id][m_segmentId]){
 //	std::cout<<"ID: "<<m_id<<"  seg: "<<seg_num<<"  frame: "<<frame_num<<"   Sim Time: "<<Simulator::Now().GetSeconds()<<" ------- "<<"total_bytes: "<<m_totBytes<<std::endl;
-	v_num++;
-	if(v_num!=(int)video_series[m_id].size())
-	tmp_num=frame_num;
-	frame_num=0;
+        //yibin
+        
+        
+	    v_num++;
+	    if(v_num!=(int)video_series[m_id].size())
+	        tmp_num=frame_num;
+	    frame_num=0;
         seg_num++;
     }
-    if (seg_num==(60/seg_length)) DashClient::StopApplication();
+    //cout<<seg_num<<","<<m_segmentId<<endl;
+//    if (seg_num==(61/seg_length)) 
+	if (seg_num==(5/seg_length))
+    //cout<<m_id<<","<<m_segmentId<<","<<m_totBytes<<endl;
+    //cout<<60/(uint32_t)seg_length<<endl;
+    //if(m_segmentId==(60/(uint32_t)seg_length))
+        DashClient::StopApplication();
 
     message.RemoveHeader(mpegHeader);
     message.RemoveHeader(httpHeader);
@@ -309,7 +411,7 @@ namespace ns3
       
       if(v_num>0 && (tmp_num == video_series[m_id][v_num-1]))
       {
-	tmp_num=0;
+	      tmp_num=0;
 //	std::cout<<"ID: "<<m_id<<"   request segment------"<<std::endl;
 //	std::cout<<mpegHeader.GetFrameId()<<std::endl; //Jerry	
 //	uint32_t segment_size = m_segment_bytes; //Jerry

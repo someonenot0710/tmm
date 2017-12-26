@@ -82,10 +82,10 @@ namespace ns3
         m_interruption_time += (Simulator::Now() - m_lastpaused);
 
 	//tmm
-//	std::cout<<"3,"<<userID<<","<<m_lastpaused.GetSeconds()<<","<<Simulator::Now().GetSeconds()<<std::endl;
+	std::cout<<"3,"<<userID<<","<<m_lastpaused.GetSeconds()<<","<<Simulator::Now().GetSeconds()<<std::endl;
 	record=1;
 
-//	std::cout<<"4,"<<userID<<","<<m_interrruptions<<","<<(Simulator::Now() - m_lastpaused).GetSeconds()<<std::endl; //tmm
+	std::cout<<"4,"<<userID<<","<<m_interrruptions<<","<<(Simulator::Now() - m_lastpaused).GetSeconds()<<std::endl; //tmm
 
         PlayFrame();
 	}
@@ -159,7 +159,7 @@ namespace ns3
 
 	//tmm
 	if (record==0){
-//		std::cout<<"3,"<<userID<<","<<Simulator::Now().GetSeconds()<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
+		std::cout<<"3,"<<userID<<","<<Simulator::Now().GetSeconds()<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
 	}
 	record=0;
 

@@ -237,7 +237,7 @@ namespace ns3
 //	std::cout<<"socket: "<<socket<<"  m_queue_size: "<<m_queues[socket].size()<<std::endl; //Jerry
         int bytes;
         Ptr<Packet> frame = m_queues[socket].front().Copy();
-//	std::cout<<"1,"<<socket<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
+	std::cout<<"1,"<<socket<<","<<Simulator::Now().GetSeconds()<<std::endl; //tmm
         if ((bytes = socket->Send(frame)) != (int) frame->GetSize())
           {
 	    std::cout<<"Could not send frame"<<std::endl;
